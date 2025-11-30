@@ -42,7 +42,7 @@ export default function TopNav() {
             right="2px"
             bg="red.500"
             borderRadius="full"
-            boxSize="10px"
+            boxSize="8px"
             p="0"
           />
         </Box>
