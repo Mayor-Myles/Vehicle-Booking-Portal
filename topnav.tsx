@@ -10,8 +10,8 @@ import {
   Icon,
   Heading
 } from '@chakra-ui/react';
-import { FiLock, FiBell, FiWifi, FiActivity, FiPlus } from 'react-icons/fi';
-
+import { FiLock, FiBell, FiWifi, FiPhoneCall, FiPlus } from 'react-icons/fi';
+import { TbScan } from "react-icons/tb";
 const TopNav = () => {
   return (
     <Box 
@@ -26,7 +26,7 @@ const TopNav = () => {
       {/* Navigation Bar */}
       <Flex justify="space-between" align="center" mb={8}>
         <IconButton
-          icon={<FiLock />}
+          icon={<TbScan />}
           variant="ghost"
           aria-label="Lock"
           fontSize="20px"
@@ -55,7 +55,7 @@ const TopNav = () => {
       </VStack>
 
       {/* Function Buttons */}
-      <VStack spacing={4}>
+      <HStack spacing={4}>
         <Button
           leftIcon={<Icon as={FiWifi} boxSize={5} />}
           variant="outline"
@@ -69,7 +69,7 @@ const TopNav = () => {
           Buy Data
         </Button>
         <Button
-          leftIcon={<Icon as={FiActivity} boxSize={5} />}
+          leftIcon={<Icon as={FiPhoneCall} boxSize={5} />}
           variant="outline"
           width="full"
           justifyContent="flex-start"
@@ -80,19 +80,20 @@ const TopNav = () => {
         >
           Buy Airtime
         </Button>
+      </HStack>
         <Button
           leftIcon={<Icon as={FiPlus} boxSize={5} />}
-          bg="blue.800"
+          bg="brown.800"
           color="white"
           width="full"
-          justifyContent="flex-start"
+          justifyContent="center"
           py={6}
           borderRadius="md"
           _hover={{ bg: "blue.700" }}
         >
           Add Money
         </Button>
-      </VStack>
+      
     </Box>
   );
 };
