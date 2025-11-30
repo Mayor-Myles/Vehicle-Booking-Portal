@@ -29,7 +29,7 @@ export default function TopNav() {
       {/* Icons Section */}
       <Flex align="center" gap={3}>
         {/* Chat Icon */}
-        <Box >
+        <Box position="relative">
           <IconButton
             aria-label="messages"
             icon={<HiOutlineChatBubbleOvalLeft size={22} />}
@@ -38,8 +38,8 @@ export default function TopNav() {
           />
           <Badge
             position="absolute"
-            top="0"
-            right="0"
+            top="3px"
+            right="2px"
             bg="red.500"
             borderRadius="full"
             boxSize="10px"
@@ -48,17 +48,17 @@ export default function TopNav() {
         </Box>
 
         {/* Bell Icon */}
-        <Box >
+        <Box position="relative">
           <IconButton
             aria-label="notifications"
-            icon={<HiOutlineBell size={22} />}
-            variant="ghost"
+            icon={<HiOutlineBell size={23} />}
+            variant="solid"
             size="lg"
           />
           <Badge
             position="absolute"
-            top="0"
-            right="0"
+            top="3px"
+            right="2px"
             bg="red.500"
             borderRadius="full"
             boxSize="10px"
