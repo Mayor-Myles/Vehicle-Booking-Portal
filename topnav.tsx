@@ -16,8 +16,8 @@ export default function TopNav() {
         <Avatar
           size="md"
           name="Olaoluwa Abijo"
-          src="https://www.freepik.com/free-ai-image/portrait-man-cartoon-style_137497745.htm#fromView=keyword&page=1&position=1&uuid=97f99a3e-4233-444b-96b2-0b72f4ef48ac&query=Black+man+avatar"  />
-
+          src="avatar.png"/>
+          
         <Box lineHeight="1.2">
           <Text fontSize="sm" color="gray.500">
             Welcome.
@@ -29,7 +29,7 @@ export default function TopNav() {
       {/* Icons Section */}
       <Flex align="center" gap={3}>
         {/* Chat Icon */}
-        <Box position="relative">
+        <Box position="">
           <IconButton
             aria-label="messages"
             icon={<HiOutlineChatBubbleOvalLeft size={22} />}
@@ -38,8 +38,8 @@ export default function TopNav() {
           />
           <Badge
             position="absolute"
-            top="0px"
-            right="0px"
+            top="0"
+            right="0"
             bg="red.500"
             borderRadius="full"
             boxSize="10px"
@@ -48,7 +48,7 @@ export default function TopNav() {
         </Box>
 
         {/* Bell Icon */}
-        <Box position="relative">
+        <Box position="">
           <IconButton
             aria-label="notifications"
             icon={<HiOutlineBell size={22} />}
@@ -57,8 +57,8 @@ export default function TopNav() {
           />
           <Badge
             position="absolute"
-            top="0px"
-            right="0px"
+            top="0"
+            right="0"
             bg="red.500"
             borderRadius="full"
             boxSize="10px"
