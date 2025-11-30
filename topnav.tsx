@@ -8,7 +8,7 @@ export default function TopNav() {
       align="center"
       justify="space-between"
       px={4}
-      py={3}
+      py={2}
       bg="white"
     >
       {/* Left Section */}
@@ -16,14 +16,14 @@ export default function TopNav() {
         <Avatar
           size="md"
           name="Olaoluwa Abijo"
-          src="/your-avatar.png"   // replace with actual image if needed
+          src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fblack-man-avatar&psig=AOvVaw136Ni6S5nFOARzZo8JoWnS&ust=1764587845340000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCUlZHgmZEDFQAAAAAdAAAAABAE"   // replace with actual image if needed
         />
 
         <Box lineHeight="1.2">
           <Text fontSize="sm" color="gray.500">
             Welcome.
           </Text>
-          <Text fontWeight="semibold">Olaoluwa Abijo</Text>
+          <Text fontWeight="bold">Clement Adekunle</Text>
         </Box>
       </Flex>
 
@@ -34,13 +34,13 @@ export default function TopNav() {
           <IconButton
             aria-label="messages"
             icon={<HiOutlineChatBubbleOvalLeft size={22} />}
-            variant="ghost"
+            variant=""
             size="lg"
           />
           <Badge
             position="absolute"
-            top="2px"
-            right="2px"
+            top="0px"
+            right="0px"
             bg="red.500"
             borderRadius="full"
             boxSize="10px"
@@ -58,12 +58,12 @@ export default function TopNav() {
           />
           <Badge
             position="absolute"
-            top="2px"
-            right="2px"
+            top="0px"
+            right="0px"
             bg="red.500"
             borderRadius="full"
             boxSize="10px"
-            p="0"
+            p="2"
           />
         </Box>
       </Flex>
