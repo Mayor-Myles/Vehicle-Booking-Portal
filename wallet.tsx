@@ -5,7 +5,7 @@ import { FiTrendingUp, FiPlus } from "react-icons/fi";
 export default function Wallet() {
   return (
     <Box
-      w="100%"
+      
       maxW="360px"
       bgGradient="linear(to-r, purple.500, purple.600)"
       borderRadius="xl"
