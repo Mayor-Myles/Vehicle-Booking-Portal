@@ -12,6 +12,9 @@ import {
 } from '@chakra-ui/react';
 import { FiLock, FiBell, FiWifi, FiPhoneCall, FiPlus } from 'react-icons/fi';
 import { TbScan } from "react-icons/tb";
+import { CiGift } from "react-icons/ci";
+
+
 const TopNav = () => {
   return (
     <Box 
@@ -29,17 +32,17 @@ const TopNav = () => {
           icon={<TbScan />}
           variant="ghost"
           aria-label="Scan"
-          fontSize="50px"
+          fontSize="30px"
           color="gray.700"
         />
-        <Button variant="ghost" fontWeight="medium" color="gray.700">
-          Reward
+        <Button justify="center" align="center" variant="outline" fontWeight="medium" color="green">
+         <CiGift/> Reward
         </Button>
         <IconButton
           icon={<FiBell />}
           variant="ghost"
           aria-label="Notifications"
-          fontSize="50px"
+          fontSize="30px"
           color="gray.700"
         />
       </Flex>
@@ -50,7 +53,7 @@ const TopNav = () => {
           Available Balance
         </Text>
         <Text fontSize="3xl" fontWeight="bold" color="gray.800">
-          N 11,3466.60
+          N 11,3466
         </Text>
       </VStack>
 
@@ -89,6 +92,7 @@ const TopNav = () => {
           justifyContent="center"
           py={6}
           borderRadius="md"
+          m="2"
           _hover={{ bg: "blue.700" }}
         >
           Add Money
