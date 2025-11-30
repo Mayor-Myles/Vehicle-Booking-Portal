@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Box,
   Button,
@@ -32,7 +34,7 @@ const transactions = [
   },
 ];
 
-export default function Dashboard() {
+export default function DashboardPage() {
   return (
     <Flex direction="column" minH="100vh" bg="gray.100" p={4}>
       {/* Balance Section */}
