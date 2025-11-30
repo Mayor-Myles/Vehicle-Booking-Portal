@@ -12,6 +12,7 @@ import {
   HStack,
 } from '@chakra-ui/react';
 import { FaHome, FaMoneyBill, FaHistory, FaUser } from 'react-icons/fa';
+import TopNav from '@/topnav';
 
 const transactions = [
   {
