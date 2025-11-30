@@ -19,7 +19,7 @@ const TopNav = () => {
   return (
     <Box 
       p={4} 
-      bg="white" 
+      bg="#EADDCA" 
       borderRadius="lg" 
       boxShadow="sm" 
       maxW="md" 
@@ -35,9 +35,16 @@ const TopNav = () => {
           fontSize="30px"
           color="gray.700"
         />
-        <Button justify="center" align="center" variant="outline" fontWeight="medium" color="green">
-         <CiGift/> Reward
-        </Button>
+        <Button 
+  variant="outline" 
+  fontWeight="medium" 
+  color="green"
+  leftIcon={<Icon as={CiGift} boxSize={5} />}
+  justifyContent="center"
+  alignItems="center"
+>
+  Reward
+</Button>
         <IconButton
           icon={<FiBell />}
           variant="ghost"
