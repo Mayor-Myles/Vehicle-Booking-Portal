@@ -12,18 +12,18 @@ import {
 import { FiCamera, FiGift, FiBell } from 'react-icons/fi';
 
 export default function TopNav() {
-  const iconSize = useBreakpointValue({ base: '2em', md: 'lg' });
+  const iconSize = useBreakpointValue({ base: 'md', md: 'lg' });
 
   return (
     <Grid
-      templateColumns="repeat(3, 1fr)"
+      templateColumns="3fr 1fr 1fr"
       alignItems="center"
       bg="brown.50"
       px={4}
       py={2}
       boxShadow="sm"
       borderRadius="md"
-      w="100%"
+      ww="100%"
     >
       {/* Left: QR Scanner */}
       <GridItem>
@@ -36,8 +36,7 @@ export default function TopNav() {
         />
       </GridItem>
 
-      <GridItem>
-      </GridItem>
+    
 
       {/* Center: Reward Button */}
       <GridItem>
