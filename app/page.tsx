@@ -24,7 +24,8 @@ export default function DashboardPage() {
   w="100%" 
   justify="center"   
   align="flex-start" 
-  pt={10}     
+  pt={10} > 
+      
       <TopNav/>
       <Wallet/>
     
