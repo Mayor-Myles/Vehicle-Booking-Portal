@@ -21,7 +21,7 @@ import TopNav from '@/topnav';
 export default function DashboardPage() {
   return (
     <Flex 
-  w="100%" 
+  
   justify="center"   
   align="flex-start" 
   direction="column"
