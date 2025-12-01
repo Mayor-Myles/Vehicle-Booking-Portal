@@ -24,6 +24,7 @@ export default function DashboardPage() {
   w="100%" 
   justify="center"   
   align="flex-start" 
+  direction="column"
   pt={10} > 
       
       <TopNav/>
