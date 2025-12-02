@@ -14,7 +14,7 @@ export default function Wallet() {
       color="white"
       w="100%"
       boxShadow="lg"
-      mt={5}
+      mt="3em"
     >
       <Flex justify="space-between" align="center" mb="2">
         <Flex align="center" gap="2">
