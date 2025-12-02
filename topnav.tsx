@@ -4,7 +4,7 @@ import { HiOutlineChatBubbleOvalLeft, HiOutlineBell } from "react-icons/hi2";
 export default function TopNav() {
   return (
     <Flex
-      
+      w="100%"
       align="center"
       justify="space-between"
       px={4}
