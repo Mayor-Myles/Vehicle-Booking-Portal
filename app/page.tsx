@@ -22,8 +22,8 @@ export default function DashboardPage() {
   return (
     <Flex 
   w="100%"
-  justify="center"   
-  align="flex-start" 
+  justifyContent="center"   
+  alignItems="flex-start" 
   direction="column"
   pt={10} > 
       
