@@ -12,6 +12,7 @@ export default function Wallet() {
       borderRadius="xl"
       p="6"
       color="white"
+      w="100%"
       boxShadow="lg"
     >
       <Flex justify="space-between" align="center" mb="2">
