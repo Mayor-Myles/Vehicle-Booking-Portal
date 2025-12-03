@@ -6,14 +6,14 @@ export default function Wallet() {
   return (
     <Box
       w="100%"
-      maxW={{sm:0,md:"360px"}}
+      maxW={{ base: "100%", md: "360px" }}   // full width on mobile, 360px on desktop
       bgGradient="linear(to-r, purple.500, purple.600)"
       borderRadius="xl"
-      p="6"
+      p={6}
       color="white"
       boxShadow="lg"
-      
-      m={10}
+      position="relative"     // needed for absolute button
+      m={{ base: 2, md: 6 }}  // small margin on mobile, bigger on desktop
     >
       <Flex justify="space-between" align="center" mb="2">
         <Flex align="center" gap="2">
@@ -33,9 +33,9 @@ export default function Wallet() {
       </Text>
 
       <Button
-        
         position="absolute"
-        right="3px"
+        bottom="-20px"     // make it float below like the design
+        right="20px"
         borderRadius="full"
         boxSize="50px"
         bg="white"
