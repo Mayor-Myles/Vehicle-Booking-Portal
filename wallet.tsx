@@ -6,7 +6,7 @@ export default function Wallet() {
   return (
     <Box
       w="100%"
-      mx="5em"     
+      maxW="360px"
       bgGradient="linear(to-r, purple.500, purple.600)"
       borderRadius="xl"
       p="6"
