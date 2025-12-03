@@ -4,22 +4,24 @@ import { HiOutlineChatBubbleOvalLeft, HiOutlineBell } from "react-icons/hi2";
 export default function TopNav() {
   return (
     <Flex
-      
       align="center"
       justify="space-between"
       px={4}
       py={2}
       bg="white"
-      position="sticky"
+      position="fixed"   // FIXED NAVBAR
       top="0"
+      w="100%"           // FULL WIDTH
+      zIndex="1000"      // ON TOP OF ALL CONTENT
+      boxShadow="sm"     // OPTIONAL: Nice shadow
     >
       {/* Left Section */}
       <Flex align="center" gap={3}>
         <Avatar
           size="md"
           name="Clement Pauljo"
-          src="avatar.jpeg"/>
-          
+          src="avatar.jpeg"
+        />
         <Box lineHeight="1.2">
           <Text fontSize="sm" color="gray.500">
             Welcome.
