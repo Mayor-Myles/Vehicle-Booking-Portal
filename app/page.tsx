@@ -30,6 +30,7 @@ export default function DashboardPage() {
         align="flex-start"
         mt="5em"         // pushes below TopNav
         px={{ base: 4, md: 0 }}
+      direction="column"
       >
       <Wallet/>
     <Menu/>
