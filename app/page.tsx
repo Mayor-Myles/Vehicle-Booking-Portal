@@ -33,10 +33,10 @@ export default function DashboardPage() {
       direction="column"
       >
       <Wallet/>
-    <Menu/>
+    
     </Flex>
 
-      
+      <Menu/>
 
     </>
   );
