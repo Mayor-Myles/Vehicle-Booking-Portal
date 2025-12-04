@@ -14,7 +14,7 @@ import {
 import { FaHome, FaMoneyBill, FaHistory, FaUser } from 'react-icons/fa';
 import TopNav from '@/topnav';
  import Wallet from '@/wallet';
-import Menu from '@menu';
+import Menu from '@/menu';
 
 
 
