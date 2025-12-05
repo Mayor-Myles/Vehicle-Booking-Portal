@@ -17,7 +17,7 @@ import TopNav from '@/topnav';
 import Menu from '@/menu';
 import Activity from '@/activities';
 import Advert from '@/adverts';
-
+import BottomNav from "@/buttomNav':
 
 
 export default function DashboardPage() {
@@ -40,7 +40,7 @@ export default function DashboardPage() {
 <Advert />
       <Menu/>
       <Activity/>
-      
+      <ButtomNav/>
 
     </>
   );
