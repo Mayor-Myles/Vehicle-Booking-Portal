@@ -40,7 +40,7 @@ export default function DashboardPage() {
 <Advert />
       <Menu/>
       <Activity/>
-      <ButtomNav/>
+      <BottomNav/>
 
     </>
   );
