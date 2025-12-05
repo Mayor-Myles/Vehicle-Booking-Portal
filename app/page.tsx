@@ -16,6 +16,8 @@ import TopNav from '@/topnav';
  import Wallet from '@/wallet';
 import Menu from '@/menu';
 import Activity from '@/activities';
+import Advert from '@/adverts';
+
 
 
 export default function DashboardPage() {
@@ -38,6 +40,7 @@ export default function DashboardPage() {
 
       <Menu/>
       <Activity/>
+      <Advert />
 
     </>
   );
