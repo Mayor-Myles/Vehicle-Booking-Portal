@@ -47,14 +47,14 @@ export default function TopNav() {
             right="2px"
             bg="red.500"
             borderRadius="full"
-            boxSize="8px"
+            boxSize="6px"
             p="2"
           />
         </Box>
 
       {/* Drawer */}
       <Sidebar />
-      </Flex>
+      
     </Flex>
   );
 }
