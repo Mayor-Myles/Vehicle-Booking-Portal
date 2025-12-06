@@ -41,7 +41,7 @@ const menuItems = [
   { label: "Profile", icon: FiUser, href: "/profile" },
 ];
 
-export default function SidebarDrawer() {
+export default function Sidebar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
