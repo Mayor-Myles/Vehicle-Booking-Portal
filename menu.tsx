@@ -23,9 +23,7 @@ export default function Menu() {
 
   return (
     <Box p={4} m={5} maxW="768px">
-      <Text fontWeight="bold" mb={4} fontSize="sm">
-        Quick Actions
-      </Text>
+      
 
       <Grid
         templateColumns={{ base: "repeat(3, 1fr)", md: "repeat(4, 1fr)" }}
