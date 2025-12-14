@@ -6,7 +6,7 @@ import {FiMenu} from "react-icons/fi";
 
 export default function TopNav() {
 
-  const {isOpen, onOpen, isClose} = useDisclosure();
+  const {isOpen, onOpen, onClose} = useDisclosure();
   
   return (
     <Flex
