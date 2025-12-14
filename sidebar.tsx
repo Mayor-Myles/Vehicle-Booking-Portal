@@ -85,6 +85,7 @@ const Sidebar = () => {
         zIndex="9999"
         overflowY="auto"
         overflowX="hidden"
+        mr="3em"
       >
         {/* Logo and Search Section */}
         <VStack spacing={6} p={6} align="stretch">
