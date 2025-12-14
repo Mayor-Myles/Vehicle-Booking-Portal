@@ -51,10 +51,10 @@ export default function Sidebar() {
   
   
   return (
-      {/* Button to open drawer */}
+    
       
 
-      {/* Drawer Sidebar */}
+      
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
 
