@@ -38,7 +38,7 @@ const Sidebar = () => {
   
   // Responsive sidebar behavior
   const isMobile = useBreakpointValue({ base: true, md: false });
-  const sidebarWidth = isMobile ? (isOpen ? '250px' : '0') : '280px';
+  const sidebarWidth = isMobile ? (isOpen ? '250px' : '0') : '270px';
   
   // Menu items
   const menuItems = [
