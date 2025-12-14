@@ -18,7 +18,7 @@ export default function Advert() {
       align="center"
       justify="space-between"
       
-      m={isMobile ? 4 : "4em"}
+      m={isMobile ? 4 : "100px"}
     >
       {/* Left section with icon + text */}
       <Flex align="center" gap={3}>
