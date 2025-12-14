@@ -1,4 +1,4 @@
-import { Box, Flex, Avatar, Text, IconButton, Badge, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, Avatar, Text, IconButton, Badge, useDisclosure, Button } from "@chakra-ui/react";
 import { HiOutlineChatBubbleOvalLeft, HiOutlineBell } from "react-icons/hi2";
 import Sidebar from "@/sidebar";
 import {FiMenu} from "react-icons/fi";
