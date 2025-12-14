@@ -38,10 +38,10 @@ export default function Adverts() {
 
   return (
     <SimpleGrid 
-      columns={1} 
+      columns={isMobile ? 2 : 3} 
       spacing={4} 
       p={4}
-      maxW={isMobile ? "100%" : "1200px"}
+      maxW={isMobile ? "100%" : "800px"}
       mx={isMobile ? "2em" : "6em"}
       overflowX="scroll"
     >
