@@ -47,7 +47,7 @@ export default function Adverts() {
       maxW={isMobile ? "100%" : "800px"}
       mx={isMobile ? "2em" : "6em"}
       overflowX="scroll"
-      direction="row"
+      
     >
       {advertData.map((advert) => (
         <Flex
