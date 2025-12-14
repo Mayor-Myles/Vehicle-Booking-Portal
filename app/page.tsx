@@ -27,7 +27,7 @@ export default function DashboardPage() {
   
   return (
    
-    <>
+    <Flex direction="column" justifyContent="center">
       
       <TopNav/>
 
