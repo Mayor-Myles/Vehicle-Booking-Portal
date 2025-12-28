@@ -52,7 +52,8 @@ export default function Adverts() {
       
     >
       {advertData.map((advert) => (
-        <Flex
+        <GridItem>
+      <Flex
           key={advert.id}
           bg={advert.bgColor}
           p={4}
@@ -92,6 +93,7 @@ export default function Adverts() {
             <Icon as={FiChevronRight} fontSize={22} color={advert.arrowColor} />
           </Flex>
         </Flex>
+        </GridItem>
       ))}
     </Grid>
     </Flex>
