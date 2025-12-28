@@ -42,6 +42,7 @@ export default function Adverts() {
       overflowX="auto"
       px={4}
       py={2}
+      my={2}
       css={{
         '&::-webkit-scrollbar': {
           display: 'none',
@@ -62,7 +63,7 @@ export default function Adverts() {
             p={4}
             borderRadius="lg"
             minWidth={isMobile ? "280px" : "auto"}
-            width={isMobile ? "280px" : "100%"}
+            width={isMobile ? "280px" : "480px"}
             flexShrink={0}
             cursor="pointer"
             _hover={{ transform: "translateY(-2px)", boxShadow: "lg" }}
