@@ -61,7 +61,7 @@ const Sidebar = () => {
           onClick={onToggle}
           position="fixed"
           top="3"
-          right="18"
+          right="2em"
           zIndex="modal"
           bgGradient="linear(to-r, purple.300, purple.400)"
           color="white"
