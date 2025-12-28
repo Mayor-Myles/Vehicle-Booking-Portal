@@ -41,7 +41,7 @@ export default function Menu() {
             cursor="pointer"
             _hover={{ bg: "gray.300" }}
           >
-            <Icon as={item.icon} boxSize={6} mb={2} color="gray.700" />
+            <Icon as={item.icon} boxSize={{base:6,md:4}} mb={2} color="gray.700" />
             <Text fontSize="xs" fontWeight="medium" color="gray.700">
               {item.label}
             </Text>
