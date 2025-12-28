@@ -1,4 +1,4 @@
-import { useBreakpointValue, Box, Flex, Text, Icon, SimpleGrid } from "@chakra-ui/react";
+import { useBreakpointValue, Box, Flex, Text, Icon, SimpleGrid, Grid } from "@chakra-ui/react";
 import { BsAward, BsWallet2, BsRocket } from "react-icons/bs";
 import { FiChevronRight, FiPercent, FiUsers } from "react-icons/fi";
 import { MdSecurity } from "react-icons/md";
@@ -42,8 +42,8 @@ export default function Adverts() {
     
       >
       
-    <SimpleGrid 
-      columns={isMobile ? 2 : 3} 
+    <Grid 
+      templateColumns={isMobile ? 2 : 3} 
       spacing={4} 
       p={4}
       maxW={isMobile ? "100%" : "600px"}
@@ -93,7 +93,7 @@ export default function Adverts() {
           </Flex>
         </Flex>
       ))}
-    </SimpleGrid>
+    </Grid>
     </Flex>
   );
 }
