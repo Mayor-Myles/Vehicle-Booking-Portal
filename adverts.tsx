@@ -43,7 +43,7 @@ export default function Adverts() {
       px={4}
       py={2}
       my={2}
-      mx={{md:"8em"}}
+      mx={{md:"18em"}}
       css={{
         '&::-webkit-scrollbar': {
           display: 'none',
