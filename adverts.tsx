@@ -52,8 +52,8 @@ export default function Adverts() {
     >
       <Flex 
         gap={4}
-        width={isMobile ? "max-content" : "100%"}
-        minWidth={isMobile ? "max-content" : "auto"}
+        width={isMobile ? "100%" : "100%"}
+        {/*minWidth={isMobile ? "max-content" : "auto"}*/}
       >
         {advertData.map((advert) => (
           <Box
