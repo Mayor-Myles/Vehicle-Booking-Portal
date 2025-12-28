@@ -55,7 +55,7 @@ export default function Adverts() {
         gap={4}
         width={isMobile ? "max-content" : "100%"}       
         minWidth={isMobile ? "max-content" : "480px"}
-        mx="8em"
+        mx={{md:"8em"}}
       >
         {advertData.map((advert) => (
           <Box
