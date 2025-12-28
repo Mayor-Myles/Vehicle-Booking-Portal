@@ -1,10 +1,10 @@
-import { useBreakpointValue, Box, Flex, Text, Icon, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
-import { BsAward, BsWallet2, BsRocket } from "react-icons/bs";
-import { FiChevronRight, FiPercent, FiUsers } from "react-icons/fi";
+import { useBreakpointValue, Box, Flex, Text, Icon, Grid, GridItem } from "@chakra-ui/react";
+import { BsAward } from "react-icons/bs";
+import { FiChevronRight, FiPercent } from "react-icons/fi";
 import { MdSecurity } from "react-icons/md";
 
 export default function Adverts() {
-  const isMobile = useBreakpointValue({ sm: true, md: false });
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   const advertData = [
     {
@@ -37,65 +37,71 @@ export default function Adverts() {
   ];
 
   return (
-
-    <Flex justifyContent="center"
-    
-      >
-      
-    <Grid 
-      templateColumns={isMobile ? "1fr" : "repeat(3,1fr)"} 
-      gap={4} 
-      p={4}
-      maxW={isMobile ? "100%" : "600px"}
-  
-      
-      
+    <Box 
+      width="100%"
+      overflowX="auto"
+      px={4}
+      py={2}
+      css={{
+        '&::-webkit-scrollbar': {
+          display: 'none',
+        },
+        '-ms-overflow-style': 'none',
+        'scrollbar-width': 'none',
+      }}
     >
-      {advertData.map((advert) => (
-        <GridItem>
-      <Flex
-          key={advert.id}
-          bg={advert.bgColor}
-          p={4}
-          borderRadius="lg"
-          align="center"
-          justify="space-between"
-          cursor="pointer"
-          _hover={{ transform: "translateY(-2px)", boxShadow: "lg" }}
-          transition="all 0.2s"
-        >
-          <Flex align="center" gap={3}>
-            <Flex
-              bg="white"
-              boxSize="40px"
-              borderRadius="full"
-              align="center"
-              justify="center"
-            >
-              <Icon as={advert.icon} fontSize={22} color={advert.iconColor} />
-            </Flex>
-            <Box>
-              <Text fontWeight="bold" fontSize="md" color="black">
-                {advert.title}
-              </Text>
-              <Text fontSize="sm" color="gray.600">
-                {advert.description}
-              </Text>
-            </Box>
-          </Flex>
-          <Flex
-            bg="white"
-            boxSize="36px"
-            borderRadius="full"
-            align="center"
-            justify="center"
+      <Flex 
+        gap={4}
+        width={isMobile ? "max-content" : "100%"}
+        minWidth={isMobile ? "max-content" : "auto"}
+      >
+        {advertData.map((advert) => (
+          <Box
+            key={advert.id}
+            bg={advert.bgColor}
+            p={4}
+            borderRadius="lg"
+            minWidth={isMobile ? "280px" : "auto"}
+            width={isMobile ? "280px" : "100%"}
+            flexShrink={0}
+            cursor="pointer"
+            _hover={{ transform: "translateY(-2px)", boxShadow: "lg" }}
+            transition="all 0.2s"
           >
-            <Icon as={FiChevronRight} fontSize={22} color={advert.arrowColor} />
-          </Flex>
-        </Flex>
-        </GridItem>
-      ))}
-    </Grid>
-    </Flex>
+            <Flex align="center" justify="space-between">
+              <Flex align="center" gap={3}>
+                <Flex
+                  bg="white"
+                  boxSize="40px"
+                  borderRadius="full"
+                  align="center"
+                  justify="center"
+                >
+                  <Icon as={advert.icon} fontSize={22} color={advert.iconColor} />
+                </Flex>
+                <Box>
+                  <Text fontWeight="bold" fontSize="md" color="black">
+                    {advert.title}
+                  </Text>
+                  <Text fontSize="sm" color="gray.600">
+                    {advert.description}
+                  </Text>
+                </Box>
+              </Flex>
+              <Flex
+                bg="white"
+                boxSize="36px"
+                borderRadius="full"
+                align="center"
+                justify="center"
+                ml={3}
+              >
+                <Icon as={FiChevronRight} fontSize={22} color={advert.arrowColor} />
+              </Flex>
+            </Flex>
+          </Box>
+        ))}
+      </Flex>
+    </Box>
   );
 }
