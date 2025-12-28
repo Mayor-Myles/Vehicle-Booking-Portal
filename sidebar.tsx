@@ -60,8 +60,8 @@ const Sidebar = () => {
           icon={isOpen ? React.createElement(FiChevronLeft) : React.createElement(FiMenu)}
           onClick={onToggle}
           position="fixed"
-          top="4"
-          right="14"
+          top="3"
+          right="18"
           zIndex="modal"
           bgGradient="linear(to-r, purple.300, purple.400)"
           color="white"
