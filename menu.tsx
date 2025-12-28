@@ -22,7 +22,7 @@ export default function Menu() {
   ];
 
   return (
-    <Box p={4} m={5} px={{md:"20em"}}>
+    <Box py={4} m={5} px={{md:"22em"}}>
       
 
       <Grid
@@ -41,7 +41,7 @@ export default function Menu() {
             cursor="pointer"
             _hover={{ bg: "gray.300" }}
           >
-            <Icon as={item.icon} boxSize={{base:6,md:4}} mb={2} color="gray.700" />
+            <Icon as={item.icon} boxSize={{base:6,md:10}} mb={2} color="gray.700" />
             <Text fontSize="xs" fontWeight="medium" color="gray.700">
               {item.label}
             </Text>
