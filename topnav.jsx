@@ -65,15 +65,14 @@ export const TopNav = ({openSidebar}) => {
           
         </Box>
         
-        <Icon
+        
           
-          aria-label="Toggle light/dark mode"
-          as={<CiLight size="md" />}
-          rounded="lg"
-          color="black"
+             <CiLight size="md"  />
+        
           
           
-          />
+          
+          
 <IconButton
           onClick={openSidebar}
           aria-label="Menu"
