@@ -37,7 +37,7 @@ export const TopNav = ({ onMenuClick }) => {
     
         <Flex justify="space-between" align="center" px={4} py={3}>
         
-          <Box>
+          <Flex
           <Avatar 
               size="sm" 
               name="Clement Adekunle" 
@@ -54,12 +54,12 @@ export const TopNav = ({ onMenuClick }) => {
               Clement Adekunle
             </Text>
           </VStack>
-         </Box>
+         </Flex>
           
           <HStack spacing={3}>
             <IconButton
               aria-label="Notifications"
-              icon={<FiBell />}
+              icon={<FiBell size="md" />}
               variant="ghost"
               size="lg"
               colorScheme="gray"
