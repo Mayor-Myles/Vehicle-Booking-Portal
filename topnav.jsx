@@ -4,7 +4,10 @@
 import { HStack, Avatar, Text, Box, IconButton, Badge } from "@chakra-ui/react";
 import { FiMenu, FiBell } from "react-icons/fi";
 
-export default function TopNav() {
+expor
+  
+
+export const TopNav = ({isSidebar) => {
   return (
     <HStack
       w="100%"
