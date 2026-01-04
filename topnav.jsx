@@ -71,7 +71,7 @@ export const TopNav = ({openSidebar}) => {
           aria-label="Toggle light/dark mode"
           icon={<FaRegLightbulb size="md" />}
           rounded="lg"
-          
+          color="black"
           variant="ghost"
           
           />
