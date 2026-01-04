@@ -66,9 +66,9 @@ export const TopNav = ({openSidebar}) => {
         </Box>
         
         
-          <Box boxSize="40px" >
-          <CiLight size="me" />
-          </Box>
+          <IconButton boxSize="35px" >
+          <CiLight />
+          </IconButton>
              
         
           
