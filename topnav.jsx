@@ -34,7 +34,7 @@ export const TopNav = ({ onMenuClick }) => {
          
         <Flex justify="space-between" align="center" px={4} py={3}>
         
-          <Flex><
+          <Flex>
           <Avatar 
               size="md" 
               name="Clement Adekunle" 
