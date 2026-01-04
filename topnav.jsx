@@ -67,7 +67,7 @@ export const TopNav = ({openSidebar}) => {
         
         
           
-             <CiLight boxSize="30px"  />
+             <CiLight boxSize="2em"  />
         
           
           
