@@ -7,7 +7,7 @@ import { FiMenu, FiBell } from "react-icons/fi";
 expor
   
 
-export const TopNav = ({isSidebar) => {
+export const TopNav = ({openSidebar) => {
   return (
     <HStack
       w="100%"
