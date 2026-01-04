@@ -1,8 +1,9 @@
 'use client';
 
-import { ChakraProvider, Box, useBreakpointValue, useDisclosure } from '@chakra-ui/react';
+import React from 'react';
+import { ChakraProvider, Box, Flex, useDisclosure, useBreakpointValue } from '@chakra-ui/react';
+import { TopNav } from '@/topnav';
 import { Sidebar } from '@/sidebar';
-import { TopNav } from '@/topNav';
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -12,13 +13,20 @@ function App() {
     <ChakraProvider>
       <Box minH="100vh" bg="gray.50">
         <TopNav onMenuClick={onOpen} />
-        <Box display="flex">
+        <Flex>
           {!isMobile && <Sidebar isOpen={true} onClose={onClose} />}
           {isMobile && <Sidebar isOpen={isOpen} onClose={onClose} isMobile={true} />}
           <Box flex="1" p={{ base: 4, md: 6 }}>
-            {/* Your main content here */}
+            <Box p={6} bg="white" borderRadius="lg" boxShadow="sm">
+              <h1 style={{ fontSize: '2xl', fontWeight: 'bold', marginBottom: '16px' }}>
+                Welcome to Mylezic Dashboard
+              </h1>
+              <p style={{ color: 'gray.600' }}>
+                Your main content goes here. Navigate using the sidebar menu items.
+              </p>
+            </Box>
           </Box>
-        </Box>
+        </Flex>
       </Box>
     </ChakraProvider>
   );
