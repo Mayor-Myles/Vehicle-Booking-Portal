@@ -22,7 +22,8 @@ export const TopNav = ({openSidebar}) => {
         <Avatar
           name="Clement Adekunle"
           src="https://biteable.com/wp-content/uploads/2025/06/2006_thumb_small.jpg"
-          boxSize="40px"
+          size="lg"
+          shadow="md"
         />
 
         <Box>
@@ -69,7 +70,7 @@ export const TopNav = ({openSidebar}) => {
           aria-label="Toggle light/dark mode"
           icon={<FaRegLightbulb />}
           rounded="lg"
-          color="white"
+          
           variant="ghost"
           
           />
