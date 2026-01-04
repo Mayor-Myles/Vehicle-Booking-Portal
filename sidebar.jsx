@@ -27,7 +27,7 @@ import {
   FiSearch,
 } from "react-icons/fi";
 
-export const Sidebar = ({isOpen,onOpen,onClose}) => {
+export const Sidebar = ({isOpen,onClose,onOpen = ()=>{}}) => {
   return (
     <Box
       w="280px"
