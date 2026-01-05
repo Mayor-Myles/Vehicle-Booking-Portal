@@ -70,7 +70,7 @@ export const TopNav = ({openSidebar}) => {
         
         
           <IconButton onClick={toggleColorMode} boxSize="35px" >
-            {colorMode=== "dark" ? ( <CiLight />) : ( <CiDark />)
+            {colorMode=== "dark" ? ( <CiLight />) : ( <CiDark />) }
           </IconButton>
              
         
