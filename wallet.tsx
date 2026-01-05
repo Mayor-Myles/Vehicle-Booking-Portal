@@ -22,8 +22,8 @@ export default function Wallet() {
   return (
     <HStack
       spacing={6}
-      align="flex-start"
-      flexWrap="wrap"
+      align="center"
+      
     >
       {/* -------- QUOTE CARD -------- */}
       <Box
