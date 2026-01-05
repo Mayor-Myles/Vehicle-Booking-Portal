@@ -1,12 +1,15 @@
 
 "use client";
 
-import { HStack, Avatar, Text, Box, IconButton, Badge, Icon} from "@chakra-ui/react";
+import { HStack, Avatar, Text, Box, IconButton, Badge, Icon, useColorMode} from "@chakra-ui/react";
 import { FiMenu, FiBell } from "react-icons/fi";
-import { CiLight } from "react-icons/ci";
+import { CiLight, CiDark } from "react-icons/ci";
   
 
 export const TopNav = ({openSidebar}) => {
+ 
+  const {colorMode, toggleColorMode} = useColorMode();
+  
   return (
 
     <Box
@@ -22,7 +25,7 @@ export const TopNav = ({openSidebar}) => {
       align="center"
       py={2}
       px={3}
-      bg="white"
+      bg={colorMode === "light" ? "white" : "#1e1e1e"}
     >
       {/* Left section */}
       <HStack spacing={3}>
@@ -66,8 +69,8 @@ export const TopNav = ({openSidebar}) => {
         </Box>
         
         
-          <IconButton boxSize="35px" >
-          <CiLight />
+          <IconButton onClick={toggleColorMode} boxSize="35px" >
+            {colorMode=== "dark" ? ( <CiLight />) : ( <CiDark />)
           </IconButton>
              
         
