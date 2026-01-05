@@ -52,7 +52,7 @@ export const TopNav = ({openSidebar}) => {
         <Box position="relative">
           <IconButton
             aria-label="Notifications"
-            icon={<FiBell size="2em" />}
+            icon={<FiBell size="1.5em" />}
             rounded="lg"
             
           />
