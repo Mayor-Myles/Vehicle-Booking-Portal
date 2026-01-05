@@ -9,6 +9,7 @@ import {
   Button,
   Icon,
   Avatar,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { FaApple, FaPlus } from "react-icons/fa";
 import Calendar from "react-calendar";
@@ -16,7 +17,8 @@ import "react-calendar/dist/Calendar.css";
 
 export default function Wallet() {
  
-  
+  const isMobile = useBreakpointValue({base:true,md:false});
+    
   return (
     <HStack
       spacing={6}
@@ -31,6 +33,7 @@ export default function Wallet() {
         rounded="xl"
         w="260px"
         boxShadow="lg"
+        display={isMobile && "none"}
       >
         <Text fontSize="lg" fontWeight="semibold">
           “Spend wisely, save smart.”
@@ -40,7 +43,7 @@ export default function Wallet() {
         </Text>
       </Box>
 
-      {/* -------- WALLET CARD (matches screenshot) -------- */}
+      {/* -------- WALLET CARD -------- */}
       <Box>
         {/* Top small card */}
         <Box
@@ -115,6 +118,7 @@ export default function Wallet() {
         rounded="xl"
         p={3}
         boxShadow="sm"
+        display={isMobile && "none"}
       >
         <Calendar />
       </Box>
