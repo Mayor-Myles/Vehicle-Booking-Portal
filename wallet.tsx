@@ -55,7 +55,7 @@ export default function Wallet() {
         >
           <HStack justify="space-between">
             <Avatar size="xs" bg="black" />
-            <Text fontWeight="semibold">09060421395</Text>
+            <Text fontWeight="semibold">emilyvibes@gmail.com</Text>
           </HStack>
         </Box>
 
@@ -71,10 +71,10 @@ export default function Wallet() {
           <Icon as={FaApple} boxSize={6} />
 
           <HStack justify="space-between" mt={3}>
-            <Text fontWeight="semibold">•••• •••• •••• 7845</Text>
+            <Text fontWeight="semibold">09060421393</Text>
             <VStack spacing={0} align="flex-end">
-              <Text fontSize="xs" opacity={0.7}>Exp. Date</Text>
-              <Text fontWeight="semibold">08/26</Text>
+              <Text fontSize="xs" opacity={0.7}>User ID</Text>
+              <Text fontWeight="semibold">2011176535</Text>
             </VStack>
           </HStack>
 
@@ -84,7 +84,7 @@ export default function Wallet() {
               $8,182.80
             </Text>
             <Text fontSize="xs" opacity={0.7}>Name</Text>
-            <Text fontWeight="semibold">Muminul Hoque</Text>
+            <Text fontWeight="semibold">Paul Clement</Text>
           </VStack>
 
           {/* Add Card Button */}
