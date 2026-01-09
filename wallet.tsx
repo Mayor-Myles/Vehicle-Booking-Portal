@@ -1,9 +1,73 @@
 "use client";
 
-import { Box, Text, HStack, VStack, Flex } from "@chakra-ui/react";
+import { Box, Text, HStack, VStack, Flex, Avatar, } from "@chakra-ui/react";
 
 export default function Wallet() {
+
+  
   return (
+
+<Flex gap={4}>
+  
+    <Box
+      w="340px"
+      h="460px"
+      bg="gray.900"
+      borderRadius="2xl"
+      boxShadow="2xl"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      color="white"
+    >
+      <VStack spacing={6} px={6} textAlign="center">
+        {/* Avatar */}
+        <Avatar
+          size="xl"
+          src="/bill-russell.jpg" // replace with your image path
+          border="4px solid"
+          borderColor="gray.700"
+        />
+
+        {/* Name */}
+        <Text
+          fontSize="sm"
+          letterSpacing="widest"
+          color="gray.400"
+          fontWeight="semibold"
+        >
+          BILL RUSSELL
+        </Text>
+
+        {/* Quote */}
+        <Text
+          fontSize="xl"
+          fontWeight="bold"
+          lineHeight="1.4"
+        >
+          THIS GAME HAS ALWAYS BEEN,
+          <br />
+          AND WILL ALWAYS BE,
+          <br />
+          ABOUT BUCKETS.
+        </Text>
+
+        {/* Icon / Divider */}
+        <Box
+          w="40px"
+          h="40px"
+          borderRadius="full"
+          bg="gray.800"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Text fontSize="lg">🏀</Text>
+        </Box>
+      </VStack>
+    </Box>
+  
+    
     <Box
       
       borderRadius="2xl"
@@ -67,5 +131,6 @@ export default function Wallet() {
         </Flex>
       </VStack>
     </Box>
+</Flex>
   );
 }
