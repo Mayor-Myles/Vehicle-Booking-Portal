@@ -2,7 +2,7 @@
 
 import { Box, Text, HStack, VStack, Flex } from "@chakra-ui/react";
 
-export default function WalletCard() {
+export default function Wallet() {
   return (
     <Box
       w="340px"
