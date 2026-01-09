@@ -10,8 +10,7 @@ export default function Wallet() {
 <Flex gap={4}>
   
     <Box
-      w="340px"
-      h="460px"
+      
       bg="gray.900"
       borderRadius="2xl"
       boxShadow="2xl"
