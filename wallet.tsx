@@ -42,7 +42,7 @@ export default function Wallet() {
         <Text
           fontSize="sm"
           fontWeight="bold"
-          lineHeight="1.4"
+          
         >
           THIS GAME HAS ALWAYS BEEN,
           <br />
