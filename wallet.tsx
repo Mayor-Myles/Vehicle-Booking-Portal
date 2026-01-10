@@ -111,7 +111,7 @@ export default function Wallet() {
           </HStack>
 
           
-          <HStack spacing={-2}>
+          <HStack>
             <CiCreditCard1 size="md" />
                 </HStack>
         </Flex>
