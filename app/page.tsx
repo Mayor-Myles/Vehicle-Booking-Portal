@@ -18,7 +18,7 @@ function App() {
         <Flex>
           {!isMobile && <Sidebar isOpen={true} onClose={onClose}   />}
           {isMobile && <Sidebar isOpen={isOpen} onClose={onClose}  />}
-          <Box flex="1" p={{ base: 4, md: 6 }}>
+          <Box p={{ base: 4, md: 6 }}>
           <Wallet />
           </Box>
         </Flex>
