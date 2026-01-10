@@ -15,7 +15,7 @@ export default function Wallet() {
   
     <Box
       h="150px"
-      w="150px"
+      w="200px"
       
       bg="gray.900"
       borderRadius="2xl"
