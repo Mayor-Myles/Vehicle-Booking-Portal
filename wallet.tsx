@@ -15,12 +15,11 @@ export default function Wallet() {
   
     <Box
       h="150px"
-      w="200px"
-      
+      w="200px"      
       bg="gray.900"
       borderRadius="2xl"
       boxShadow="2xl"
-      display="flex"
+      display={["none","flex"]}
       alignItems="center"
       justifyContent="center"
       color="white"
@@ -30,14 +29,14 @@ export default function Wallet() {
         <Avatar
           size="sm"
           src="/bill-russell.jpg" // replace with your image path
-          border="4px solid"
+          border="1px solid"
           borderColor="gray.700"
         />
 
         {/* Name */}
         <Text
           fontSize="sm"
-          letterSpacing="widest"
+
           color="gray.400"
           fontWeight="semibold"
         >
@@ -120,8 +119,8 @@ export default function Wallet() {
       </VStack>
     </Box>
 
-  <Flex h="150px">
-  <Calendar  />
+  <Flex display={["none","flex"]} h="150px">
+  <Calendar className="calendar" />
   </Flex>
     
 </Flex>
