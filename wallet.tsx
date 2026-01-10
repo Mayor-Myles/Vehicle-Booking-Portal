@@ -15,6 +15,7 @@ export default function Wallet() {
   
     <Box
       h="150px"
+      w="150px"
       
       bg="gray.900"
       borderRadius="2xl"
@@ -118,7 +119,11 @@ export default function Wallet() {
         </Flex>
       </VStack>
     </Box>
+
+  <Flex h="150px">
   <Calendar  />
+  </Flex>
+    
 </Flex>
   );
 }
