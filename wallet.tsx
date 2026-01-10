@@ -64,7 +64,7 @@ export default function Wallet() {
       color="white"
       boxShadow="xl"
       w={{base:"100%"}}
-      mx={{base:"2em"}}
+      mx={{base:"1em"}}
       
     >
       {/* Decorative curve */}
