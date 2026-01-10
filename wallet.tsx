@@ -63,7 +63,8 @@ export default function Wallet() {
       bgGradient="linear(to-r, #5A4FCF, #3F3A8F)"
       color="white"
       boxShadow="xl"
-      w="100%"
+      w={{base:"100%"}}
+      mx={{base:"2em"}
       
     >
       {/* Decorative curve */}
