@@ -1,6 +1,10 @@
 "use client";
 
 import { Box, Text, HStack, VStack, Flex, Avatar, } from "@chakra-ui/react";
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
+
+
 
 export default function Wallet() {
 
