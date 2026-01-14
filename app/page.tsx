@@ -14,7 +14,7 @@ function App() {
 
   return (
     <ChakraProvider>
-      <Flex direction="column" minH="100vh" bg="gray.50">
+      <Flex flexDirection="column" minH="100vh" bg="gray.50">
         <TopNav openSidebar={onOpen} />
 
       
