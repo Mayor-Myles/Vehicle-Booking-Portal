@@ -13,46 +13,7 @@ export default function Wallet() {
 
 <Flex gap={4}>
   
-    <Box
-      h="150px"
-      w="200px"      
-      bg="gray.900"
-      borderRadius="2xl"
-      boxShadow="2xl"
-      display={["none","flex"]}
-      alignItems="center"
-      justifyContent="center"
-      color="white"
-    >
-      <VStack spacing={6} px={6} textAlign="center" mt={2}>
-        {/* Avatar */}
-        <Avatar
-          size="sm"
-          src="/bill-russell.jpg" // replace with your image path
-          border="1px solid"
-          borderColor="gray.700"
-        />
-
-        {/* Name */}
-        <Text
-          fontSize="sm"
-
-          color="gray.400"
-          fontWeight="semibold"
-        >
-          BILL RUSSELL
-        </Text>
-
-        {/* Quote */}
-        <Text
-          fontSize="sm"
-          fontWeight="bold"
-          
-        >
-          Make hat while the sunshine. lore ipsum dolor itet.
-        </Text>
-      </VStack>
-    </Box>
+    
   
     
     <Box
@@ -87,7 +48,7 @@ export default function Wallet() {
           <HStack spacing={2}>
             <Text letterSpacing="3px">09060421356</Text>
              <Text fontWeight="bold" fontSize="lg">
-              1234
+              
             </Text>
           </HStack>
         </VStack>
@@ -119,7 +80,7 @@ export default function Wallet() {
     </Box>
 
   <Flex display={["none","flex"]} h="150px">
-  <Calendar className="calendar" />
+  
   </Flex>
     
 </Flex>
