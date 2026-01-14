@@ -5,19 +5,19 @@ import { FiBriefcase, FiActivity, FiCheckCircle } from "react-icons/fi";
 
 const stats = [
   {
-    title: "Total Engagements",
+    title: "Total Projects",
     value: "24",
     change: "+4 this month",
     icon: FiBriefcase,
   },
   {
-    title: "Active Contracts",
+    title: "Active Projects",
     value: "6",
     change: "+2 ongoing",
     icon: FiActivity,
   },
   {
-    title: "Completed Engagements",
+    title: "Completed Projects",
     value: "18",
     change: "+12%",
     icon: FiCheckCircle,
@@ -26,7 +26,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <Flex overflowX="auto" pb={2}>
+    <Flex mx={3} overflowX="auto" pb={2}>
       <HStack spacing={4} minW="max-content">
         {stats.map((item, index) => (
           <Box
