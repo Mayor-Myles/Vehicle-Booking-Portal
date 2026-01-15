@@ -70,9 +70,7 @@ export default function Wallet() {
           </HStack>
 
           
-          <HStack>
-            <FiCreditCard size="md" />
-                </HStack>
+      
         </Flex>
       </VStack>
     </Box>
