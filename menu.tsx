@@ -35,7 +35,7 @@ export default function ServicesMenu() {
   return (
     <Box mx="2">
       {/* Title */}
-      <Text fontSize="lg" fontWeight="bold" mb={4}>
+      <Text fontSize="md" fontWeight="bold" mb={4}>
         Services
       </Text>
 
@@ -59,10 +59,10 @@ export default function ServicesMenu() {
                   w="56px"
                   h="56px"
                   borderRadius="full"
-                  bg="white"
+                  
                   align="center"
                   justify="center"
-                  boxShadow="md"
+                  boxShadow="sm"
                 >
                   <Icon
                     as={service.icon}
