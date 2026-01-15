@@ -4,7 +4,8 @@ import {
   Box,
   Text,
   VStack,
-  HStack,
+  Grid,
+  GridItem,
   Flex,
   Icon,
 } from "@chakra-ui/react";
@@ -32,48 +33,60 @@ const services = [
 
 export default function ServicesMenu() {
   return (
-    <Flex justify="center">
+    <Box>
       {/* Title */}
       <Text fontSize="lg" fontWeight="bold" mb={4}>
         Services
       </Text>
 
-      {/* Menu */}
-      <Flex overflowX="auto" pb={2}>
-        <HStack spacing={6}>
+      {/* Scrollable Grid */}
+      <Box overflowX="auto">
+        <Grid
+          templateColumns="repeat(8, minmax(72px, 1fr))"
+          gap={6}
+          minW="max-content"
+        >
           {services.map((service, index) => (
-            <VStack
-              key={index}
-              spacing={2}
-              cursor="pointer"
-              _hover={{ transform: "translateY(-2px)" }}
-              transition="0.2s ease"
-            >
-              {/* Icon Circle */}
-              <Flex
-                w="56px"
-                h="56px"
-                borderRadius="full"
-                bg="white"
-                align="center"
-                justify="center"
-                boxShadow="sm"
+            <GridItem key={index}>
+              <VStack
+                spacing={2}
+                cursor="pointer"
+                transition="0.2s ease"
+                _hover={{ transform: "translateY(-2px)" }}
               >
-                <Icon
-                  as={service.icon}
-                  boxSize={6}
-                  color="purple.500"
-                />
-              </Flex>
+                {/* Icon Circle */}
+                <Flex
+                  w="56px"
+                  h="56px"
+                  borderRadius="full"
+                  bg="white"
+                  align="center"
+                  justify="center"
+                  boxShadow="sm"
+                >
+                  <Icon
+                    as={service.icon}
+                    boxSize={6}
+                    color="purple.500"
+                  />
+                </Flex>
 
-              {/* Label */}
-              <Text fontSize="sm" fontWeight="medium" textAlign="center">
-                {service.label}
-              </Text>
-            </VStack>
+                {/* Label */}
+                <Text
+                  fontSize="sm"
+                  fontWeight="medium"
+                  textAlign="center"
+                  whiteSpace="nowrap"
+                >
+                  {service.label}
+                </Text>
+              </VStack>
+            </GridItem>
           ))}
-        </HStack>
-      </Flex>
-    </Flex>
+        </Grid>
+      </Box>
+    </Box>
   );
 }
+
+
