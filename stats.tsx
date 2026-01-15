@@ -1,7 +1,10 @@
 "use client";
 
-import { Box, Text, HStack, VStack, Icon, Flex } from "@chakra-ui/react";
+import { Box, Text, HStack, VStack, Icon, Flex, useColorModeValue, } from "@chakra-ui/react";
 import { FiBriefcase, FiActivity, FiCheckCircle } from "react-icons/fi";
+
+
+
 
 const stats = [
   {
@@ -25,13 +28,16 @@ const stats = [
 ];
 
 export default function Stats() {
+
+  const bg = useColorModeValue("white","black");
+  
   return (
     <Flex justify="center" align="center" mx={3} overflowX="auto" pb={2} mt="5">
       <HStack spacing={4} minW="max-content">
         {stats.map((item, index) => (
           <Box
             key={index}
-            
+            bg={bg}
             borderRadius="2xl"
             boxShadow="sm"
             px={5}
