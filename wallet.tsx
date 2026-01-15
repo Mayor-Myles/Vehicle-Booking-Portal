@@ -23,7 +23,7 @@ export default function Wallet() {
       boxShadow="xl"
       w={{base:"100%"}}
       
-      mx={{base:"1em"}}
+      mx={{base:"1em", md:"3em", lg:"5em", xl:"7em" }}
       
     >
       {/* Decorative curve */}
