@@ -25,6 +25,7 @@ export default function Wallet() {
       color="white"
       boxShadow="xl"
       w={{base:"100%"}}
+      maxW="360px"
       mx={{base:"1em"}}
       
     >
