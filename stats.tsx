@@ -26,7 +26,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <Flex justify="center" align="center" mx={3} overflowX="auto" pb={2} mt="10">
+    <Flex justify="center" align="center" mx={3} overflowX="auto" pb={2} mt="5">
       <HStack spacing={4} minW="max-content">
         {stats.map((item, index) => (
           <Box
