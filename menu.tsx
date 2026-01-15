@@ -1,53 +1,79 @@
-import { Box, Grid, Flex, Text, Icon } from "@chakra-ui/react";
+"use client";
+
 import {
-  FiSend,
-  FiSettings,
-  FiGrid,
-  FiTrendingUp,
+  Box,
+  Text,
+  VStack,
+  HStack,
+  Flex,
+  Icon,
+} from "@chakra-ui/react";
+import {
   FiPhone,
-  FiDatabase,
-  FiUsers,
+  FiWifi,
+  FiPenTool,
+  FiScissors,
+  FiEdit3,
+  FiMonitor,
   FiMessageSquare,
+  FiGrid,
 } from "react-icons/fi";
 
-export default function Menu() {
-  const menuItems = [
-    { label: "Data", icon: FiDatabase },
-    { label: "Airtime", icon: FiPhone },
-    { label: "Hire Me", icon: FiUsers },
-    { label: "Bulk SMS", icon: FiMessageSquare },
-    { label: "Transfer", icon: FiSend },
-    { label: "Settings", icon: FiSettings },
-    
-  ];
+const services = [
+  { label: "Airtime", icon: FiPhone },
+  { label: "Data", icon: FiWifi },
+  { label: "Graphics Design", icon: FiPenTool },
+  { label: "Fashion", icon: FiScissors },
+  { label: "Drawing Art", icon: FiEdit3 },
+  { label: "Web Design", icon: FiMonitor },
+  { label: "Bulk SMS", icon: FiMessageSquare },
+  { label: "More", icon: FiGrid },
+];
 
+export default function ServicesMenu() {
   return (
-    <Box py={4} m={5} px={{md:"22em"}}>
-      
+    <Box>
+      {/* Title */}
+      <Text fontSize="lg" fontWeight="bold" mb={4}>
+        Services
+      </Text>
 
-      <Grid
-        templateColumns={{ base: "repeat(3, 1fr)", md: "repeat(4, 1fr)" }}
-        gap={4}
-      >
-        {menuItems.map((item) => (
-          <Flex
-            key={item.label}
-            direction="column"
-            align="center"
-            justify="center"
-            bg="gray.200"
-            borderRadius="2xl"
-            py={4}
-            cursor="pointer"
-            _hover={{ bg: "gray.300" }}
-          >
-            <Icon as={item.icon} boxSize={{base:6,md:10}} mb={2} color="gray.700" />
-            <Text fontSize="xs" fontWeight="medium" color="gray.700">
-              {item.label}
-            </Text>
-          </Flex>
-        ))}
-      </Grid>
+      {/* Menu */}
+      <Flex overflowX="auto" pb={2}>
+        <HStack spacing={6} minW="max-content">
+          {services.map((service, index) => (
+            <VStack
+              key={index}
+              spacing={2}
+              cursor="pointer"
+              _hover={{ transform: "translateY(-2px)" }}
+              transition="0.2s ease"
+            >
+              {/* Icon Circle */}
+              <Flex
+                w="56px"
+                h="56px"
+                borderRadius="full"
+                bg="white"
+                align="center"
+                justify="center"
+                boxShadow="sm"
+              >
+                <Icon
+                  as={service.icon}
+                  boxSize={6}
+                  color="purple.500"
+                />
+              </Flex>
+
+              {/* Label */}
+              <Text fontSize="sm" fontWeight="medium" textAlign="center">
+                {service.label}
+              </Text>
+            </VStack>
+          ))}
+        </HStack>
+      </Flex>
     </Box>
   );
 }
