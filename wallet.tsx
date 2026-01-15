@@ -11,11 +11,8 @@ export default function Wallet() {
   
   return (
 
-<Flex gap={4}>
-  
-    
-  
-    
+<Flex justifyContent="center">
+     
     <Box
       h="150px"
       borderRadius="2xl"
@@ -25,7 +22,7 @@ export default function Wallet() {
       color="white"
       boxShadow="xl"
       w={{base:"100%"}}
-      maxW="360px"
+      
       mx={{base:"1em"}}
       
     >
