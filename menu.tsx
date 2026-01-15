@@ -32,7 +32,7 @@ const services = [
 
 export default function ServicesMenu() {
   return (
-    <Box>
+    <Flex justify="center">
       {/* Title */}
       <Text fontSize="lg" fontWeight="bold" mb={4}>
         Services
