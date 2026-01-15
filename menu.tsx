@@ -74,6 +74,6 @@ export default function ServicesMenu() {
           ))}
         </HStack>
       </Flex>
-    </Box>
+    </Flex>
   );
 }
