@@ -40,7 +40,7 @@ export default function ServicesMenu() {
 
       {/* Menu */}
       <Flex overflowX="auto" pb={2}>
-        <HStack spacing={6} minW="max-content">
+        <HStack spacing={6}>
           {services.map((service, index) => (
             <VStack
               key={index}
