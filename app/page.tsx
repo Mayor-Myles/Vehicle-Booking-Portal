@@ -21,16 +21,11 @@ const bg = useColorModeValue("gray.50","black");
           {!isMobile && <Sidebar isOpen={true} onClose={onClose}   />}
           {isMobile && <Sidebar isOpen={isOpen} onClose={onClose}  />}
         
-        <Flex flex="1" flexDirection="column" minH="100vh" bg={bg} justifyContent="flex-start" alignItems="center" w="100%" ml={{"base":2,"md":280}}>
+        <Box  minH="100vh" bg={bg} ml={{"base":2,"md":280}}>
         <TopNav openSidebar={onOpen} />
-
-        <Box p={{ base: 4, md: 6 }}>
           <Wallet />
-            
-          </Box>
-          <Stats/>
-        
-      </Flex>
+          <Stats/>     
+      </Box>
     </ChakraProvider>
   );
 }
