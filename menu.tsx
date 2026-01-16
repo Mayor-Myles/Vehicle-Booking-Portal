@@ -7,6 +7,7 @@ import {
   Grid,
   GridItem,
   Flex,
+  useColorModeValue,
   Icon,
 } from "@chakra-ui/react";
 import {
