@@ -36,7 +36,7 @@ export default function ServicesMenu() {
 
   const bg= useColorModeValue("white","black");
 
-const color = useColorModeValue("white","black");
+const color = useColorModeValue("black","white");
   
   
   return (
