@@ -35,6 +35,9 @@ const services = [
 export default function ServicesMenu() {
 
   const bg= useColorModeValue("white","black");
+
+const color = useColorModeValue("white","black");
+  
   
   return (
     <Box mx={{base:2,md:"10",lg:"15",xl:"20"}}>
@@ -83,6 +86,7 @@ export default function ServicesMenu() {
                   fontWeight="medium"
                   textAlign="center"
                   whiteSpace="nowrap"
+                  color={color}
                 >
                   {service.label}
                 </Text>
