@@ -17,17 +17,18 @@ const bg = useColorModeValue("gray.50","black");
   
   return (
     <ChakraProvider>
-      
+      <Box bg="black">
       
           {!isMobile && <Sidebar isOpen={true} onClose={onClose}   />}
           {isMobile && <Sidebar isOpen={isOpen} onClose={onClose}  />}
         
-        <Box  minH="100vh" bg={bg} ml={{"base":2,"md":280}}>
+        <Box  minH="100vh"  ml={{"base":2,"md":280}}>
         <TopNav openSidebar={onOpen} />
           <Wallet />
           <Stats/>  
           <Menu />
           <BottomNav />
+      </Box>
       </Box>
     </ChakraProvider>
   );
