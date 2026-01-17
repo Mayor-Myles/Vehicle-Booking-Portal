@@ -82,7 +82,7 @@ const color = useColorModeValue("black","white");
 
                 {/* Label */}
                 <Text
-                  fontSize="sm"
+                  fontSize="xs"
                   fontWeight="medium"
                   textAlign="center"
                   whiteSpace="nowrap"
