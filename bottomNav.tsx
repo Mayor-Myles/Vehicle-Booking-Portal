@@ -14,7 +14,7 @@ export default function BottomNav() {
       bottom="0"
       left="0"
       width="100%"
-      bg="white"
+      
       borderTop="1px solid #e5e5e5"
       zIndex="1000"
       py={2}
@@ -22,14 +22,14 @@ export default function BottomNav() {
       <Flex justify="space-around" align="center">
         {/* Home */}
         <IconButton
-          icon={<FiHome size={22} />}
+          icon={<FiHome size={12} />}
           variant="ghost"
           aria-label="Home"
         />
 
         {/* Activity */}
         <IconButton
-          icon={<FiClock size={22} />}
+          icon={<FiClock size={12} />}
           variant="ghost"
           aria-label="Activity"
         />
@@ -45,19 +45,19 @@ export default function BottomNav() {
           boxShadow="lg"
           mt="-35px"
         >
-          <FiPlus color="white" size={26} />
+          <FiPlus color="white" size={15} />
         </Flex>
 
         {/* Wallet */}
         <IconButton
-          icon={<FiCreditCard size={22} />}
+          icon={<FiCreditCard size={11} />}
           variant="ghost"
           aria-label="Wallet"
         />
 
         {/* Profile */}
         <IconButton
-          icon={<FiUser size={22} />}
+          icon={<FiUser size={11} />}
           variant="ghost"
           aria-label="Profile"
         />
