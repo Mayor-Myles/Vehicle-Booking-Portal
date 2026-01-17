@@ -1,4 +1,4 @@
-import { Box, Flex, IconButton } from "@chakra-ui/react";
+import { Box, Flex, IconButton, useColorMode} from "@chakra-ui/react";
 import {
   FiHome,
   FiClock,
@@ -8,6 +8,9 @@ import {
 } from "react-icons/fi";
 
 export default function BottomNav() {
+ 
+  bg = useColorModeValue("white","black");
+  
   return (
     <Box
       position="fixed"
@@ -16,6 +19,7 @@ export default function BottomNav() {
       width="100%"
       zIndex="1000"
       py={2}
+      bg={bg}
     >
       <Flex justify="space-around" align="center">
         {/* Home */}
