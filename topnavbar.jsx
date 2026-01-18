@@ -17,12 +17,13 @@ import {
   HStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { CiMenuFries } from "react-icons/ci";
+import { CiMenuFries, CiLight, CiDark } from "react-icons/ci";
 
 export default function TopNavbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const brandColor = "purple.400"; // deep purple
    const bg = useColorModeValue("white","black");
+const {colorMode, toggleColorMode} = useColorMode();
 
      
   return (
@@ -67,6 +68,9 @@ export default function TopNavbar() {
 
           {/* Actions */}
           <HStack spacing={3}>
+
+           <IconButton size={15} variant="ghost" icon={colorMode ==="light" ? <CiDark size={12} /> : <CiLight size={12} />} />
+            
             <Button
               size="sm"
               variant="outline"
