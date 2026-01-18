@@ -28,7 +28,7 @@ const services = [
   { title: "Fashion", icon: FiScissors ,url:"/fashion"},
   { title: "Graphics Design", icon: FiPenTool , url:"/graphics" },
   { title: "Drawing Art", icon: FiEdit3 , url:"/drawing-art"},
-  { title: "Web Design", icon: FiMonitor , "url:"/web-design"},
+  { title: "Web Design", icon: FiMonitor , url:"/web-design"},
   { title: "Bulk SMS", icon: FiMessageSquare, url:"/bulk-sms" },
 ];
 
