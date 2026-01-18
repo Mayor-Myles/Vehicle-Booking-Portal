@@ -48,7 +48,7 @@ export default function ContactUs() {
               placeholder="Your Message"
               size="lg"
               rows={5}
-              bg="white"
+              
             />
           </GridItem>
 
