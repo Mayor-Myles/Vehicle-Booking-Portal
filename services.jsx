@@ -88,7 +88,7 @@ export default function Services() {
                 </Flex>
 
                 {/* Title */}
-                <Text fontWeight="semibold" textAlign="center">
+                <Text fontSize="14px" fontWeight="semibold" textAlign="center">
                   {service.title}
                 </Text>
               </VStack>
