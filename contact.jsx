@@ -32,15 +32,15 @@ export default function ContactUs() {
           gap={6}
         >
           <GridItem>
-            <Input placeholder="Full Name" size="lg" bg="white" />
+            <Input placeholder="Full Name" size="lg"  />
           </GridItem>
 
           <GridItem>
-            <Input placeholder="Email Address" size="lg" bg="white" />
+            <Input placeholder="Email Address" size="lg"  />
           </GridItem>
 
           <GridItem colSpan={{ base: 1, md: 2 }}>
-            <Input placeholder="Subject" size="lg" bg="white" />
+            <Input placeholder="Subject" size="lg" />
           </GridItem>
 
           <GridItem colSpan={{ base: 1, md: 2 }}>
