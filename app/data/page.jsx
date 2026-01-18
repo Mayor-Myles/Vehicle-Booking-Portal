@@ -110,7 +110,7 @@ export default function DataAirtimePage() {
       
         {/* Transaction Summary */}
         <Box
-          bg="purple.100"
+          bg="purple.200"
           p={5}
           borderRadius="2xl"
           border="1px solid #BFDBFE"
