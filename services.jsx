@@ -18,7 +18,7 @@ import {
   FiMonitor,
   FiMessageSquare,
 } from "react-icons/fi";
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 
 
 
