@@ -16,25 +16,25 @@ const projects = [
     title: "E-commerce Website Design",
     category: "Web Design",
     status: "Completed",
-    image: "/projects/web-design.jpg",
+    image: "https://colorlib.com/wp/wp-content/uploads/sites/2/ecommerce-website-builder.jpg",
   },
   {
     title: "Fashion Brand Logo",
     category: "Graphics Design",
     status: "Active",
-    image: "/projects/graphics.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtthZie3cxEK_vXfrGkRVk9ggZbr2LliDtfQ&usqp=CAU",
   },
   {
     title: "Bulk SMS Campaign",
     category: "Bulk SMS",
     status: "Completed",
-    image: "/projects/sms.jpg",
+    image: "https://myoperator.com/blog/wp-content/uploads/2019/12/Bulk-SMS-Service-Business-magnet-you-need-in-2024-for-a-faster-growth-01.png",
   },
   {
     title: "Custom Illustration Art",
     category: "Drawing Art",
     status: "Completed",
-    image: "/projects/art.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7IlpizLU4YPFKzUewz_rmCcVozUCO9DccEgzVb4FitG-vxaqNt4Ye69Sg&s=10",
   },
 ];
 
