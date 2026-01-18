@@ -53,7 +53,7 @@ export default function DataAirtimePage() {
                 borderRadius="xl"
                 align="center"
                 justify="center"
-                border={net.name === "MTN" ? "2px solid purple.500" : "none"}
+                border={net.name === "MTN" ? "3px solid purple.500" : "none"}
               >
                 
             <Text fontWeight="bold">{net.name}</Text>
@@ -112,7 +112,7 @@ export default function DataAirtimePage() {
       
         {/* Transaction Summary */}
         <Box
-          bg="purple.300"
+          bgGradient="to-r, purple.400,purple.600"
           p={5}
           borderRadius="2xl"
           border="1px solid #BFDBFE"
@@ -121,7 +121,7 @@ export default function DataAirtimePage() {
           <Text
             fontWeight="bold"
             letterSpacing="widest"
-            color="blue.600"
+            
             mb={4}
           >
             TRANSACTION SUMMARY
@@ -148,11 +148,11 @@ export default function DataAirtimePage() {
               <Text fontWeight="medium">₦0.00</Text>
             </Flex>
 
-            <Box h="1px" bg="purple.200" my={2} />
+            <Box h="1px" bg="purple.600" my={2} />
 
             <Flex justify="space-between" align="center">
               <Text fontWeight="bold">Total Amount</Text>
-              <Text fontSize="2xl" fontWeight="bold" color="blue.600">
+              <Text fontSize="2xl" fontWeight="bold" color="putple.600">
                 ₦3,000.00
               </Text>
             </Flex>
