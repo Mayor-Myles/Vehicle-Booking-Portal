@@ -23,13 +23,13 @@ import {useRouter} from "next/navigation";
 
 
 const services = [
-  { title: "Airtime", icon: FiPhone , url:"/airtime" },
+  { title: "Airtime", icon: FiPhone , url:"/data" },
   { title: "Data", icon: FiWifi , url:"/data" },
-  { title: "Fashion", icon: FiScissors ,url:"/fashion"},
-  { title: "Graphics Design", icon: FiPenTool , url:"/graphics" },
-  { title: "Drawing Art", icon: FiEdit3 , url:"/drawing-art"},
-  { title: "Web Design", icon: FiMonitor , url:"/web-design"},
-  { title: "Bulk SMS", icon: FiMessageSquare, url:"/bulk-sms" },
+  { title: "Fashion", icon: FiScissors ,url:"/data"},
+  { title: "Graphics Design", icon: FiPenTool , url:"/data" },
+  { title: "Drawing Art", icon: FiEdit3 , url:"/data"},
+  { title: "Web Design", icon: FiMonitor , url:"/data"},
+  { title: "Bulk SMS", icon: FiMessageSquare, url:"/data" },
 ];
 
 export default function Services() {
