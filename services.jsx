@@ -29,7 +29,7 @@ const services = [
   { title: "Bulk SMS", icon: FiMessageSquare },
 ];
 
-export default function ServicesSection() {
+export default function Services() {
   return (
     <Box py={{ base: 10, md: 16 }} bg="gray.50">
       <Box maxW="1200px" mx="auto" px={{ base: 4, md: 8 }}>
