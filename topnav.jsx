@@ -36,17 +36,21 @@ export const TopNav = ({openSidebar}) => {
         />
 
         <Box>
-          <Text fontSize="sm" color="gray.500">
-            Welcome.
-          </Text>
+          
           <Text fontSize="lg" fontWeight="bold">
-            Clement Adekunle
+            Mylezic
           </Text>
         </Box>
       </HStack>
 
       {/* Right section */}
+
+    
       <HStack spacing={3}>
+
+        <Link href="/">Home</Link>
+
+        <Link href="/">Airtime</Link>
         
         <Box position="relative">
           <IconButton
@@ -72,10 +76,6 @@ export const TopNav = ({openSidebar}) => {
             {colorMode === "dark" ?  <CiLight size="1.5em"/> :  <CiDark size="1.5em" /> }
           </IconButton>
              
-        
-          
-          
-          
           
 <IconButton
           onClick={openSidebar}
