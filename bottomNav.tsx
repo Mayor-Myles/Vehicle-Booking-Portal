@@ -24,14 +24,14 @@ export default function BottomNav() {
       <Flex justify="space-around" align="center">
         {/* Home */}
         <IconButton
-          icon={<FiHome size={16} />}
+          icon={<FiHome size={18} />}
           variant="ghost"
           aria-label="Home"
         />
 
         {/* Activity */}
         <IconButton
-          icon={<FiClock size={16} />}
+          icon={<FiClock size={18} />}
           variant="ghost"
           aria-label="Activity"
         />
@@ -52,14 +52,14 @@ export default function BottomNav() {
 */}
         {/* Wallet */}
         <IconButton
-          icon={<FiCreditCard size={16} />}
+          icon={<FiCreditCard size={18} />}
           variant="ghost"
           aria-label="Wallet"
         />
 
         {/* Profile */}
         <IconButton
-          icon={<FiUser size={16} />}
+          icon={<FiUser size={18} />}
           variant="ghost"
           aria-label="Profile"
         />
