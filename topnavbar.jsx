@@ -95,6 +95,7 @@ export default function TopNavbar() {
               onClick={onOpen}
               bgGradient="linear(to-r, purple.400, purple.500)"
               color="white"
+              _hover={{bg:"purple.600"}}
             />
           </HStack>
         </Flex>
