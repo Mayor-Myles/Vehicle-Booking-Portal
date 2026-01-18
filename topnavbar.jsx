@@ -15,13 +15,16 @@ import {
   DrawerCloseButton,
   useDisclosure,
   HStack,
+  useModeColorValue,
 } from "@chakra-ui/react";
 import { CiMenuFries } from "react-icons/ci";
 
 export default function TopNavbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const brandColor = "purple"; // deep purple
+  const brandColor = "purple.400"; // deep purple
+   const bg = useColorModeValue("white","black");
 
+     
   return (
     <>
       {/* Navbar */}
@@ -31,6 +34,7 @@ export default function TopNavbar() {
         zIndex="1000"
          boxShadow="sm"
         borderColor="gray.200"
+        bg={bg}
       >
         <Flex
           maxW="1200px"
