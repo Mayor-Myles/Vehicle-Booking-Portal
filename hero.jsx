@@ -81,9 +81,9 @@ export default function HeroSection() {
         {/* Image */}
         <Box flex="1" w="100%" textAlign="center">
           <Image
-            src="https://img.freepik.com/free-vector/business-people-illustration-concept_52683-34769.jpg" // replace with your image
+            src="https://p7.hiclipart.com/preview/963/188/941/5bbb35d4a9681.jpg" // replace with your image
             alt="Hire professionals"
-            maxW="210px"
+            maxW="300px"
             mx="auto"
           />
         </Box>
