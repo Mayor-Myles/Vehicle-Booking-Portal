@@ -20,13 +20,13 @@ import {
 } from "react-icons/fi";
 
 const services = [
-  { title: "Airtime", icon: FiPhone },
-  { title: "Data", icon: FiWifi },
-  { title: "Fashion", icon: FiScissors },
-  { title: "Graphics Design", icon: FiPenTool },
-  { title: "Drawing Art", icon: FiEdit3 },
-  { title: "Web Design", icon: FiMonitor },
-  { title: "Bulk SMS", icon: FiMessageSquare },
+  { title: "Airtime", icon: FiPhone , url:"/airtime" },
+  { title: "Data", icon: FiWifi , url:"/data" },
+  { title: "Fashion", icon: FiScissors ,url:"/fashion"},
+  { title: "Graphics Design", icon: FiPenTool , url:"/graphics" },
+  { title: "Drawing Art", icon: FiEdit3 , url:"/drawing-art"},
+  { title: "Web Design", icon: FiMonitor , "url:"/web-design"},
+  { title: "Bulk SMS", icon: FiMessageSquare, url:"/bulk-sms" },
 ];
 
 export default function Services() {
@@ -59,7 +59,7 @@ export default function Services() {
           {services.map((service, index) => (
             <GridItem key={index}>
               <VStack
-                
+                onClick={router.push(service.url)}
                 p={3}
                 borderRadius="2xl"
                 boxShadow="md"
