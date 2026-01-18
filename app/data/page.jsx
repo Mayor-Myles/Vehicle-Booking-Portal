@@ -14,7 +14,7 @@ import {
   Switch,
 } from "@chakra-ui/react";
 import TopNavbar from "@/topnavbar";
-import bottomNav from "@/bottomNav";
+import BottomNav from "@/bottomNav";
 import {useState,useEffect} from "react";
 
 
