@@ -14,6 +14,7 @@ import {
   Switch,
 } from "@chakra-ui/react";
 import TopNavbar from "@/topnavbar";
+import bottomNav from "@/bottomnav";
 import {useState,useEffect} from "react";
 
 
@@ -37,6 +38,9 @@ export default function DataAirtimePage() {
   
   const [networkSelected,setNetworkSelected] = useState("MTN");
 
+  const [selectedPlan,setSelectedPlan] = useState(null);
+
+  
 useEffect(()=>{
 
 alert(networkSelected);
@@ -135,6 +139,7 @@ alert(networkSelected);
           border="2px solid"
           borderColor="purle.600"
           mb={6}
+          display={selectedPlan ? "block" : "none"}
         >
           <Text
             fontWeight="bold"
@@ -180,7 +185,8 @@ alert(networkSelected);
         </Box>
 
         {/* Proceed */}
-        <Flex justify="space-between" align="center">
+        <Flex justify="space-between" align="center" display={selectedPlan ? "block" : "none"}
+        >
           <Box>
             <Text fontSize="sm" color="gray.500">
               TOTAL TO PAY
