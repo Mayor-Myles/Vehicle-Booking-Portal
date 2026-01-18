@@ -98,7 +98,7 @@ export default function DataAirtimePage() {
             
               p={2}
               borderRadius="2xl"
-              boxShadow="sm"
+              boxShadow="lg"
               border={plan.size === "1.5GB" ? "2px solid purple.600" : "none"}
             >
               <Text fontWeight="bold">{plan.size}</Text>
@@ -120,7 +120,7 @@ export default function DataAirtimePage() {
       
         {/* Transaction Summary */}
         <Box
-          bgGradient="to-r, purple.400,purple.600"
+          bgGradient="linear(to-r, purple.500,purple.600)"
           p={5}
           borderRadius="2xl"
           border="1px solid #BFDBFE"
