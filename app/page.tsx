@@ -9,6 +9,9 @@ import Stats from '@/stats';
 import Menu from '@/menu';
 import BottomNav from "@/bottomNav";
 
+import Home from "@/home";
+
+
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -17,9 +20,10 @@ const bg = useColorModeValue("gray.50","black");
   
   return (
     <ChakraProvider>
+
+      < Home/>
       
-      
-      <Box  minH="100vh"  ml={{"base":2,"md":280}}>
+      {/*  <Box  minH="100vh"  ml={{"base":2,"md":280}}>
               {!isMobile && <Sidebar isOpen={true} onClose={onClose}   />}
           {isMobile && <Sidebar isOpen={isOpen} onClose={onClose}  />}
         
@@ -29,7 +33,7 @@ const bg = useColorModeValue("gray.50","black");
           <Stats/>  
           <Menu />
           <BottomNav />
-      </Box>
+      </Box>*}
       
     </ChakraProvider>
   );
