@@ -1,4 +1,4 @@
-import topnav from "@/topnav";
+import {TopNav} from "@/topnav";
 import {Box,Flex} from "@chakra-ui/react";
 
 
