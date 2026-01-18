@@ -1,7 +1,7 @@
 
 "use client";
 
-import { HStack, Avatar, Text, Box, IconButton, Badge, Icon, useColorMode} from "@chakra-ui/react";
+import { HStack, Avatar, Text, Box, IconButton, Badge, Icon, useColorMode, Link} from "@chakra-ui/react";
 import { FiMenu,} from "react-icons/fi";
 import { CiLight, CiDark, CiBellOn } from "react-icons/ci";
   
