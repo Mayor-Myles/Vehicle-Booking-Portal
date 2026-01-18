@@ -53,7 +53,7 @@ export default function DataAirtimePage() {
                 borderRadius="xl"
                 align="center"
                 justify="center"
-                border={net.name === "MTN" ? "3px solid #3B82F6" : "none"}
+                border={net.name === "MTN" ? "2px solid purple.500" : "none"}
               >
                 
             <Text fontWeight="bold">{net.name}</Text>
@@ -69,9 +69,11 @@ export default function DataAirtimePage() {
             RECIPIENT NUMBER
           </Text>
           <Input
-            size="lg"
+            size="md"
             fontWeight="bold"
             defaultValue="0803 456 7890"
+            variant="flushed"
+            
           />
         </Box>
 
@@ -110,7 +112,7 @@ export default function DataAirtimePage() {
       
         {/* Transaction Summary */}
         <Box
-          bg="purple.200"
+          bg="purple.300"
           p={5}
           borderRadius="2xl"
           border="1px solid #BFDBFE"
