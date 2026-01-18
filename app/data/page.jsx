@@ -43,6 +43,7 @@ export default function DataAirtimePage() {
                 w="72px"
                 h="72px"
                 bg={net.color}
+                color="white"
                 borderRadius="xl"
                 align="center"
                 justify="center"
@@ -51,9 +52,7 @@ export default function DataAirtimePage() {
                 
             <Text fontWeight="bold">{net.name}</Text>
               </Flex>
-              )}
-              
-            
+                      
             </VStack>
           ))}
         </HStack>
