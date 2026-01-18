@@ -13,6 +13,9 @@ import {
   Badge,
   Switch,
 } from "@chakra-ui/react";
+import TopNavbar from "@/topnavnar";
+
+
 
 const networks = [
   { name: "MTN", color: "#FACC15" },
@@ -30,6 +33,9 @@ const plans = [
 export default function DataAirtimePage() {
   return (
     <Box minH="100vh" py={6}>
+
+      <TopNavbar />
+      
       <Box maxW="480px" mx="auto" px={4}>
         {/* Select Network */}
         <Text fontWeight="bold" mb={3}>
