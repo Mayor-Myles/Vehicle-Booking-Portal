@@ -56,14 +56,14 @@ export default function Wallet() {
               <Text fontSize="xs" opacity={0.7}>
                 BALANCE
               </Text>
-              <Text fontSize="10px" fontWeight="semibold">5,525</Text>
+              <Text fontSize="12px" fontWeight="semibold">5,525</Text>
             </VStack>
 
             <VStack align="flex-start" spacing={0}>
               <Text fontSize="xs" opacity={0.7}>
                 BONUS
               </Text>
-              <Text fontSize="10px" fontWeight="semibold">345</Text>
+              <Text fontSize="12px" fontWeight="semibold">345</Text>
             </VStack>
           </HStack>
 
