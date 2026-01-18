@@ -83,7 +83,7 @@ export default function HeroSection() {
           <Image
             src="hero.png" // replace with your image
             alt="Hire professionals"
-            maxW="310px"
+            maxW="400px"
           mx="auto"
           />
         </Box>
