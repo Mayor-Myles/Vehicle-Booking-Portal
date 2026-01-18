@@ -81,7 +81,7 @@ export default function HeroSection() {
         {/* Image */}
         <Box flex="1" w="100%" textAlign="center">
           <Image
-            src="https://biteable.com/wp-content/uploads/2025/06/2006_thumb_small.jpg" // replace with your image
+            src="https://img.freepik.com/free-vector/business-people-illustration-concept_52683-34769.jpg" // replace with your image
             alt="Hire professionals"
             maxW="210px"
             mx="auto"
