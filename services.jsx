@@ -18,6 +18,9 @@ import {
   FiMonitor,
   FiMessageSquare,
 } from "react-icons/fi";
+import {useRouter} from "next/navigation";
+
+
 
 const services = [
   { title: "Airtime", icon: FiPhone , url:"/airtime" },
@@ -30,6 +33,9 @@ const services = [
 ];
 
 export default function Services() {
+
+  const router = useRouter();
+  
   return (
     <Box py={{ base: 10, md: 16 }} >
       <Box maxW="1200px" mx="auto" px={{ base: 4, md: 8 }}>
