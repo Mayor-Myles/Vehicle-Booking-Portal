@@ -36,7 +36,7 @@ export default function DataAirtimePage() {
 
       <TopNavbar />
       
-      <Box maxW="480px" mx="auto" px={4}>
+      <Box pt={4} maxW="480px" mx="auto" px={4}>
         {/* Select Network */}
         <Text fontWeight="bold" mb={3}>
           Select Network
@@ -77,17 +77,15 @@ export default function DataAirtimePage() {
 
         {/* Data Plans*/}
         <Flex justify="space-between" mb={3}>
-          <Text fontWeight="bold">Frequently Bought</Text>
-          <Text color="purple.500" fontWeight="medium" cursor="pointer">
-            See All
-          </Text>
+          <Text fontWeight="bold">Data Plans</Text>
+          
         </Flex>
 
         <Grid templateColumns="repeat(3, 1fr)" gap={4} mb={6}>
           {plans.map((plan, i) => (
             <Box
               key={i}
-              bg="white"
+            
               p={2}
               borderRadius="2xl"
               boxShadow="sm"
@@ -112,7 +110,7 @@ export default function DataAirtimePage() {
       
         {/* Transaction Summary */}
         <Box
-          bg="purple.50"
+          bg="purple.500"
           p={5}
           borderRadius="2xl"
           border="1px solid #BFDBFE"
