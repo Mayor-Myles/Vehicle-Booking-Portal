@@ -71,8 +71,7 @@ export default function TopNavbar() {
               size="sm"
               variant="outline"
               borderColor="gray.300"
-              {/* display={{ base: "none", md: "inline-flex" }}*/}
-            >
+               >
               Sign In
             </Button>
 
