@@ -70,7 +70,7 @@ const {colorMode, toggleColorMode} = useColorMode();
           {/* Actions */}
           <HStack spacing={3}>
 
-           <IconButton size="lg" onClick={toggleColorMode} variant="ghost" icon={colorMode ==="light" ? <CiDark size="2em" /> : <CiLight size="2em" />} />
+           <IconButton size="lg" onClick={toggleColorMode} icon={colorMode ==="light" ? <CiDark size="1.7em" /> : <CiLight size="1.7em" />} />
             
             <Button
               size="sm"
