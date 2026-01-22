@@ -36,9 +36,9 @@ const plans = [
 
 export default function DataAirtimePage() {
   
-  const [networkSelected,setNetworkSelected] = useState();
+  const [networkSelected,setNetworkSelected] = useState(null);
 
-  const [selectedPlan,setSelectedPlan] = useState();
+  const [selectedPlan,setSelectedPlan] = useState(null);
 
   const [phoneNumber,setPhoneNumber] = useState("080xxxxxxxx");
   
