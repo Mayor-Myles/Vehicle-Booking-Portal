@@ -65,7 +65,7 @@ export default function Services() {
           {services.map((service, index) => (
             <GridItem key={index}>
               <VStack
-                onClick={router.push(service.url)}
+                onClick={()=> router.push(service.url)}
                 p={3}
                 borderRadius="2xl"
                 boxShadow="md"
