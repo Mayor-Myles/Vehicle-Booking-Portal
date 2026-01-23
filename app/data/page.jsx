@@ -28,15 +28,19 @@ const networks = [
   { name: "_9mobile", color: "mediumseagreen" },
 ];
 
-const plans = [
-  {
-    MTN:
-  { size: "1.5GB", duration: "30 Days", price: "₦31,200" },
- Glo:  { size: "2GB", duration: "Weekly", price: "₦1200" },
-_9mobile:{ size: "10GB", duration: "30 Days", price: "₦3,600" }
-  
-  }
-];
+const plans = {
+  MTN: [
+    { size: "1.5GB", duration: "30 Days", price: 1200 },
+    { size: "3GB", duration: "30 Days", price: 2500 }
+  ],
+  Glo: [
+    { size: "2GB", duration: "Weekly", price: 1200 }
+  ],
+  "9mobile": [
+    { size: "10GB", duration: "30 Days", price: 3600 }
+  ]
+};
+
 
 export default function DataAirtimePage() {
   
@@ -102,7 +106,7 @@ export default function DataAirtimePage() {
         </Flex>
 
         <Grid templateColumns="repeat(3, 1fr)" gap={4} mb={6}  >
-          {plans.selectedNetwork.map((plan, i) => (
+          {plans[selectedNetwork].map((plan, i) => (
             <Box
               key={i}
               display={selectedPlan? "none" : "flex"}
