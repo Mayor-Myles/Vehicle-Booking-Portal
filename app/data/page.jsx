@@ -79,7 +79,7 @@ export default function DataAirtimePage() {
         </HStack>
 
         {/* Recipient Number */}
-        <Box p={4} borderRadius="2xl" mb={6} boxShadow="sm">
+        <Box visibility={selectedPlan ? "none" : "" } p={4} borderRadius="2xl" mb={6} boxShadow="sm">
           <Text fontSize="sm" color="gray.500" mb={2}>
             RECIPIENT NUMBER
           </Text>
@@ -98,7 +98,7 @@ export default function DataAirtimePage() {
           
         </Flex>
 
-        <Grid templateColumns="repeat(3, 1fr)" gap={4} mb={6} visibility={selectedPlan && "none"} >
+        <Grid templateColumns="repeat(3, 1fr)" gap={4} mb={6} visibility={selectedPlan ? "none" : ""} >
           {plans.map((plan, i) => (
             <Box
               key={i}
@@ -184,14 +184,14 @@ export default function DataAirtimePage() {
         </Box>
 
         {/* Proceed */}
-        <Flex justify="space-between" align="center" display={selectedPlan ? "block" : "none"}
+        <Flex justify="space-between" align="center" display={selectedPlan ? "inline-block" : "none"}
         >
           <Box>
             <Text fontSize="sm" color="gray.500">
               TOTAL TO PAY
             </Text>
             <Text fontWeight="bold" fontSize="xl">
-              ₦{selectedPlan?.price}
+              {selectedPlan?.price}
             </Text>
           </Box>
 
@@ -205,6 +205,8 @@ export default function DataAirtimePage() {
           >
             Proceed →
           </Button>
+
+          <Button onClick={()=>setSeectedPlan(null)}  bg="gray.50" size="lg">Cancel</Button>
         </Flex>
       </Box>
       <BottomNav />
