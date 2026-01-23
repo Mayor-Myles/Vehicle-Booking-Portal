@@ -17,7 +17,7 @@ import TopNavbar from "@/topnavbar";
 import BottomNav from "@/bottomNav";
 import {useState,useEffect} from "react";
 import {useRecoilState,useRecoilValue} from "recoil";
-import {plansState} from "@/states";
+import {plansState} from "@/state";
 
 
 
@@ -29,18 +29,7 @@ const networks = [
   { name: "_9mobile", color: "mediumseagreen" },
 ];
 
-const plans = {
-  MTN: [
-    { size: "1.5GB", duration: "30 Days", price: 1200 },
-    { size: "3GB", duration: "30 Days", price: 2500 }
-  ],
-  Glo: [
-    { size: "2GB", duration: "Weekly", price: 1200 }
-  ],
-  "_9mobile": [
-    { size: "10GB", duration: "30 Days", price: 3600 }
-  ]
-};
+
 
 
 export default function DataAirtimePage() {
@@ -51,7 +40,7 @@ export default function DataAirtimePage() {
 
   const [phoneNumber,setPhoneNumber] = useState(null);
 
-
+const plans = useRecoilValue(plansState);
   
   return (
     <Box minH="100vh" py={6}>
