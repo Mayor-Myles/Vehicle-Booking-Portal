@@ -98,9 +98,10 @@ export default function DataAirtimePage() {
           
         </Flex>
 
-        <Grid templateColumns="repeat(3, 1fr)" gap={4} mb={6} visibility={selectedPlan? "none" : ""} >
+        <Grid templateColumns="repeat(3, 1fr)" gap={4} mb={6}  >
           {plans.map((plan, i) => (
             <Box
+              visibility={selectedPlan? "none" : ""}
               key={i}
               
               display="flex"
