@@ -16,7 +16,8 @@ import {
 import TopNavbar from "@/topnavbar";
 import BottomNav from "@/bottomNav";
 import {useState,useEffect} from "react";
-
+import {useRecoilState,useRecoilValue} from "recoil";
+import {plansState} from "@/states";
 
 
 
@@ -96,6 +97,7 @@ export default function DataAirtimePage() {
             fontWeight="bold"
             defaultValue={phoneNumber}
             variant="flushed"
+            onChange={(e)=>setPhoneNumber(e.target.value)}
             
           />
         </Box>
@@ -117,7 +119,6 @@ export default function DataAirtimePage() {
               p={2}
               borderRadius="2xl"
               boxShadow="lg"
-              onChange={(e)=> setPhoneNumber(e.target.value)}
               border={plan.size === "1.5GB" ? "2px solid purple.600" : "none"}
               onClick={()=>setSelectedPlan(plan)}
               >
