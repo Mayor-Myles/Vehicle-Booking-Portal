@@ -32,6 +32,6 @@ export const plansState = atom({
     { size: "11GB", duration: "30 Days", price: 4000 },
     { size: "15GB", duration: "30 Days", price: 5000 },
   ],
-};
+}
 
 });
