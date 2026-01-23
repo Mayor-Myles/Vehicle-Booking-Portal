@@ -29,9 +29,10 @@ const networks = [
 ];
 
 const plans = [
-  { size: "1.5GB", duration: "30 Days", price: "₦1,200" },
-  { size: "2GB", duration: "Weekly", price: "₦600" },
-  { size: "10GB", duration: "30 Days", price: "₦3,000" },
+  {MTN:
+  { size: "1.5GB", duration: "30 Days", price: "₦31,200"} },
+ Glo: { { size: "2GB", duration: "Weekly", price: "₦1200" } },
+9mobile:{  { size: "10GB", duration: "30 Days", price: "₦3,600" }}
 ];
 
 export default function DataAirtimePage() {
@@ -93,13 +94,12 @@ export default function DataAirtimePage() {
         </Box>
 
         {/* Data Plans*/}
-        <Flex justify="space-between" mb={3} visibility={selectedPlan ? "none" : ""} >
-          <Text fontWeight="bold">Data Plans</Text>
-          
+        <Flex justify="space-between" mb={3} display={networkSelected ? "flex" : "none"} >
+          <Text fontWeight="bold">Data Plans</Text>          
         </Flex>
 
         <Grid templateColumns="repeat(3, 1fr)" gap={4} mb={6}  >
-          {plans.map((plan, i) => (
+          {plans.selectedNetwork.map((plan, i) => (
             <Box
               key={i}
               display={selectedPlan? "none" : "flex"}
@@ -186,15 +186,7 @@ export default function DataAirtimePage() {
         {/* Proceed */}
         <Flex justify="space-between" align="center" display={selectedPlan ? "inline-block" : "none"}
         >
-          <Box>
-            <Text fontSize="sm" color="gray.500">
-              TOTAL TO PAY
-            </Text>
-            <Text fontWeight="bold" fontSize="xl">
-              {selectedPlan?.price}
-            </Text>
-          </Box>
-
+          
           <Button
             size="lg"
             bg="purple.500"
@@ -206,7 +198,7 @@ export default function DataAirtimePage() {
             Proceed →
           </Button>
 
-          <Button ml={10} onClick={()=>setSelectedPlan(null)}  bg="gray.50" size="lg">Cancel</Button>
+          <Button ml={10} color="black" onClick={()=>setSelectedPlan(null)}  bg="gray.50" size="lg">Cancel</Button>
         </Flex>
       </Box>
       <BottomNav />
