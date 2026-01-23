@@ -43,12 +43,7 @@ export default function DataAirtimePage() {
   const [phoneNumber,setPhoneNumber] = useState("080xxxxxxxx");
 
 
-  useEffect(()=> {
-
-
-    alert(selectedPlan.price)
-
-  },[selectedPlan]);
+  
   return (
     <Box minH="100vh" py={6}>
 
