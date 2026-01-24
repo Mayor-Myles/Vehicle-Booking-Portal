@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Flex, Heading, Spacer, Button, HStack } from "@chakra-ui/react";
 
 export default function Navbar() {
