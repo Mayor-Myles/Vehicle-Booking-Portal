@@ -18,21 +18,21 @@ import FAQ from "@/components/faq";
 
 
 function App() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  //const { isOpen, onOpen, onClose } = useDisclosure();
+  //const isMobile = useBreakpointValue({ base: true, md: false });
 
-const bg = useColorModeValue("gray.50","black");
+//const bg = useColorModeValue("gray.50","black");
   
   return (
     <ChakraProvider>      
       < Navbar />
-      <Hero />
+      {/* <Hero />
       <SearchForm />
       <PopularRoutes />
       <HowItWorks />
       <Features />
       <FAQ />
-      <ContactUs />  
+      <ContactUs /> */} 
     </ChakraProvider>
   );
 }
