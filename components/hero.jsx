@@ -48,7 +48,7 @@ const Hero = () => {
             <Button
               size="lg"
               color={color}
-              bg="brown.400"
+              bg="brown"
               _hover={{ bg: "brown.500" }}
             >
               Book Now
