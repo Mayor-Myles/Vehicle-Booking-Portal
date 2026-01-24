@@ -30,7 +30,7 @@ export default function ExpertsMobileView() {
   const inputBg = useColorModeValue("white", "gray.700");
   const textMuted = useColorModeValue("gray.600", "gray.400");
 const [experts,setExperts] = useAtom(expertsState);
-const [experts,setExperts] = useAtom(expertsState);
+
 
 
   
