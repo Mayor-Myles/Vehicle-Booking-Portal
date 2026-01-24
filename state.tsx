@@ -1,11 +1,8 @@
 "use client";
 
+import { atom } from "jotai";
 
-import { atom } from 'recoil';
-
-export const plansState = atom({
-  key: 'plansState',
-  default: {
+export const plansAtom = atom({
   MTN: [
     { size: "500MB", duration: "7 Days", price: 300 },
     { size: "1GB", duration: "7 Days", price: 500 },
@@ -24,7 +21,7 @@ export const plansState = atom({
     { size: "12GB", duration: "30 Days", price: 5000 },
   ],
 
-  "_9mobile": [
+  _9mobile: [
     { size: "500MB", duration: "7 Days", price: 300 },
     { size: "1GB", duration: "7 Days", price: 500 },
     { size: "2GB", duration: "30 Days", price: 1200 },
@@ -32,6 +29,4 @@ export const plansState = atom({
     { size: "11GB", duration: "30 Days", price: 4000 },
     { size: "15GB", duration: "30 Days", price: 5000 },
   ],
-}
-
 });
