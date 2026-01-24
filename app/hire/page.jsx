@@ -71,9 +71,10 @@ export default function ExpertsMobileView() {
         {/* Expert Card */}
         <Box
           bg={cardBg}
-          borderRadius="2xl"
+          borderRadius="lg"
           overflow="hidden"
           boxShadow="md"
+          mx="1.5em"
         >
           {/* Image */}
           <Box position="relative">
@@ -104,10 +105,10 @@ export default function ExpertsMobileView() {
             <Flex justify="space-between" align="center">
               <Box>
                 <Text fontWeight="bold" fontSize="md">
-                  Julianne V.
+                  Julianne Veronica
                 </Text>
                 <Text
-                  fontSize="sm"
+                  fontSize="md"
                   fontWeight="semibold"
                   color="purple.400"
                 >
@@ -130,7 +131,7 @@ export default function ExpertsMobileView() {
               px={3}
               py={1}
               fontSize="xs"
-              colorScheme="purple"
+              colorScheme="gray.50"
               variant="subtle"
             >
               ✓ 45 Projects
@@ -140,7 +141,7 @@ export default function ExpertsMobileView() {
             <Flex gap={3} pt={2}>
               <Button
                 variant="outline"
-                borderRadius="xl"
+                borderRadius="sm"
                 size="sm"
                 w="40%"
               >
@@ -149,7 +150,7 @@ export default function ExpertsMobileView() {
 
               <Button
                 colorScheme="purple"
-                borderRadius="xl"
+                borderRadius="sm"
                 size="sm"
                 w="60%"
               >
