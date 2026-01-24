@@ -16,7 +16,7 @@ import {
 import TopNavbar from "@/topnavbar";
 import BottomNav from "@/bottomNav";
 import {useState,useEffect} from "react";
-import {useRecoilState,useRecoilValue} from "recoil";
+import {useAtom} from "jotai";
 import {plansState} from "@/state";
 
 
@@ -40,7 +40,7 @@ export default function DataAirtimePage() {
 
   const [phoneNumber,setPhoneNumber] = useState(null);
 
-const plans = useRecoilValue(plansState);
+const [plans,setPlans] = useAtom(plansState);
   
   return (
     <Box minH="100vh" py={6}>
