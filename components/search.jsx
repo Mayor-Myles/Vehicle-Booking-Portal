@@ -101,7 +101,7 @@ export default function SearchForm() {
                 height="52px"
                 borderRadius="lg"
               >
-                <option value="">Select departure city</option>
+                <option value="">Select Destination City</option>
                 {cities.map(city => (
                   <option key={city}>{city}</option>
                 ))}
