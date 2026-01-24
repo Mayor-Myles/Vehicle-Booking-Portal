@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Heading, Text, Stack } from "@chakra-ui/react";
-import SearchForm from "@/search";
+import SearchForm from "@/components/search";
 
 export default function Hero() {
   return (
