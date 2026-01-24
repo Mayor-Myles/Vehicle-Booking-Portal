@@ -93,7 +93,7 @@ const router = useRouter();
            <IconButton size="lg" onClick={toggleColorMode} icon={colorMode ==="light" ? <CiDark size="1.7em" /> : <CiLight size="1.7em" />} />
             
             <Button
-              onClick={()=>router.push("/login")}
+              onClick={()=>{router.push("/login")}}
               size="sm"
               variant="outline"
               borderColor="purple.600"
