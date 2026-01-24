@@ -14,125 +14,151 @@ import {
   Stack,
   Text,
   useColorModeValue,
-  useBreakpointValue,
+  IconButton,
   SimpleGrid,
 } from '@chakra-ui/react';
-import { MdLocationOn, MdCalendarToday, MdPersonOutline } from 'react-icons/md';
+import {
+  MdOutlineLocationOn,
+  MdOutlineCalendarToday,
+  MdOutlinePersonOutline,
+  MdSwapVert,
+} from 'react-icons/md';
 
-export default function SearchForm() {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+const cities = [
+  'Ibadan',
+  'Lagos',
+  'Mowe',
+  'Ibafo',
+  'Kogi',
+  'Ilorin',
+  'Oshogbo',
+];
 
+export default function BusSearchForm() {
   const bg = useColorModeValue('white', 'gray.800');
-  const border = useColorModeValue('gray.200', 'gray.700');
-  const labelColor = useColorModeValue('gray.600', 'gray.300');
-  const iconColor = useColorModeValue('brown.500', 'brown.300');
-  const inputBg = useColorModeValue('gray.50', 'gray.700');
+  const cardBorder = useColorModeValue('orange.200', 'gray.700');
+  const inputBg = useColorModeValue('orange.50', 'gray.700');
+  const iconColor = useColorModeValue('orange.500', 'orange.300');
+  const labelColor = useColorModeValue('gray.700', 'gray.300');
 
   return (
-    <Box
-      maxW="720px"
-      mx="auto"
-      p={{ base: 5, md: 8 }}
-      borderWidth={1}
-      borderRadius="xl"
-      boxShadow="lg"
-      bg={bg}
-      borderColor={border}
-    >
-      {/* Header */}
-      <Stack spacing={1} mb={6}>
-        <Text fontSize="2xl" fontWeight="bold">
-          Find your next journey
-        </Text>
-        <Text fontSize="sm" color={labelColor}>
-          Search and book bus tickets easily
-        </Text>
-      </Stack>
+    <Box px={4} pt={6}>
+      <Text fontSize="2xl" fontWeight="bold" mb={4}>
+        Find your next journey
+      </Text>
 
-      <Stack spacing={5}>
-        {/* From / To */}
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+      <Box
+        bg={bg}
+        borderRadius="2xl"
+        borderWidth="1px"
+        borderColor={cardBorder}
+        p={5}
+        boxShadow="md"
+      >
+        <Stack spacing={5}>
+          {/* FROM CITY */}
           <FormControl>
-            <FormLabel color={labelColor}>From</FormLabel>
+            <FormLabel color={labelColor}>From City</FormLabel>
             <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <MdLocationOn color={iconColor} />
-              </InputLeftElement>
-              <Input
-                bg={inputBg}
-                placeholder="Departure city"
-                _focus={{ borderColor: 'brown.500' }}
-              />
-            </InputGroup>
-          </FormControl>
-
-          <FormControl>
-            <FormLabel color={labelColor}>To</FormLabel>
-            <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <MdLocationOn color={iconColor} />
-              </InputLeftElement>
-              <Input
-                bg={inputBg}
-                placeholder="Destination city"
-                _focus={{ borderColor: 'brown.500' }}
-              />
-            </InputGroup>
-          </FormControl>
-        </SimpleGrid>
-
-        {/* Date & Guests */}
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-          <FormControl>
-            <FormLabel color={labelColor}>Travel Date</FormLabel>
-            <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <MdCalendarToday color={iconColor} />
-              </InputLeftElement>
-              <Input
-                type="date"
-                bg={inputBg}
-                _focus={{ borderColor: 'brown.500' }}
-              />
-            </InputGroup>
-          </FormControl>
-
-          <FormControl>
-            <FormLabel color={labelColor}>Passengers</FormLabel>
-            <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <MdPersonOutline color={iconColor} />
+              <InputLeftElement>
+                <MdOutlineLocationOn size={24} color={iconColor} />
               </InputLeftElement>
               <Select
                 bg={inputBg}
-                pl={10}
-                _focus={{ borderColor: 'brown.500' }}
+                pl={12}
+                height="52px"
+                borderRadius="lg"
               >
-                <option>1 Adult</option>
-                <option>2 Adults</option>
-                <option>3 Adults</option>
-                <option>4 Adults</option>
+                <option value="">Select departure city</option>
+                {cities.map(city => (
+                  <option key={city}>{city}</option>
+                ))}
               </Select>
             </InputGroup>
           </FormControl>
-        </SimpleGrid>
 
-        {/* CTA */}
-        <Button
-          size="lg"
-          mt={4}
-          bgGradient="linear(to-r, brown.500, brown.600)"
-          color="white"
-          _hover={{
-            bgGradient: 'linear(to-r, brown.600, brown.700)',
-            transform: 'translateY(-1px)',
-            boxShadow: 'lg',
-          }}
-          _active={{ transform: 'scale(0.98)' }}
-        >
-          Search Buses
-        </Button>
-      </Stack>
+          {/* SWAP */}
+          <Flex justify="center" mt={-2} mb={-2}>
+            <IconButton
+              aria-label="Swap cities"
+              icon={<MdSwapVert size={26} />}
+              variant="outline"
+              colorScheme="orange"
+              borderRadius="full"
+            />
+          </Flex>
+
+          {/* TO CITY */}
+          <FormControl>
+            <FormLabel color={labelColor}>To City</FormLabel>
+            <InputGroup>
+              <InputLeftElement>
+                <MdOutlineLocationOn size={24} color={iconColor} />
+              </InputLeftElement>
+              <Input
+                bg={inputBg}
+                pl={12}
+                height="52px"
+                borderRadius="lg"
+                placeholder="Enter destination city"
+              />
+            </InputGroup>
+          </FormControl>
+
+          {/* DATE & GUESTS */}
+          <SimpleGrid columns={2} spacing={4}>
+            <FormControl>
+              <FormLabel color={labelColor}>Date</FormLabel>
+              <InputGroup>
+                <InputLeftElement>
+                  <MdOutlineCalendarToday size={22} color={iconColor} />
+                </InputLeftElement>
+                <Input
+                  type="date"
+                  bg={inputBg}
+                  pl={12}
+                  height="52px"
+                  borderRadius="lg"
+                />
+              </InputGroup>
+            </FormControl>
+
+            <FormControl>
+              <FormLabel color={labelColor}>Guests</FormLabel>
+              <InputGroup>
+                <InputLeftElement>
+                  <MdOutlinePersonOutline size={24} color={iconColor} />
+                </InputLeftElement>
+                <Select
+                  bg={inputBg}
+                  pl={12}
+                  height="52px"
+                  borderRadius="lg"
+                >
+                  <option>1 Adult</option>
+                  <option>2 Adults</option>
+                  <option>3 Adults</option>
+                  <option>4 Adults</option>
+                </Select>
+              </InputGroup>
+            </FormControl>
+          </SimpleGrid>
+
+          {/* CTA */}
+          <Button
+            mt={4}
+            height="56px"
+            borderRadius="xl"
+            bg="orange.600"
+            color="white"
+            fontSize="lg"
+            _hover={{ bg: 'orange.700' }}
+            _active={{ transform: 'scale(0.98)' }}
+          >
+            Search Buses
+          </Button>
+        </Stack>
+      </Box>
     </Box>
   );
 }
