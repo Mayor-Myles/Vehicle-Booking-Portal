@@ -217,7 +217,7 @@ const popUp = (title,message,type) => {
             color="white"
             px={8}
             borderRadius="xl"
-            _hover={{ bg: "#1D4ED8" }}
+            _hover={{ bg: "purple.100" }}
           >
             Proceed →
           </Button>
