@@ -37,7 +37,7 @@ export default function ExpertsMobileView() {
             <SearchIcon color={textMuted} />
           </InputLeftElement>
           <Input
-            placeholder="Search experts..."
+            placeholder="Search..."
             bg={inputBg}
             
             _focus={{ borderColor: "purple.400" }}
@@ -57,7 +57,7 @@ export default function ExpertsMobileView() {
             _hover={{bg:"purple.600"}}
             flexShrink={0}
           >
-        {category.name}
+        {category}
       
           </Button>
 
@@ -74,7 +74,7 @@ export default function ExpertsMobileView() {
           borderRadius="lg"
           overflow="hidden"
           boxShadow="md"
-          mx="1.5em"
+          mx="1em"
         >
           {/* Image */}
           <Box position="relative">
