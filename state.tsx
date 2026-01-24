@@ -69,7 +69,7 @@ export const expertsState = atom([
 ]);
 
 export const userState = atom({
-  isAuthenticated: false,
+  isAuthenticated: true,
   profile: {
     id: "m123",
     firstName: "Paul",
