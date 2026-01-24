@@ -28,9 +28,10 @@ function App() {
       < Navbar />
       <Hero />
       <SearchForm />
+      <PopularRoutes />
       {/* 
       
-      <PopularRoutes />
+      
       <HowItWorks />
       <Features />
       <FAQ />
