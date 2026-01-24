@@ -29,7 +29,7 @@ const Hero = () => {
         <Stack spacing={6} flex="1" textAlign={{ base: "center", md: "left" }}>
           <Heading
             as="h1"
-            size="2xl"
+            size="md"
             fontWeight="bold"
             color={color}
             lineHeight="short"
@@ -47,7 +47,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              color={color}
+              color="white"
               bg="brown"
               _hover={{ bg: "brown.500" }}
             >
