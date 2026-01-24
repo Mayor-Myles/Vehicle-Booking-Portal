@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Heading, Text, Stack } from "@chakra-ui/react";
 import SearchForm from "./SearchForm";
 
