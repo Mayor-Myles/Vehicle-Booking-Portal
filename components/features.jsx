@@ -1,12 +1,12 @@
 "use client";
 
 import { Box, SimpleGrid, Text, VStack, Heading } from "@chakra-ui/react";
-import { CiBus } from "react-icons/ci";
+import { CiDelivery } from "react-icons/ci";
 
 const features = [
-  { icon: CiBus, title: "Wide Network", desc: "Travel anywhere with our extensive bus network." },
-  { icon: CiBus, title: "Easy Booking", desc: "Book tickets quickly with just a few clicks." },
-  { icon: CiBus, title: "Secure Payments", desc: "Safe and reliable payment options for all users." },
+  { icon: CiDeliveryTruck, title: "Wide Network", desc: "Travel anywhere with our extensive bus network." },
+  { icon: CiDeliveryTruck, title: "Easy Booking", desc: "Book tickets quickly with just a few clicks." },
+  { icon: CiDeliveryTruck, title: "Secure Payments", desc: "Safe and reliable payment options for all users." },
 ];
 
 export default function Features() {
