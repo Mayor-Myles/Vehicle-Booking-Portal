@@ -231,6 +231,7 @@ export default function BuyAirtime() {
 
               <Button
                 ml={6}
+                color="gray.50"
                 bg="gray.50"
                 onClick={() => setShowSummary(false)}
               >
