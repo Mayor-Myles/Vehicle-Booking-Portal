@@ -27,8 +27,9 @@ function App() {
     <ChakraProvider>      
       < Navbar />
       <Hero />
-      {/* 
       <SearchForm />
+      {/* 
+      
       <PopularRoutes />
       <HowItWorks />
       <Features />
