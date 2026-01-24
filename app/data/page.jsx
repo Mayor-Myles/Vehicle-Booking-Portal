@@ -45,16 +45,16 @@ const [plans,setPlans] = useAtom(plansState);
 
 const toast = useToast();
 
-const popUp = (title,type) => {
+const popUp = (title,message,type) => {
 
   if(!phoneNumber){
     
    toast.closeAll(); 
   
   toast({
-      title: 'Success!',
-      description: 'Your action was completed successfully.',
-      status: 'success',
+      title: title,
+      description: message,
+      status: type,
       duration: 3000,
       isClosable: true,
       position:"top",
