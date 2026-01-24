@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import {
   Box,
@@ -19,7 +17,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
-import { FaBus } from "react-icons/fa";
+import { CiDeliveryTruck} from "react-icons/ci";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,7 +30,7 @@ const Navbar = () => {
     <Box bg={bg} px={4} boxShadow="md" position="sticky" top="0" zIndex="1000">
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Flex alignItems="center">
-          <FaBus size="24" />
+          <CiDeliveryTruck size="24" />
           <Text ml={2} fontWeight="bold" color={color}>
             BusBooking
           </Text>
