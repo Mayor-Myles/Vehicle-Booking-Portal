@@ -53,7 +53,7 @@ const router = useRouter();
           justify="space-between"
         >
           {/* Logo */}
-          <Text onClick={()=>router.push("/");} fontSize="lg" fontWeight="bold" color={brandColor}>
+          <Text onClick={()=>router.push("/")} fontSize="lg" fontWeight="bold" color={brandColor}>
             Mylezic
           </Text>
 
