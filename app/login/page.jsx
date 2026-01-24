@@ -40,7 +40,7 @@ export default function Login() {
 
     <>
       <Navbar />
-    <Flex minH="100vh" align="center" justify="center" px={4}>
+    <Flex mt={{base:"2em",md:0}} minH={{base:0,md:"100vh"}} align="center" justify="center" px={4}>
      
       <Box
         maxW="md"
