@@ -23,15 +23,15 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const bg = useColorModeValue("brown.100", "brown.700");
+  const bg = useColorModeValue("white", "black");
   const color = useColorModeValue("gray.800", "white");
 
   return (
-    <Box bg={bg} px={4} boxShadow="md" position="sticky" top="0" zIndex="1000">
+    <Box bg={bg} px={4} boxShadow="sm" position="sticky" top="0" zIndex="1000">
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Flex alignItems="center">
-          <CiDeliveryTruck size="24" />
-          <Text ml={2} fontWeight="bold" color={color}>
+          <CiDeliveryTruck size="50" />
+          <Text size="lg" ml={2} fontWeight="bold" color={color}>
             BusBooking
           </Text>
         </Flex>
@@ -54,13 +54,13 @@ const Navbar = () => {
         <Flex alignItems="center" gap={2}>
           <IconButton
             aria-label="Toggle Theme"
-            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            icon={colorMode === "light" ? <MoonIcon size="lg" /> : <SunIcon size="lg" />}
             onClick={toggleColorMode}
             variant="ghost"
           />
           <IconButton
             aria-label="Open Menu"
-            icon={<HamburgerIcon />}
+            icon={<HamburgerIcon size="lg" color="brown" />}
             display={{ base: "flex", md: "none" }}
             onClick={onOpen}
             variant="ghost"
