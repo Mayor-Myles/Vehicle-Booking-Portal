@@ -95,13 +95,17 @@ export default function SearchForm() {
               <InputLeftElement>
                 <MdOutlineLocationOn size={24} color={iconColor} />
               </InputLeftElement>
-              <Input
+              <Select
                 bg={inputBg}
                 pl={12}
                 height="52px"
                 borderRadius="lg"
-                placeholder="Enter destination city"
-              />
+              >
+                <option value="">Select departure city</option>
+                {cities.map(city => (
+                  <option key={city}>{city}</option>
+                ))}
+              </Select>
             </InputGroup>
           </FormControl>
 
@@ -124,7 +128,7 @@ export default function SearchForm() {
             </FormControl>
 
             <FormControl>
-              <FormLabel color={labelColor}>Guests</FormLabel>
+              <FormLabel color={labelColor}>Passengers</FormLabel>
               <InputGroup>
                 <InputLeftElement>
                   <MdOutlinePersonOutline size={24} color={iconColor} />
