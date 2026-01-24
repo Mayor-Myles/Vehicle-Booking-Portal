@@ -11,7 +11,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <Box py={16} px={6} bg="gray.50">
+    <Box py={16} px={6} >
       <Heading textAlign="center" mb={10}>How It Works</Heading>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} maxW="6xl" mx="auto">
         {steps.map((step, i) => (
