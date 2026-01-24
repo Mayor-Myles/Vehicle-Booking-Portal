@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, SimpleGrid, Text, VStack, Heading } from "@chakra-ui/react";
-import { CiDelivery } from "react-icons/ci";
+import { CiDeliveryTruck } from "react-icons/ci";
 
 const feats = [
   { icon: CiDeliveryTruck, title: "Wide Network", desc: "Travel anywhere with our extensive bus network." },
