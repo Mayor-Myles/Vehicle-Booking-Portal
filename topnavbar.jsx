@@ -80,11 +80,11 @@ const router = useRouter();
     {
           user.isAuthenticated ? (
 <>
-            <Box borderRadius="full" p={2} border="2px solid white">
+            <Box borderRadius="full" m={2} p={2} border="2px solid white">
             <Avatar
       name={user.name}
       src={user.gender === "male" ? "https://i.pinimg.com/564x/b3/e5/db/b3e5db5a3bf1399f74500a6209462794.jpg" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXB_1EHdjgjcvq0AK52i0YlenrCIctpJJ74A&usqp=CAU" }
-      size="md"
+      size="sm"
     />
             </Box>  
 <IconButton size="lg" onClick={toggleColorMode} icon={colorMode ==="light" ? <CiDark size="1.7em" /> : <CiLight size="1.7em" />} />
