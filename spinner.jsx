@@ -41,7 +41,7 @@ export default function SpinnerEffect() {
         >
           <Box textAlign="center">
             <Spinner
-              thickness="4px"
+              thickness="2px"
               speed="0.65s"
               emptyColor="gray.200"
               color="purple.500"
