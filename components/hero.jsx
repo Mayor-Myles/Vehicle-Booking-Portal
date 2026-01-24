@@ -14,7 +14,7 @@ import {
 
 const Hero = () => {
   const bg = useColorModeValue("brown.50", "brown.800");
-  const color = useColorModeValue("gray.800", "white");
+  const color = useColorModeValue("boack", "white");
 
   return (
     <Box bg={bg} minH="80vh" px={6} py={12}>
@@ -47,7 +47,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              colorScheme="orange"
+              color={color}
               bg="brown.400"
               _hover={{ bg: "brown.500" }}
             >
