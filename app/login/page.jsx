@@ -28,7 +28,7 @@ import {
   MdOutlineVisibilityOff,
 } from "react-icons/md";
 import NextLink from "next/link";
-
+import Navbar from "@/components/navbar";
 export default function Login() {
   const [show, setShow] = useState(false);
 
@@ -40,6 +40,7 @@ export default function Login() {
 
   return (
     <Flex minH="100vh" align="center" justify="center" px={4}>
+     <Navbar />
       <Box
         maxW="md"
         w="full"
