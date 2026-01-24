@@ -32,7 +32,7 @@ export default function TopNavbar() {
 const {colorMode, toggleColorMode} = useColorMode();
 const router = useRouter();
   const[user,setUser] = useAtom(userState);
-     const borderColor = useColorModeValue("dodgerblue","white");
+     const borderColor = useColorModeValue("#5D3FD3","white");
   return (
     <>
       {/* Navbar */}
