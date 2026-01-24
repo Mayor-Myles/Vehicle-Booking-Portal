@@ -29,10 +29,11 @@ function App() {
       <Hero />
       <SearchForm />
       <PopularRoutes />
+      <HowItWorks />
       {/* 
       
       
-      <HowItWorks />
+      
       <Features />
       <FAQ />
       <ContactUs /> */} 
