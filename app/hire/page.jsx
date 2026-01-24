@@ -35,7 +35,7 @@ const [experts,setExperts] = useAtom(expertsState);
 
   
   return (
-    <Box minH="100vh" bg={bg} px={3} py={4}>
+    <Box minH="100vh" bg={bg} px={3} py={4} mb="3em">
     <TopNavbar />
       <Stack spacing={4} maxW="420px" mx="auto">
         {/* Search */}
