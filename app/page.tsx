@@ -26,7 +26,8 @@ function App() {
   return (
     <ChakraProvider>      
       < Navbar />
-      {/* <Hero />
+      <Hero />
+      {/* 
       <SearchForm />
       <PopularRoutes />
       <HowItWorks />
