@@ -17,10 +17,21 @@ import {useRouter} from "next/navigation";
 export default function HeroSection() {
   const primary = "#4B2E83"; // deep purple
   const secondary = "#6B46C1";
-
+const[isLoading,setIsLoading] = useState(false);
   const router = useRouter();
 
+function handleSpin() => {
+setIsLoading(true);
+  const spin = setTimeout(() => {
 
+    setIsLoading(false);
+    
+  },500)
+
+  clearTimeout(spin);
+
+
+}
   
   return (
     <Box py={{ base: 10, md: 20 }}>
@@ -68,7 +79,7 @@ export default function HeroSection() {
               leftIcon={<Icon as={FiUserPlus} />}
               _hover={{ bg: secondary }}
               borderRadius="xl"
-              onClick={()=>router.push("/hire?=all")}
+              onClick={()=>{router.push("/hire?=all"); handleSpin();}}
             >
               Find Talent
             </Button>
