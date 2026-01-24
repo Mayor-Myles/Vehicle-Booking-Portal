@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Input, Button, SimpleGrid } from "@chakra-ui/react";
 import { CiLocationOn } from "react-icons/ci";
 
