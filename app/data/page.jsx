@@ -50,7 +50,9 @@ const popUp = (title,message,type) => {
   if(!phoneNumber){
     
    toast.closeAll(); 
-  
+    
+  setSelectedPlan(null);
+    
   toast({
       title: title,
       description: message,
@@ -59,8 +61,10 @@ const popUp = (title,message,type) => {
       isClosable: true,
       position:"top",
     });
-return;
+
   }
+
+  return null;
   };
 
 
