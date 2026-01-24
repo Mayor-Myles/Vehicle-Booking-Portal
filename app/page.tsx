@@ -30,13 +30,14 @@ function App() {
       <SearchForm />
       <PopularRoutes />
       <HowItWorks />
+      <Features />
+      
       {/* 
       
-      
-      
-      <Features />
       <FAQ />
-      <ContactUs /> */} 
+      <ContactUs />
+      
+       */} 
     </ChakraProvider>
   );
 }
