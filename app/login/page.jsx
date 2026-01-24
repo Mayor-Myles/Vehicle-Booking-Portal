@@ -1,8 +1,6 @@
 
 "use client";
 
-"use client";
-
 import {
   Box,
   Button,
@@ -39,8 +37,11 @@ export default function Login() {
   const textColor = useColorModeValue("gray.700", "gray.300");
 
   return (
+
+    <>
+      <Navbar />
     <Flex minH="100vh" align="center" justify="center" px={4}>
-     <Navbar />
+     
       <Box
         maxW="md"
         w="full"
@@ -134,5 +135,6 @@ export default function Login() {
         </Stack>
       </Box>
     </Flex>
+    </>
   );
 }
