@@ -34,7 +34,7 @@ const cities = [
   'Oshogbo',
 ];
 
-export default function BusSearchForm() {
+export default function SearchForm() {
   const bg = useColorModeValue('white', 'gray.800');
   const cardBorder = useColorModeValue('orange.200', 'gray.700');
   const inputBg = useColorModeValue('orange.50', 'gray.700');
