@@ -73,6 +73,7 @@ setIsLoading(true);
             pt={2}
           >
             <Button
+              isLoading={isLoading}
               size="lg"
               bg={primary}
               color="white"
@@ -85,6 +86,7 @@ setIsLoading(true);
             </Button>
 
             <Button
+              isLoading={isLoading}
               size="lg"
               variant="outline"
               borderColor="gray.300"
