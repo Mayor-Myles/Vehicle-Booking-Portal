@@ -45,7 +45,7 @@ export default function SpinnerEffect() {
               speed="0.65s"
               emptyColor="gray.200"
               color="purple.500"
-              size="3em"
+              size="xl"
               mb={4}
             />
             <Box color="white" fontWeight="medium">
