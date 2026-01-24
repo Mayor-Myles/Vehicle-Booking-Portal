@@ -1,135 +1,137 @@
 
 "use client";
 
+"use client";
+
 import {
   Box,
+  Button,
+  Flex,
+  FormControl,
+  FormLabel,
+  Heading,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  Link,
   Stack,
   Text,
-  Input,
-  Button,
-  Image,
-  Divider,
-  Flex,
-  IconButton,
   useColorModeValue,
-  Link,
-  
+  IconButton,
 } from "@chakra-ui/react";
-import { FaGoogle, FaFacebookF, FaTwitter } from "react-icons/fa";
-import TopNavbar from "@/topnavbar";
-
+import { useState } from "react";
+import {
+  MdOutlineEmail,
+  MdOutlineLock,
+  MdOutlineVisibility,
+  MdOutlineVisibilityOff,
+} from "react-icons/md";
+import NextLink from "next/link";
 
 export default function Login() {
-  const bg = useColorModeValue("gray.50", "gray.900");
-  const cardBg = useColorModeValue("white", "gray.800");
-  const muted = useColorModeValue("gray.600", "gray.400");
+  const [show, setShow] = useState(false);
+
+  const bg = useColorModeValue("white", "gray.800");
+  const cardBorder = useColorModeValue("orange.200", "gray.700");
+  const inputBg = useColorModeValue("orange.50", "gray.700");
+  const iconColor = useColorModeValue("orange.500", "orange.300");
+  const textColor = useColorModeValue("gray.700", "gray.300");
 
   return (
-    <>
-    <TopNavbar/>
-    <Box
-      minH={{md:"100vh"}}
-      bg={bg}
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      px={4}
-      mt={{base:"3em",md:0}}
-    >
-      
+    <Flex minH="100vh" align="center" justify="center" px={4}>
       <Box
-        w="100%"
-        maxW="420px"
-        bg={cardBg}
+        maxW="md"
+        w="full"
+        bg={bg}
         borderRadius="2xl"
-        boxShadow="sm"
-        p={{ base: 6, sm: 8 }}
+        borderWidth="1px"
+        borderColor={cardBorder}
+        p={8}
+        boxShadow="lg"
       >
-        
-        <Flex justify="center" mb={6}>
-          <Text fontSize="lg" fontWeight="bold" color="purple.500">
-          
-          </Text>
-           
-        </Flex>
+        <Stack spacing={6}>
+          {/* Header */}
+          <Stack spacing={1} textAlign="center">
+            <Heading size="lg">Welcome Back</Heading>
+            <Text color={textColor} fontSize="sm">
+              Login to continue booking your journey
+            </Text>
+          </Stack>
 
-        
-        {/* Title */}
-        <Stack spacing={1} mb={6} textAlign="center">
-          <Text fontSize="xl" fontWeight="bold">
-            Login to your Account
-          </Text>
-          <Text fontSize="sm" color={muted}>
-            Welcome back, please enter your details
-          </Text>
-        </Stack>
+          {/* Email */}
+          <FormControl>
+            <FormLabel>Email</FormLabel>
+            <InputGroup>
+              <InputLeftElement>
+                <MdOutlineEmail size={22} color={iconColor} />
+              </InputLeftElement>
+              <Input
+                type="email"
+                bg={inputBg}
+                pl={12}
+                height="52px"
+                borderRadius="lg"
+                placeholder="Enter your email"
+              />
+            </InputGroup>
+          </FormControl>
 
-        {/* Form */}
-        <Stack spacing={4}>
-          <Input
-            placeholder="Email"
-            type="email"
-            size="lg"
-            borderRadius="xl"
-            _focus={{ borderColor: "purple.400" }}
-          />
+          {/* Password */}
+          <FormControl>
+            <FormLabel>Password</FormLabel>
+            <InputGroup>
+              <InputLeftElement>
+                <MdOutlineLock size={22} color={iconColor} />
+              </InputLeftElement>
+              <Input
+                type={show ? "text" : "password"}
+                bg={inputBg}
+                pl={12}
+                pr={12}
+                height="52px"
+                borderRadius="lg"
+                placeholder="Enter your password"
+              />
+              <InputRightElement>
+                <IconButton
+                  variant="ghost"
+                  aria-label="Toggle password visibility"
+                  icon={show ? <MdOutlineVisibilityOff /> : <MdOutlineVisibility />}
+                  onClick={() => setShow(!show)}
+                />
+              </InputRightElement>
+            </InputGroup>
+          </FormControl>
 
-          <Input
-            placeholder="Password"
-            type="password"
-            size="lg"
-            borderRadius="xl"
-            _focus={{ borderColor: "purple.400" }}
-          />
-
+          {/* Login Button */}
           <Button
-            size="lg"
-            colorScheme="purple"
+            mt={2}
+            height="56px"
             borderRadius="xl"
+            bg="orange.600"
+            color="white"
+            fontSize="lg"
+            _hover={{ bg: "orange.700" }}
+            _active={{ transform: "scale(0.98)" }}
           >
-            Sign in
+            Login
           </Button>
+
+          {/* Register Link */}
+          <Text textAlign="center" fontSize="sm" color={textColor}>
+            New here?{" "}
+            <Link
+              as={NextLink}
+              href="/register"
+              color="orange.600"
+              fontWeight="semibold"
+            >
+              Create an account
+            </Link>
+          </Text>
         </Stack>
-
-        {/* Divider */}
-        <Flex justify="center" align="center" my={6}>
-          
-          <Text px={3} fontSize="sm" color={muted}>
-            Or sign in with
-          </Text>
-
-          <Text px={3} fontSize="sm" color={muted}>
-            No Account? <Link color="purple.600" href="/register">Register</Link>
-          </Text>
-          
-        </Flex>
-
-        {/* Social Login */}
-        <Flex gap={4} justify="center">
-          <IconButton
-            aria-label="Sign in with Google"
-            icon={<FaGoogle color="orange" />}
-            variant="outline"
-            borderRadius="xl"
-            size="lg"
-          />
-          <IconButton
-            aria-label="Sign in with Facebook"
-            icon={<FaFacebookF color="dodgerblue" />}
-            variant="outline"
-            borderRadius="xl"
-            size="lg"
-          />
-          <IconButton
-            aria-label="Sign in with Twitter"
-            icon={<FaTwitter />}
-            variant="outline"
-            borderRadius="xl"
-            size="lg"
-          />
-        </Flex>
       </Box>
-    </Box>
-    </>
+    </Flex>
   );
 }
