@@ -68,7 +68,7 @@ const Hero = () => {
         {/* Right Image */}
         <Box flex="1" mt={{ base: 10, md: 0 }} textAlign="center">
           <Image
-            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80"
+            src="https://c8.alamy.com/comp/2JE4KJ5/travel-time-vector-background-design-time-to-travel-text-with-3d-luggage-bag-sunglasses-and-hat-tourist-elements-for-fun-and-enjoy-travelling-2JE4KJ5.jpg"
             alt="Bus travel"
             borderRadius="lg"
             shadow="lg"
