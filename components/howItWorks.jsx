@@ -1,11 +1,11 @@
 "use client";
 
 import { Box, Heading, SimpleGrid, VStack, Text } from "@chakra-ui/react";
-import { CiSearch, CiBus, CiCreditCard1 } from "react-icons/ci";
+import { CiSearch, CiDeliveryTruck, CiCreditCard1 } from "react-icons/ci";
 
 const steps = [
   { icon: CiSearch, title: "Search Route", text: "Choose your origin and destination" },
-  { icon: CiBus, title: "Select Bus", text: "Pick a bus that fits your schedule" },
+  { icon: CiDeliveryTruck, title: "Select Bus", text: "Pick a bus that fits your schedule" },
   { icon: CiCreditCard1, title: "Pay & Travel", text: "Secure payment and enjoy your trip" },
 ];
 
