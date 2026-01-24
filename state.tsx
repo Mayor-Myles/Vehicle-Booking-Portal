@@ -32,7 +32,7 @@ export const plansState= atom({
 });
 
 
-export const expertsAtom = atom([
+export const expertsState = atom([
   {
     id: "1",
     name: "Julianne V.",
