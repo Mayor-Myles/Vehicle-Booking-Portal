@@ -15,6 +15,7 @@ import Home from "@/home";
 import Projects from "@/projects";
 import ContactUs from "@/contact";
 import Footer from "@/footer";
+import Spinner from "@/spinner";
 
 
 
@@ -27,7 +28,7 @@ const bg = useColorModeValue("gray.50","black");
   return (
     <ChakraProvider>
 
-      
+      <Spinner />
       < TopNavbar />
       <HeroSection />
       <Services />
