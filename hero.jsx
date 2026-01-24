@@ -13,11 +13,14 @@ import {
 import { FiUserPlus, FiWifi } from "react-icons/fi";
 import {useRouter} from "next/navigation";
 import {useState} from "react";
+import { useState } from "react";
+
+
+
 
 export default function HeroSection() {
   const primary = "#4B2E83"; // deep purple
   const secondary = "#6B46C1";
-import { useState } from "react";
 
 const [loading, setLoading] = useState({
   hire: false,
