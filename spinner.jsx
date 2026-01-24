@@ -19,7 +19,7 @@ export default function SpinnerEffect() {
     setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 300); // Small delay for better UX
+    }, 1000); // Small delay for better UX
 
     return () => clearTimeout(timer);
   }, [pathname, searchParams]);
