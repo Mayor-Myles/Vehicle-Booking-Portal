@@ -84,8 +84,8 @@ const router = useRouter();
       size="md"
     />
             </Box>      
-              ):
-           ( 
+              ) :
+           (
             <HStack spacing={3}>
 
            <IconButton size="lg" onClick={toggleColorMode} icon={colorMode ==="light" ? <CiDark size="1.7em" /> : <CiLight size="1.7em" />} />
@@ -109,7 +109,9 @@ const router = useRouter();
             >
               Get Started
             </Button>
-              )}
+              )
+
+              }
 
             {/* Mobile Menu Button */}
             <IconButton
