@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -7,81 +8,127 @@ import {
   FormControl,
   FormLabel,
   Input,
+  InputGroup,
+  InputLeftElement,
   Select,
   Stack,
   Text,
   useColorModeValue,
   useBreakpointValue,
+  SimpleGrid,
 } from '@chakra-ui/react';
 import { MdLocationOn, MdCalendarToday, MdPersonOutline } from 'react-icons/md';
 
-export default function SearchForm() {
+export default function BusSearchForm() {
   const isMobile = useBreakpointValue({ base: true, md: false });
+
   const bg = useColorModeValue('white', 'gray.800');
   const border = useColorModeValue('gray.200', 'gray.700');
-  const labelColor = useColorModeValue('gray.700', 'gray.300');
-  const iconColor = useColorModeValue('brown.600', 'brown.300');
-  const buttonColor = useColorModeValue('brown.600', 'brown.400');
-  const buttonHover = useColorModeValue('brown.700', 'brown.500');
+  const labelColor = useColorModeValue('gray.600', 'gray.300');
+  const iconColor = useColorModeValue('brown.500', 'brown.300');
+  const inputBg = useColorModeValue('gray.50', 'gray.700');
 
   return (
     <Box
-      maxW="600px"
+      maxW="720px"
       mx="auto"
-      p={6}
+      p={{ base: 5, md: 8 }}
       borderWidth={1}
-      borderRadius="lg"
-      boxShadow="md"
+      borderRadius="xl"
+      boxShadow="lg"
       bg={bg}
       borderColor={border}
     >
-      <Text fontSize="xl" fontWeight="bold" mb={4} color={labelColor}>
-        Find your next journey
-      </Text>
-      <Stack spacing={4}>
-        <FormControl>
-          <FormLabel color={labelColor}>From City</FormLabel>
-          <Flex align="center" gap={2}>
-            <MdLocationOn color={iconColor} />
-            <Input placeholder="Enter departure city" />
-          </Flex>
-        </FormControl>
+      {/* Header */}
+      <Stack spacing={1} mb={6}>
+        <Text fontSize="2xl" fontWeight="bold">
+          Find your next journey
+        </Text>
+        <Text fontSize="sm" color={labelColor}>
+          Search and book bus tickets easily
+        </Text>
+      </Stack>
 
-        <FormControl>
-          <FormLabel color={labelColor}>To City</FormLabel>
-          <Flex align="center" gap={2}>
-            <MdLocationOn color={iconColor} />
-            <Input placeholder="Enter destination city" />
-          </Flex>
-        </FormControl>
+      <Stack spacing={5}>
+        {/* From / To */}
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+          <FormControl>
+            <FormLabel color={labelColor}>From</FormLabel>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <MdLocationOn color={iconColor} />
+              </InputLeftElement>
+              <Input
+                bg={inputBg}
+                placeholder="Departure city"
+                _focus={{ borderColor: 'brown.500' }}
+              />
+            </InputGroup>
+          </FormControl>
 
-        <FormControl>
-          <FormLabel color={labelColor}>Date</FormLabel>
-          <Flex align="center" gap={2}>
-            <MdCalendarToday color={iconColor} />
-            <Input type="date" defaultValue="2023-10-24" />
-          </Flex>
-        </FormControl>
+          <FormControl>
+            <FormLabel color={labelColor}>To</FormLabel>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <MdLocationOn color={iconColor} />
+              </InputLeftElement>
+              <Input
+                bg={inputBg}
+                placeholder="Destination city"
+                _focus={{ borderColor: 'brown.500' }}
+              />
+            </InputGroup>
+          </FormControl>
+        </SimpleGrid>
 
-        <FormControl>
-          <FormLabel color={labelColor}>Guests</FormLabel>
-          <Flex align="center" gap={2}>
-            <MdPersonOutline color={iconColor} />
-            <Select defaultValue="1 Adult">
-              <option>1 Adult</option>
-              <option>2 Adults</option>
-              <option>3 Adults</option>
-              <option>4 Adults</option>
-            </Select>
-          </Flex>
-        </FormControl>
+        {/* Date & Guests */}
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+          <FormControl>
+            <FormLabel color={labelColor}>Travel Date</FormLabel>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <MdCalendarToday color={iconColor} />
+              </InputLeftElement>
+              <Input
+                type="date"
+                bg={inputBg}
+                _focus={{ borderColor: 'brown.500' }}
+              />
+            </InputGroup>
+          </FormControl>
 
+          <FormControl>
+            <FormLabel color={labelColor}>Passengers</FormLabel>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <MdPersonOutline color={iconColor} />
+              </InputLeftElement>
+              <Select
+                bg={inputBg}
+                pl={10}
+                _focus={{ borderColor: 'brown.500' }}
+              >
+                <option>1 Adult</option>
+                <option>2 Adults</option>
+                <option>3 Adults</option>
+                <option>4 Adults</option>
+              </Select>
+            </InputGroup>
+          </FormControl>
+        </SimpleGrid>
+
+        {/* CTA */}
         <Button
-          bg={buttonColor}
-          color="white"
-          _hover={{ bg: buttonHover }}
           size="lg"
-          width="full"
+          mt={4}
+          bgGradient="linear(to-r, brown.500, brown.600)"
+          color="white"
+          _hover={{
+            bgGradient: 'linear(to-r, brown.600, brown.700)',
+            transform: 'translateY(-1px)',
+            boxShadow: 'lg',
+          }}
+          _active={{ transform: 'scale(0.98)' }}
         >
           Search Buses
         </Button>
