@@ -11,11 +11,17 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FiUserPlus, FiWifi } from "react-icons/fi";
+import {useRouter} from "next/navigation";
+
 
 export default function HeroSection() {
   const primary = "#4B2E83"; // deep purple
   const secondary = "#6B46C1";
 
+  const router = useRouter();
+
+
+  
   return (
     <Box py={{ base: 10, md: 20 }}>
       <Flex
@@ -62,6 +68,7 @@ export default function HeroSection() {
               leftIcon={<Icon as={FiUserPlus} />}
               _hover={{ bg: secondary }}
               borderRadius="xl"
+              onClick={()=>router.push("/hire?=all")}
             >
               Find Talent
             </Button>
@@ -72,6 +79,7 @@ export default function HeroSection() {
               borderColor="gray.300"
               leftIcon={<Icon as={FiWifi} />}
               borderRadius="xl"
+              onClick={()=>router.push("/data")}
             >
               Buy Data & Airtime
             </Button>
@@ -81,9 +89,9 @@ export default function HeroSection() {
         {/* Image */}
         <Box flex="1" w="100%" textAlign="center">
           <Image
-            src="hero.png" // replace with your image
+            src="hero.png" 
             alt="Hire professionals"
-            maxW="400px"
+            maxW="412px"
           mx="auto"
           />
         </Box>
