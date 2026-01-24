@@ -30,3 +30,41 @@ export const plansState= atom({
     { size: "15GB", duration: "30 Days", price: 5000 },
   ],
 });
+
+
+export const expertsAtom = atom([
+  {
+    id: "1",
+    name: "Julianne V.",
+    role: "Creative Director",
+    rating: 4.9,
+    projects: 45,
+    online: true,
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    category: "fashion",
+  },
+  {
+    id: "2",
+    name: "Amara K.",
+    role: "Fashion Stylist",
+    rating: 4.8,
+    projects: 38,
+    online: false,
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
+    category: "styling",
+  },
+  {
+    id: "3",
+    name: "Liam O.",
+    role: "Menswear Designer",
+    rating: 4.7,
+    projects: 29,
+    online: true,
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    category: "fashion",
+  },
+]);
+
