@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { MdLocationOn, MdCalendarToday, MdPersonOutline } from 'react-icons/md';
 
-export default function BusSearchForm() {
+export default function SearchForm() {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   const bg = useColorModeValue('white', 'gray.800');
