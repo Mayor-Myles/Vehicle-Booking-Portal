@@ -14,6 +14,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaGoogle, FaFacebookF, FaTwitter } from "react-icons/fa";
+import TopNavbar from "topnavbar";
+
 
 export default function Login() {
   const bg = useColorModeValue("gray.50", "gray.900");
@@ -21,6 +23,7 @@ export default function Login() {
   const muted = useColorModeValue("gray.600", "gray.400");
 
   return (
+    
     <Box
       minH="100vh"
       bg={bg}
@@ -29,12 +32,13 @@ export default function Login() {
       justifyContent="center"
       px={4}
     >
+      <TopNavbar/>
       <Box
         w="100%"
         maxW="420px"
         bg={cardBg}
         borderRadius="2xl"
-        boxShadow="lg"
+        boxShadow="sm"
         p={{ base: 6, sm: 8 }}
       >
         {/* Logo */}
