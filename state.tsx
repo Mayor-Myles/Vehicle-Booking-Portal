@@ -68,3 +68,16 @@ export const expertsState = atom([
   },
 ]);
 
+export const userState = atom({
+  isAuthenticated: false,
+  profile: {
+    id: "m123"
+    firstName: "Paul",
+    lastName: "Adebayo",
+    email: "user@gmail.com",
+    gender: "female",
+    phone: "081000200200",
+    balance:300
+  },
+});
+
