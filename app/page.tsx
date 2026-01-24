@@ -3,7 +3,7 @@
 import React from 'react';
 import { ChakraProvider, Box, Flex, useDisclosure, useBreakpointValue, VStack,useColorModeValue, } from '@chakra-ui/react';
 import  Navbar from '@/components/navbar';
-import Hero from "@/hero"
+import Hero from "@/components/hero"
 import Testimonial from "@/components/testimonial";
 import ContactUs from "@/components/contactUs";
 import SearchForm from "@/components/search";
