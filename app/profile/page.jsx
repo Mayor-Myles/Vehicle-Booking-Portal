@@ -88,7 +88,7 @@ if(!users) {
       
            {/* WALLET */}
         <Box
-          bgGradient="linear(to-r,brown.500,brown.700)"
+          bgGradient="linear(to-r,#b97a51,#8B4513)"
           borderWidth="1px"
           borderColor={cardBorder}
           borderRadius="2xl"
