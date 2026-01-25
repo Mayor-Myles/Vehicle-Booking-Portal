@@ -41,15 +41,21 @@ export default function Profile() {
     ],
   };
   
-  const [users,setUsers] = useState([]); 
+  const [users,setUsers] = useState(null); 
+  const bg = useColorModeValue("white", "gray.800");
+  const cardBorder = useColorModeValue("orange.200", "gray.700");
+  const mutedText = useColorModeValue("gray.600", "gray.400");
+  const iconColor = useColorModeValue("orange.500", "orange.300");
+  
   
   useEffect(() => {
-    const fetchUser = async () => {
+      const fetchUser = async () => {
       const { data, error } = await supabase
         .from("users")
-        .select("*");
-      if (error) { 
-        console.error(error); 
+        .select("*")
+        .single();
+      if(error) { 
+      console.error(error); 
       } 
       else { 
         setUsers(data); 
@@ -59,11 +65,13 @@ export default function Profile() {
     fetchUser();
     
   }, []);
+  
+if(!users) {
+  return( <Text>Loading...</Text>);
 
-  const bg = useColorModeValue("white", "gray.800");
-  const cardBorder = useColorModeValue("orange.200", "gray.700");
-  const mutedText = useColorModeValue("gray.600", "gray.400");
-  const iconColor = useColorModeValue("orange.500", "orange.300");
+}
+
+  
 
   return (
    <>
