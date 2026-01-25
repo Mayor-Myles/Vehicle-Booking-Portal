@@ -108,7 +108,13 @@ const { data, error } = await supabase.auth.signUp({
 
     setLoading(false);
   toast({title:"Succesful",status:"success",description:"Registration succesful. You are now being redirected to dashboard. ",position:"top"});
+   
+  if(data.session){
+    
     router.push("/profile");
+    
+  }
+  
   };
 
   
