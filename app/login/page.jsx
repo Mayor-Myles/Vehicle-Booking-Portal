@@ -19,7 +19,7 @@ import {
   IconButton,
   useToast,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import {
   MdOutlineEmail,
   MdOutlineLock,
@@ -54,7 +54,11 @@ export default function Login() {
     setFormData((prev) => ({...prev,[data]:e.target.value}));
 
   }
+useEffect(()=>{
 
+  alert(formData.email);
+},[formData,setFormData]);
+          
 const handleLogin = async () => {
   setLoading(true);
   toast.closeAll();
@@ -63,7 +67,7 @@ const handleLogin = async () => {
     password: formData.password,
   });
 
-  alert(formData.email);
+  
   if (error) {
     toast({
       title: "Error",
