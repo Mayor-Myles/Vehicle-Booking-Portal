@@ -18,6 +18,7 @@ import {
   Text,
   useColorModeValue,
   IconButton,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import {
@@ -28,18 +29,85 @@ import {
   MdOutlineVisibilityOff,
   MdOutlineWc,
 } from "react-icons/md";
-import NextLink from "next/link";
+import {useRouter} from "next/navigation";
 import Navbar from "@/components/navbar";
+import {supabase} from "@/lib/supabaseClient";
+import {FaUser} from "react-icons/fa";
 
 export default function Register() {
   const [show, setShow] = useState(false);
-
+const[loading,setLoading] = useState(false);
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
   const inputBg = useColorModeValue("orange.50", "gray.700");
   const iconColor = useColorModeValue("orange.500", "orange.300");
   const textColor = useColorModeValue("gray.700", "gray.300");
+const toast = useToast();
+const router = useRouter();
 
+  
+const [formData,setFormData] = useState(
+  {
+  phoneNumber:null,
+  email:null,
+   gender:null,
+   password:null
+  }
+);
+
+  const updateFormData = (e,key) => {
+
+
+   setFormData((prev) => {...prev,{key:e.target.value}});
+
+  }
+
+
+  {/* handles form submission */}
+const submit = async() => {
+
+  setLoading(true);
+  
+  toast.closeAll();
+
+  {/* GENERATE AND GET NEW USER ID FOR SUPABASE */}
+const { data, error } = await supabase.auth.signUp({
+      phoneNumber,
+      password,
+    });
+
+    if(error) {
+      toast({title:"Error",type:"error",description:"Registration failed. "+error.message,position:"top"});
+      setLoading(false);
+      return;
+    }
+
+    const userId = data.user.id;
+
+  {/* INSERT THE GENERATED ID AND OTHER FIELDS IN THE CREATED DB*/}
+  
+  const { insertError } = await supabase
+      .from("users")
+      .insert({
+        id: userId,
+        email,
+        phoneNumber,
+        gender,
+        fullName,
+      });
+
+    if (insertError) {
+      toast({title:"Error",type:"error",description:"Registration failed. "+insertError.message,position:"top"});
+      setLoading(false);
+      return;
+    }
+
+    setLoading(false);
+  toast({title:"Succesful",type:"success",description:"Registration succesful. You are now being redirected to dashboard. ",position:"top"});
+    router.push("/profile");
+  };
+
+  
   return (
     <>
       <Navbar />
@@ -58,11 +126,32 @@ export default function Register() {
           <Stack spacing={6}>
             {/* Header */}
             <Stack spacing={1} textAlign="center">
-              <Heading size="lg">Create Account</Heading>
+              <Heading size="sm">Create Account</Heading>
               <Text color={textColor} fontSize="sm">
                 Sign up to start booking your journeys
               </Text>
             </Stack>
+
+            {/* Fullname*/}
+                
+            <FormControl>
+              <FormLabel>Fullname</FormLabel>
+              <InputGroup>
+                <InputLeftElement>
+                  <FaUser size={22} color={iconColor} />
+                </InputLeftElement>
+                <Input
+                  onChange={(e)=>updateFormData(e,"fullName")}
+                  type="text"
+                  bg={inputBg}
+                  pl={12}
+                  height="52px"
+                  borderRadius="lg"
+                  placeholder="Enter your fullname"
+                />
+              </InputGroup>
+            </FormControl>
+
 
             {/* Phone */}
             <FormControl>
@@ -72,6 +161,7 @@ export default function Register() {
                   <MdOutlinePhone size={22} color={iconColor} />
                 </InputLeftElement>
                 <Input
+                  onChange={(e)=>updateFormData(e,"phoneNumber")}
                   type="tel"
                   bg={inputBg}
                   pl={12}
@@ -90,6 +180,7 @@ export default function Register() {
                   <MdOutlineEmail size={22} color={iconColor} />
                 </InputLeftElement>
                 <Input
+                  onChange={(e)=>updateFormData(e,"email")}
                   type="email"
                   bg={inputBg}
                   pl={12}
@@ -108,6 +199,7 @@ export default function Register() {
                   <MdOutlineWc size={22} color={iconColor} />
                 </InputLeftElement>
                 <Select
+                  onChange={(e)=>updateFormData(e,"gender")}
                   bg={inputBg}
                   pl={12}
                   height="52px"
@@ -116,7 +208,7 @@ export default function Register() {
                 >
                   <option value="male">Male</option>
                   <option value="female">Female</option>
-                  <option value="other">Other</option>
+                  
                 </Select>
               </InputGroup>
             </FormControl>
@@ -129,6 +221,7 @@ export default function Register() {
                   <MdOutlineLock size={22} color={iconColor} />
                 </InputLeftElement>
                 <Input
+                  onChange={(e)=>updateFormData(e,"password")}
                   type={show ? "text" : "password"}
                   bg={inputBg}
                   pl={12}
@@ -150,6 +243,8 @@ export default function Register() {
 
             {/* Register Button */}
             <Button
+              isLoading={loading}
+              onClick={()=>submit()}
               mt={2}
               height="56px"
               borderRadius="xl"
