@@ -58,7 +58,7 @@ const [formData,setFormData] = useState(
   const updateFormData = (e,key) => {
 
 
-   setFormData((prev) => {...prev,{key:e.target.value}});
+   setFormData((prev) => ({...prev,[key]:e.target.value}));
 
   }
 
