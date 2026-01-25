@@ -100,7 +100,7 @@ fetchUser();
   
    
   setLoading(false);
-  router.push("/profile);
+  router.push("/profile");
   
 };//login method
   
