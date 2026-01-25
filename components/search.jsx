@@ -23,6 +23,7 @@ import {
   MdOutlinePersonOutline,
   MdSwapVert,
 } from 'react-icons/md';
+import NextLink from "next/link";
 
 const cities = [
   'Ibadan',
@@ -150,6 +151,8 @@ export default function SearchForm() {
 
           {/* CTA */}
           <Button
+            as={NextLink}
+            href="/bus-listing"
             mt={4}
             height="56px"
             borderRadius="xl"
