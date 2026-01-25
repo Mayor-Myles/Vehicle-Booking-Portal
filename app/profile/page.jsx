@@ -53,7 +53,7 @@ export default function Profile() {
       const { data, error } = await supabase
         .from("users")
         .select("*")
-        .single();
+        
       if(error) { 
       console.error(error); 
       } 
