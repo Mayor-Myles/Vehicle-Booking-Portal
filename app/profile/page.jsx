@@ -106,7 +106,7 @@ if(!users) {
                 <Text fontSize="sm" color={mutedText}>
                   Available Balance
                 </Text>
-                <Text fontSize="2xl" fontWeight="bold">
+                <Text color="white" fontSize="2xl" fontWeight="bold">
                   ₦{users.balance.toLocaleString()}
                 </Text>
               </VStack>
