@@ -59,6 +59,8 @@ export default function Login() {
 const handleLogin = async () => {
   setLoading(true);
   toast.closeAll();
+  alert(formData.email);
+  alert(formData.email);
   const { data, error } = await supabase.auth.signInWithPassword({
     email: formData.email,
     password: formData.password,
