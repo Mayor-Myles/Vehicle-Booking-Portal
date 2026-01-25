@@ -22,11 +22,12 @@ import {
   MdOutlineHistory,
 } from "react-icons/md";
 import Navbar from "@/components/navbar";
-
-
+import { createClient } from "@supabase/supabase-js";
+const supabase = createClient( process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY );
+import {useEffect} from "react";
 
 export default function Profile() {
-  
+ 
   const user = {
     firstName: "John",
     lastName: "Doe",
@@ -39,6 +40,25 @@ export default function Profile() {
       { id: 3, route: "Lagos → Oshogbo", date: "Dec 10, 2023", status: "Pending" },
     ],
   };
+  
+  const [users,setUsers] = useState([]); 
+  
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data, error } = await supabase
+        .from("users")
+        .select("*");
+      if (error) { 
+        console.error(error); 
+      } 
+      else { 
+        setUsers(data); 
+      } 
+    }; 
+    
+    fetchUsers();
+    
+  }, []);
 
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
@@ -54,41 +74,10 @@ export default function Profile() {
       </Heading>
 
       <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={6}>
-        {/* USER DETAILS */}
+      
+           {/* WALLET */}
         <Box
-          bg={bg}
-          borderWidth="1px"
-          borderColor={cardBorder}
-          borderRadius="2xl"
-          p={6}
-        >
-          <Heading size="md" mb={4}>
-            Personal Information
-          </Heading>
-
-          <Stack spacing={4}>
-            <HStack>
-              <Icon as={MdOutlinePerson} boxSize={5} color={iconColor} />
-              <Text fontWeight="medium">
-                {user.firstName} {user.lastName}
-              </Text>
-            </HStack>
-
-            <HStack>
-              <Icon as={MdOutlineEmail} boxSize={5} color={iconColor} />
-              <Text>{user.email}</Text>
-            </HStack>
-
-            <HStack>
-              <Icon as={MdOutlinePhone} boxSize={5} color={iconColor} />
-              <Text>{user.phone}</Text>
-            </HStack>
-          </Stack>
-        </Box>
-
-        {/* WALLET */}
-        <Box
-          bg={bg}
+          bgGradient="linear(to-r,brown.500,brown.700)"
           borderWidth="1px"
           borderColor={cardBorder}
           borderRadius="2xl"
@@ -110,12 +99,46 @@ export default function Profile() {
                   Available Balance
                 </Text>
                 <Text fontSize="2xl" fontWeight="bold">
-                  ₦{user.walletBalance.toLocaleString()}
+                  ₦{users.balance.toLocaleString()}
                 </Text>
               </VStack>
             </HStack>
           </Flex>
         </Box>
+        
+        {/* USER DETAILS */}
+        <Box
+          bg={bg}
+          borderWidth="1px"
+          borderColor={cardBorder}
+          borderRadius="2xl"
+          p={6}
+        >
+          <Heading size="md" mb={4}>
+            Personal Information
+          </Heading>
+
+          <Stack spacing={4}>
+            <HStack>
+              <Icon as={MdOutlinePerson} boxSize={5} color={iconColor} />
+              <Text fontWeight="medium">
+                {users.firstName} {users.lastName}
+              </Text>
+            </HStack>
+
+            <HStack>
+              <Icon as={MdOutlineEmail} boxSize={5} color={iconColor} />
+              <Text>{users.email}</Text>
+            </HStack>
+
+            <HStack>
+              <Icon as={MdOutlinePhone} boxSize={5} color={iconColor} />
+              <Text>{users.phoneNumber}</Text>
+            </HStack>
+          </Stack>
+        </Box>
+
+     
 
         {/* HISTORY */}
         <Box
