@@ -17,6 +17,7 @@ import {
   Text,
   useColorModeValue,
   IconButton,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import {
@@ -29,13 +30,51 @@ import NextLink from "next/link";
 import Navbar from "@/components/navbar";
 export default function Login() {
   const [show, setShow] = useState(false);
-
+  const {supabase} from "@/lib/supabaseClient";
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
   const inputBg = useColorModeValue("orange.50", "gray.700");
   const iconColor = useColorModeValue("orange.500", "orange.300");
   const textColor = useColorModeValue("gray.700", "gray.300");
+  const toast = useToast();
+  const[loading,setLoading] = useState(false);
+  const[formData,setFormData] = useState({
 
+  email:null,
+  password:null,
+
+  });
+
+  const updateFormData = (e,data) => {
+
+    setFormData((prev)=> ({...prev,[data]:e.target.value}));
+
+  }
+
+const handleLogin = async () => {
+  setLoading(true);
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: formData.email,
+    password: formData.password,
+  });
+
+  if (error) {
+    toast({
+      title: "Error",
+      description: error.message,
+      status: "error",
+    });
+    setLoading(false);
+    return;
+  }
+
+  setLoading(false);
+  router.push("/profile");
+};
+  
+
+  
   return (
 
     <>
@@ -69,6 +108,7 @@ export default function Login() {
                 <MdOutlineEmail size={22} color={iconColor} />
               </InputLeftElement>
               <Input
+                onChange={(e)=>updateFormData(e,email)}
                 type="email"
                 bg={inputBg}
                 pl={12}
@@ -87,6 +127,7 @@ export default function Login() {
                 <MdOutlineLock size={22} color={iconColor} />
               </InputLeftElement>
               <Input
+                onChange={(e)=>updateFormData(e,password)}
                 type={show ? "text" : "password"}
                 bg={inputBg}
                 pl={12}
@@ -108,6 +149,8 @@ export default function Login() {
 
           {/* Login Button */}
           <Button
+            isLoading={loading}
+            onClick={()=>handleLogin()}
             mt={2}
             height="56px"
             borderRadius="xl"
