@@ -27,8 +27,8 @@ import {useEffect,useState} from "react";
 import SearchForm from "@/components/search";
 import HowItWorks from "@/components/howItWorks";
 import FAQ from "@/components/faq";
- import ContactUs from "@/components/contactUs";
-
+import ContactUs from "@/components/contactUs";
+import {useRouter,useSearchParams} from "next/navigation";
 
 export default function Profile() {
  
@@ -40,28 +40,47 @@ export default function Profile() {
     ],
   };
   
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");//to identify logged in user
   const [users,setUsers] = useState(null); 
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
   const mutedText = useColorModeValue("gray.600", "gray.400");
   const iconColor = useColorModeValue("orange.200", "orange.300");
-  
+  const router = useRouter();
   
   useEffect(() => {
-      const fetchUser = async () => {
+      
+  const checkAuth = async () => {
+    const { data } = await supabase.auth.getUser();
+
+    if (!data.user) {
+      router.replace("/login");
+    }
+
+    else{
+      
+const fetchUser = async () => {
       const { data, error } = await supabase
         .from("users")
         .select("*")
+        .eq("id",id)
+        .single();
         
       if(error) { 
       console.error(error); 
       } 
-      else { 
-        setUsers(data[0]); 
+      else {
+        setUsers(data); 
       } 
-    }; 
-    
-    fetchUser();
+    };//fetch user
+
+      fetchUser();
+         
+  };
+
+  checkAuth();  
+  
     
   }, []);
   
