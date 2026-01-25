@@ -49,7 +49,7 @@ export default function Login() {
   password:null,
 
   });
-  const[id,setid] = useState(null);
+ // const[id,setid] = useState(null);
 
   const updateFormData = (e,data) => {
 
@@ -92,7 +92,7 @@ const fetchUser = async () => {
       console.error(error); 
       } 
 
-    setId(data.id);//logged in user id
+   // setId(data.id);//logged in user id
 
 }
   
@@ -100,7 +100,7 @@ fetchUser();
   
    
   setLoading(false);
-  router.push("/profile?id="+id);
+  router.push("/profile);
   
 };//login method
   
