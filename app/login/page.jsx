@@ -66,8 +66,9 @@ const handleLogin = async () => {
   if (error) {
     toast({
       title: "Error",
-      description: error.message,
+      description:"Failed " + error.message,
       status: "error",
+      position="top"
     });
     setLoading(false);
     return;
