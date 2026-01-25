@@ -69,14 +69,14 @@ const fetchUser = async () => {
       const { data: fetchedData, error } = await supabase
         .from("users")
         .select("*")
-        .eq("id",fetchedData.user.id)
+        .eq("id",id)
         .single();
         
       if(error) { 
       console.error(error); 
       } 
       else {
-        setUsers(data); 
+        setUsers(fetchedData); 
       } 
     };//fetch user
 
