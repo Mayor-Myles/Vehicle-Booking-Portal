@@ -51,13 +51,13 @@ export default function Login() {
 
   const updateFormData = (e,data) => {
 
-    setFormData((prev)=> ({...prev,[data]:e.target.value}));
+    setFormData((prev) => ({...prev,[data]:e.target.value}));
 
   }
 
 const handleLogin = async () => {
   setLoading(true);
-
+  toast.closeAll();
   const { data, error } = await supabase.auth.signInWithPassword({
     email: formData.email,
     password: formData.password,
