@@ -45,7 +45,7 @@ export default function Profile() {
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
   const mutedText = useColorModeValue("gray.600", "gray.400");
-  const iconColor = useColorModeValue("orange.250", "orange.300");
+  const iconColor = useColorModeValue("orange.200", "orange.300");
   
   
   useEffect(() => {
@@ -80,10 +80,7 @@ if(!users) {
    <>
    <Navbar />
     <Box px={{ base: 4, md: 8 }} py={6} maxW="7xl" mx="auto">
-      <Heading size="lg" mb={6}>
-        Profile
-      </Heading>
-
+      
       <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={6}>
       
            {/* WALLET */}
