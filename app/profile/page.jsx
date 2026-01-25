@@ -53,7 +53,7 @@ export default function Profile() {
       
   const checkAuth = async () => {
     const { data } = await supabase.auth.getUser();
-    alert(data.user.id)
+  
     if (!data.user) {
       router.replace("/login");
     }
@@ -71,7 +71,7 @@ const fetchUser = async () => {
       console.error(error); 
       } 
       else {
-        setUsers(data); 
+        setUsers(data.user); 
       } 
     };//fetch user
 
