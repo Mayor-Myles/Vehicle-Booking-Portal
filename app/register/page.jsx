@@ -54,7 +54,6 @@ const [formData,setFormData] = useState(
   {
   phoneNumber:null,
   email:null,
-   gender:null,
    password:null
   }
 );
@@ -90,15 +89,13 @@ const { data, error } = await supabase.auth.signUp({
 
   {/* INSERT THE GENERATED ID AND OTHER FIELDS IN THE CREATED DB*/}
   
-  const { insertError } = await supabase
-      .from("users")
+  const { insertError } = await supabase.from("users")
       .insert({
-        id: userId,
-        email,
-        phoneNumber,
-        gender,
-        fullName,
-      });
+  id: userId,
+  email: formData.email,
+  phoneNumber: formData.phoneNumber,
+  fullName: formData.fullName,
+});
 
     if (insertError) {
       toast({title:"Error",status:"error",description:"Registration failed. "+insertError.message,position:"top"});
@@ -201,28 +198,7 @@ const { data, error } = await supabase.auth.signUp({
               </InputGroup>
             </FormControl>
 
-            {/* Gender */}
-            <FormControl>
-              <FormLabel>Gender</FormLabel>
-              <InputGroup>
-                <InputLeftElement>
-                  <MdOutlineWc size={22} color={iconColor} />
-                </InputLeftElement>
-                <Select
-                  onChange={(e)=>updateFormData(e,"gender")}
-                  bg={inputBg}
-                  pl={12}
-                  height="52px"
-                  borderRadius="lg"
-                  placeholder="Select gender"
-                >
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  
-                </Select>
-              </InputGroup>
-            </FormControl>
-
+            
             {/* Password */}
             <FormControl>
               <FormLabel>Password</FormLabel>
