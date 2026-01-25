@@ -149,7 +149,7 @@ if(!users) {
           </Stack>
         </Box>
 
-     
+     <SearchForm />
 
         {/* HISTORY */}
         <Box
