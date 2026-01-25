@@ -42,7 +42,7 @@ export default function SearchForm() {
   const labelColor = useColorModeValue('gray.700', 'gray.300');
 
   return (
-    <Box align="center" justify="center" display="flex" px={4}>
+    <Flex align="center" justify="center" direction="column" px={4}>
       <Text fontSize="lg" fontWeight="bold" mb={4}>
         Find your next journey
       </Text>
