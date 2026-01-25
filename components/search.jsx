@@ -163,6 +163,6 @@ export default function SearchForm() {
           </Button>
         </Stack>
       </Box>
-    </Box>
+    </Flex>
   );
 }
