@@ -76,7 +76,7 @@ const submit = async() => {
 
   {/* GENERATE AND GET NEW USER ID FOR SUPABASE */}
 const { data, error } = await supabase.auth.signUp({
-      phone : formData.phoneNumber,
+      email : formData.email,
       password : formData.password,
     });
 
