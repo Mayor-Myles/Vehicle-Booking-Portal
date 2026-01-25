@@ -89,13 +89,12 @@ const { data, error } = await supabase.auth.signUp({
 
   {/* INSERT THE GENERATED ID AND OTHER FIELDS IN THE CREATED DB*/}
   
-  const { insertError } = await supabase.from("users")
-      .insert({
-  id: userId,
-  email: formData.email,
-  phoneNumber: formData.phoneNumber,
-  fullName: formData.fullName,
-});
+  const { insertError } =  await supabase.from("users").insert({
+    id: userId,
+    email: formData.email,
+    phoneNumber: formData.phoneNumber,
+    fullName: formData.fullName,
+  });
 
     if (insertError) {
       toast({title:"Error",status:"error",description:"Registration failed. "+insertError.message,position:"top"});
