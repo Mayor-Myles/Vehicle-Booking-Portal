@@ -49,6 +49,7 @@ export default function Login() {
   password:null,
 
   });
+  const[id,setid] = useState(null);
 
   const updateFormData = (e,data) => {
 
@@ -78,9 +79,30 @@ const handleLogin = async () => {
     return;
   }
 
+  //get rhe id of logged innieer
+const fetchUser = async () => {
+      const { data, error } = await supabase
+        .from("users")
+        .select("*")
+        .eq("email",formData.email)
+         .single();
+    
+        
+      if(error) { 
+      console.error(error); 
+      } 
+
+    setId(data.id);//logged in user id
+
+}
+  
+fetchUser();
+  
+   
   setLoading(false);
-  router.push("/profile");
-};
+  router.push("/profile?id="+id);
+  
+};//login method
   
 
   
