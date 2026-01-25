@@ -60,7 +60,7 @@ const handleLogin = async () => {
   setLoading(true);
   toast.closeAll();
   alert(formData.email);
-  alert(formData.email);
+  alert(formData.password);
   const { data, error } = await supabase.auth.signInWithPassword({
     email: formData.email,
     password: formData.password,
