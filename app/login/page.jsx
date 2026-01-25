@@ -91,7 +91,7 @@ const fetchUser = async () => {
       if(error) { 
       console.error(error); 
       } 
-
+alert(data.id);
     setId(data.id);//logged in user id
 
 }
