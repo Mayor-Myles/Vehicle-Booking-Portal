@@ -68,7 +68,7 @@ const handleLogin = async () => {
       title: "Error",
       description:"Failed " + error.message,
       status: "error",
-      position="top"
+      position:"top"
     });
     setLoading(false);
     return;
