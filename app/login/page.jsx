@@ -63,6 +63,7 @@ const handleLogin = async () => {
     password: formData.password,
   });
 
+  alert(formData.email);
   if (error) {
     toast({
       title: "Error",
