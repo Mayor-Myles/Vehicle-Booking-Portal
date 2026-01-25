@@ -79,6 +79,8 @@ const fetchUser = async () => {
          
   }
 
+  }//checkAuth
+    
   checkAuth();  
   
     
