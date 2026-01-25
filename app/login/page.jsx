@@ -28,9 +28,13 @@ import {
 } from "react-icons/md";
 import NextLink from "next/link";
 import Navbar from "@/components/navbar";
+import {supabase} from "@/lib/supabaseClient";
+
+
+
+
 export default function Login() {
   const [show, setShow] = useState(false);
-  const {supabase} from "@/lib/supabaseClient";
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
   const inputBg = useColorModeValue("orange.50", "gray.700");
