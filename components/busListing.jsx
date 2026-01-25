@@ -27,7 +27,7 @@ const buses = [
   },
   {
     id: 2,
-    image: "/bus2.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLBZjxJfYWjILC074qXjJJ5PuZuDbFkjXzvBaAmjelB-PifvkIOpWokJbr&s=10",
     from: "Abuja",
     to: "Lokoja",
     departure: "09:30 AM",
@@ -37,7 +37,7 @@ const buses = [
   },
   {
     id: 3,
-    image: "/bus3.jpg",
+    image: "https://media.ed.edmunds-media.com/honda/odyssey/2016/fe/2016_honda_odyssey_f34_fe_627161_717.jpg",
     from: "Benin",
     to: "Asaba",
     departure: "01:00 PM",
