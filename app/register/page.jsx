@@ -94,6 +94,8 @@ const { data, error } = await supabase.auth.signUp({
     email: formData.email,
     phoneNumber: formData.phoneNumber,
     fullName: formData.fullName,
+    balance:0,
+    
   });
 
     if (insertError) {
