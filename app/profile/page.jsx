@@ -27,7 +27,7 @@ const supabase = createClient( process.env.NEXT_PUBLIC_SUPABASE_URL, process.env
 import {useEffect,useState} from "react";
 import SearchForm from "@/components/search";
 import HowItWorks from "@/components/howItWorks";
-import FAQ from "@/components/FAQ";
+import FAQ from "@/components/faq";
  import ContactUs from "@/components/contactUs";
 
 
