@@ -22,8 +22,7 @@ import {
   MdOutlineHistory,
 } from "react-icons/md";
 import Navbar from "@/components/navbar";
-import { createClient } from "@supabase/supabase-js";
-const supabase = createClient( process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY );
+import { supabase } from "@/lib/supabaseClient";
 import {useEffect,useState} from "react";
 import SearchForm from "@/components/search";
 import HowItWorks from "@/components/howItWorks";
@@ -130,7 +129,7 @@ if(!users) {
             <HStack>
               <Icon as={MdOutlinePerson} boxSize={5} color={iconColor} />
               <Text fontWeight="medium">
-                {users.firstName} {users.lastName}
+                {users.fullName}
               </Text>
             </HStack>
 
