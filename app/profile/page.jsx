@@ -24,7 +24,7 @@ import {
 import Navbar from "@/components/navbar";
 import { createClient } from "@supabase/supabase-js";
 const supabase = createClient( process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY );
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
 
 export default function Profile() {
  
