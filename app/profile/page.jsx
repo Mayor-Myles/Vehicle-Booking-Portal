@@ -67,10 +67,10 @@ export default function Profile() {
   }, []);
   
 if(!users) {
-  return( <Text>Loading...</Text>);
+  return null;
 
 }
-  else{ alert(users.firstName); }
+  
        
 
 
