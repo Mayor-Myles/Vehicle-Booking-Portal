@@ -11,6 +11,7 @@ import {
   Image,
   useColorModeValue,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 const Hero = () => {
   const bg = useColorModeValue("brown.50", "brown.800");
@@ -46,6 +47,8 @@ const Hero = () => {
             justify={{ base: "center", md: "flex-start" }}
           >
             <Button
+              as={NextLink}
+              href="/login"
               size="lg"
               color="white"
               bg="brown"
