@@ -54,10 +54,7 @@ export default function Login() {
     setFormData((prev) => ({...prev,[data]:e.target.value}));
 
   }
-useEffect(()=>{
 
-  alert(formData.email);
-},[formData,setFormData]);
           
 const handleLogin = async () => {
   setLoading(true);
@@ -118,7 +115,7 @@ const handleLogin = async () => {
                 <MdOutlineEmail size={22} color={iconColor} />
               </InputLeftElement>
               <Input
-                onChange={(e)=>updateFormData(e,email)}
+                onChange={(e)=>updateFormData(e,"email")}
                 type="email"
                 bg={inputBg}
                 pl={12}
@@ -137,7 +134,7 @@ const handleLogin = async () => {
                 <MdOutlineLock size={22} color={iconColor} />
               </InputLeftElement>
               <Input
-                onChange={(e)=>updateFormData(e,password)}
+                onChange={(e)=>updateFormData(e,"password")}
                 type={show ? "text" : "password"}
                 bg={inputBg}
                 pl={12}
