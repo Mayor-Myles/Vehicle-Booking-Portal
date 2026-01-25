@@ -70,7 +70,7 @@ if(!users) {
   return( <Text>Loading...</Text>);
 
 }
-  else{ alert(users.length); }
+  else{ alert(users.firstName); }
        
 
 
