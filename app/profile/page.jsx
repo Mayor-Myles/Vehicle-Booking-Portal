@@ -45,7 +45,7 @@ export default function Profile() {
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
   const mutedText = useColorModeValue("gray.600", "gray.400");
-  const iconColor = useColorModeValue("orange.500", "orange.300");
+  const iconColor = useColorModeValue("orange.250", "orange.300");
   
   
   useEffect(() => {
@@ -94,7 +94,7 @@ if(!users) {
           borderRadius="2xl"
           p={6}
         >
-          <Heading size="md" mb={4}>
+          <Heading color="white" size="md" mb={4}>
             Wallet
           </Heading>
 
