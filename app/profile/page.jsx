@@ -56,7 +56,7 @@ export default function Profile() {
       } 
     }; 
     
-    fetchUsers();
+    fetchUser();
     
   }, []);
 
