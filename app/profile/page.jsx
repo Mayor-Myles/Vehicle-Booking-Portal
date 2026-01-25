@@ -25,15 +25,15 @@ import Navbar from "@/components/navbar";
 import { createClient } from "@supabase/supabase-js";
 const supabase = createClient( process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY );
 import {useEffect,useState} from "react";
+import SearchForm from "@/components/search";
+import HowItWorks from "@/components/howItWorks";
+import FAQ from "@/components/FAQ";
+ import ContactUs from "@/components/contactUs";
+
 
 export default function Profile() {
  
   const user = {
-    firstName: "John",
-    lastName: "Doe",
-    email: "john.doe@email.com",
-    phone: "+234 801 234 5678",
-    walletBalance: 12500,
     history: [
       { id: 1, route: "Lagos → Ibadan", date: "Oct 24, 2023", status: "Completed" },
       { id: 2, route: "Ibadan → Ilorin", date: "Nov 02, 2023", status: "Completed" },
@@ -186,6 +186,9 @@ if(!users) {
         </Box>
       </SimpleGrid>
     </Box>
+     <HowItWorks/>
+     <FAQ/>
+     <ContactUs/>
    </>
   );
 }
