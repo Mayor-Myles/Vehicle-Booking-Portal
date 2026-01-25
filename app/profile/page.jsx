@@ -53,7 +53,7 @@ export default function Profile() {
       
   const checkAuth = async () => {
     const { data } = await supabase.auth.getUser();
-    alert(data.user);
+    alert(data.user.id)
     if (!data.user) {
       router.replace("/login");
     }
