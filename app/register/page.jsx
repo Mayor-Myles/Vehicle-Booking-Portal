@@ -33,6 +33,10 @@ import {useRouter} from "next/navigation";
 import Navbar from "@/components/navbar";
 import {supabase} from "@/lib/supabaseClient";
 import {FaUser} from "react-icons/fa";
+import NextLink from "next/link";
+
+
+
 
 export default function Register() {
   const [show, setShow] = useState(false);
@@ -72,12 +76,12 @@ const submit = async() => {
 
   {/* GENERATE AND GET NEW USER ID FOR SUPABASE */}
 const { data, error } = await supabase.auth.signUp({
-      phoneNumber,
-      password,
+      phone : formData.phoneNumber,
+      password : formData.password,
     });
 
     if(error) {
-      toast({title:"Error",type:"error",description:"Registration failed. "+error.message,position:"top"});
+      toast({title:"Error",status:"error",description:"Registration failed. "+error.message,position:"top"});
       setLoading(false);
       return;
     }
@@ -97,13 +101,13 @@ const { data, error } = await supabase.auth.signUp({
       });
 
     if (insertError) {
-      toast({title:"Error",type:"error",description:"Registration failed. "+insertError.message,position:"top"});
+      toast({title:"Error",status:"error",description:"Registration failed. "+insertError.message,position:"top"});
       setLoading(false);
       return;
     }
 
     setLoading(false);
-  toast({title:"Succesful",type:"success",description:"Registration succesful. You are now being redirected to dashboard. ",position:"top"});
+  toast({title:"Succesful",status:"success",description:"Registration succesful. You are now being redirected to dashboard. ",position:"top"});
     router.push("/profile");
   };
 
