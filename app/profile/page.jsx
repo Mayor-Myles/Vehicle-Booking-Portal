@@ -48,7 +48,7 @@ export default function Profile() {
   const mutedText = useColorModeValue("gray.600", "gray.400");
   const iconColor = useColorModeValue("orange.200", "orange.300");
   const router = useRouter();
-  const[id,setId] = useState(null);
+  
   
   useEffect(() => {
       
@@ -63,20 +63,20 @@ export default function Profile() {
 
     else{
 
-      setId(data.user.id);
+      const id = data.user.id;
       
 const fetchUser = async () => {
-      const { fetchedData, error } = await supabase
+      const { data: fetchedData, error } = await supabase
         .from("users")
         .select("*")
-        .eq("id",id)
+        .eq("id",fetchedData.user.id)
         .single();
         
       if(error) { 
       console.error(error); 
       } 
       else {
-        setUsers(data.user); 
+        setUsers(data); 
       } 
     };//fetch user
 
