@@ -41,7 +41,7 @@ export default function Profile() {
   };
   
   const searchParams = useSearchParams();
-  const id = searchParams.get("id");//to identify logged in user
+  //const id = searchParams.get("id");//to identify logged in user
   const [users,setUsers] = useState(null); 
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
@@ -52,6 +52,8 @@ export default function Profile() {
   useEffect(() => {
       
   const checkAuth = async () => {
+
+  
     const { data } = await supabase.auth.getUser();
   
     if (!data.user) {
@@ -59,9 +61,11 @@ export default function Profile() {
     }
 
     else{
+
+      const id = data.user.id;
       
 const fetchUser = async () => {
-      const { data, error } = await supabase
+      const { fetchedData, error } = await supabase
         .from("users")
         .select("*")
         .eq("id",id)
