@@ -58,7 +58,7 @@ export default function Profile() {
       console.error(error); 
       } 
       else { 
-        setUsers(data); 
+        setUsers(data[0]); 
       } 
     }; 
     
