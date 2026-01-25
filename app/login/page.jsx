@@ -29,7 +29,7 @@ import {
 import NextLink from "next/link";
 import Navbar from "@/components/navbar";
 import {supabase} from "@/lib/supabaseClient";
-
+import {useRouter} from "next/navigation";
 
 
 
@@ -42,6 +42,7 @@ export default function Login() {
   const textColor = useColorModeValue("gray.700", "gray.300");
   const toast = useToast();
   const[loading,setLoading] = useState(false);
+  const router = useRouter();
   const[formData,setFormData] = useState({
 
   email:null,
@@ -59,8 +60,7 @@ export default function Login() {
 const handleLogin = async () => {
   setLoading(true);
   toast.closeAll();
-  alert(formData.email);
-  alert(formData.password);
+  
   const { data, error } = await supabase.auth.signInWithPassword({
     email: formData.email,
     password: formData.password,
