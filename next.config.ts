@@ -7,9 +7,9 @@ async rewrites() {
     return [
       {
         // The "Mask" you use in React
-        source: '/api/login', 
+        source: '/api/backend:path*', 
         // The "Final Destination" where the data lives
-        destination: 'http://mylezic.myartsonline.com/user/login',
+        destination: 'http://mylezic.myartsonline.com*',
       },
     ]
   },
