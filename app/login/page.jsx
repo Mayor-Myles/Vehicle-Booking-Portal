@@ -58,6 +58,7 @@ export default function Login() {
 
           
 const handleLogin = async () => {
+  toast.closeAll();
   if (!formData.email || !formData.password) {
     toast({ title: "Error", description: "Fields cannot be empty! Enter your login details", status: "warning","position":"top" });
     return;
