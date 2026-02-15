@@ -11,7 +11,7 @@ import PopularRoutes from "@/components/popular";
 import HowItWorks from "@/components/howItWorks";
 import Features from "@/components/features";
 import FAQ from "@/components/faq";
-import {axios} from "axios";
+import axios from "axios";
 import {useAtom} from "jotai";
 import {userData} from "@/state";
 
