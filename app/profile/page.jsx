@@ -158,7 +158,7 @@ if(!user) {
             <HStack>
               <Icon as={MdOutlinePerson} boxSize={5} color={iconColor} />
               <Text fontWeight="medium">
-                {user.fullName}
+                {user.fullname}
               </Text>
             </HStack>
 
@@ -169,7 +169,7 @@ if(!user) {
 
             <HStack>
               <Icon as={MdOutlinePhone} boxSize={5} color={iconColor} />
-              <Text>{user.phoneNumber}</Text>
+              <Text>{user.phone_number}</Text>
             </HStack>
           </Stack>
         </Box>
