@@ -31,12 +31,20 @@ useEffect(()=>{
     const response = await axios.get(url);
 
     const result = response.data;
-
+    if (result.status === "error") {
+      throw new Error(result.message || "Data fetch failed");
+    }
     setUserData(result.data);
     
   }catch(error){
     
-alert(error.response.data.message || error.message);
+toast({
+      title: "Fetch error",
+      description: error.response.data.message || error.message,
+      status: "error",
+      position: "top",
+    });
+    
   }
 
   }//get user data
