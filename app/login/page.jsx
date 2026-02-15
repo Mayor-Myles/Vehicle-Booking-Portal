@@ -30,7 +30,7 @@ import NextLink from "next/link";
 import Navbar from "@/components/navbar";
 //import {supabase} from "@/lib/supabaseClient";
 import {useRouter} from "next/navigation";
-
+import axios from "axios"; // Ensure you import axios at the top
 
 export default function Login() {
   const [show, setShow] = useState(false);
@@ -50,7 +50,7 @@ export default function Login() {
   });
  const url = process.env.NEXT_PUBLIC_API_URL+"/user/login";
 
-  alert(url);
+  
   const updateFormData = (e,data) => {
 
     setFormData((prev) => ({...prev,[data]:e.target.value}));
@@ -58,7 +58,7 @@ export default function Login() {
   }
 
           
-import axios from "axios"; // Ensure you import axios at the top
+
 
 const handleLogin = async () => {
   toast.closeAll();
