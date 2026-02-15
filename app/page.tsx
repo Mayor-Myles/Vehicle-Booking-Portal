@@ -36,7 +36,7 @@ useEffect(()=>{
     
   }catch(error){
     
-alert(error.result?.message || error.message);
+alert(error.response.data.message || error.message);
   }
 
   }//get user data
