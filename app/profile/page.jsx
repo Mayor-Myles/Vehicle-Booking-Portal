@@ -51,7 +51,7 @@ export default function Profile() {
   const mutedText = useColorModeValue("gray.600", "gray.400");
   const iconColor = useColorModeValue("orange.200", "orange.300");
   const router = useRouter();
-  const url = "api/profile";
+  const url = "api/backend/auth/verifyToken";
   const jwt = localStorage.getItem("token");
   const {user} = useAtom(userData);
 
@@ -61,7 +61,7 @@ export default function Profile() {
       
   const checkAuth = async => {
 
-    const {res} = await axios.post(url,{
+    const res = await axios.post(url,{
 
    "jwt":jwt,
     });
