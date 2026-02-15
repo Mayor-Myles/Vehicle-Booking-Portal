@@ -49,7 +49,7 @@ export default function Login() {
 
   });
  // This tells Next.js to use the proxy we just built
-const url = "/api/php/user/login"; 
+const url = "/api/login"; 
 
   
   const updateFormData = (e,data) => {
