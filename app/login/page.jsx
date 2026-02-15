@@ -58,37 +58,40 @@ export default function Login() {
   }
 
           
+import axios from "axios"; // Ensure you import axios at the top
+
 const handleLogin = async () => {
   toast.closeAll();
+  
   if (!formData.email || !formData.password) {
-    toast({ title: "Error", description: "Fields cannot be empty! Enter your login details", status: "warning","position":"top" });
+    toast({ 
+      title: "Error", 
+      description: "Fields cannot be empty! Enter your login details", 
+      status: "warning", 
+      position: "top" 
+    });
     return;
   }
 
   setLoading(true);
-  toast.closeAll();
 
   try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: formData.email,
-        password: formData.password,
-      }),
+    // Axios automatically stringifies the body and sets Content-Type: application/json
+    const response = await axios.post(url, {
+      email: formData.email,
+      password: formData.password,
     });
 
-    const result = await response.json();
+    const result = response.data;
 
-    if (!response.ok || result.status == "error") {
+    // Axios only enters the 'try' block if status is 2xx. 
+    // We check your custom 'error' status if your PHP returns 200 with an error body.
+    if (result.status === "error") {
       throw new Error(result.message || "Login failed");
     }
 
     // Store the JWT Token
     localStorage.setItem("token", result.data.token);
-
 
     toast({
       title: "Success",
@@ -99,9 +102,12 @@ const handleLogin = async () => {
 
     router.push("/profile");
   } catch (error) {
+    
+    const errorMessage = error.response?.data?.message || error.message;
+    
     toast({
       title: "Login Error",
-      description: error.message,
+      description: errorMessage,
       status: "error",
       position: "top",
     });
@@ -109,6 +115,7 @@ const handleLogin = async () => {
     setLoading(false);
   }
 };
+
 
   
   return (
