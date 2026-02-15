@@ -97,7 +97,7 @@ toast({
   checkAuth();  
   
     
-  }, []);
+  }, [router,toast]);
   
 if(!user) {
   return null;
