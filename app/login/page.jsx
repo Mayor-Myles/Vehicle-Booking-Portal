@@ -30,8 +30,6 @@ import NextLink from "next/link";
 import Navbar from "@/components/navbar";
 //import {supabase} from "@/lib/supabaseClient";
 import {useRouter} from "next/navigation";
-import {urlAtom} from "@/states";
-import {useAtom} from "jotai";
 
 
 export default function Login() {
@@ -50,7 +48,7 @@ export default function Login() {
   password:null,
 
   });
- const url = useAtom(urlAtom);
+ const url = process.env.NEXT_PUBLIC_API_URL;
 
   const updateFormData = (e,data) => {
 
