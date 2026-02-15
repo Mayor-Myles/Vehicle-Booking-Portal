@@ -65,7 +65,7 @@ const toast = useToast();
     toast.closeAll();
     
     try{
-      
+      alert(jet);
     const res = await axios.post(url,{
       
    "jwt":jwt,
@@ -103,10 +103,6 @@ if(!user) {
 
 }
   
-       
-alert(user.email);
-
-  
 
   return (
    <>
@@ -124,7 +120,7 @@ alert(user.email);
           p={6}
         >
           <Heading color="white" size="md" mb={4}>
-            Wallet
+            Wallet {document.write(user)}
           </Heading>
 
           <Flex align="center" justify="space-between">
