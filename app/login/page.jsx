@@ -31,6 +31,10 @@ import Navbar from "@/components/navbar";
 //import {supabase} from "@/lib/supabaseClient";
 import {useRouter} from "next/navigation";
 import axios from "axios"; // Ensure you import axios at the top
+import {useSetAtom} from "jotai";
+import {userData} from "@/state";
+
+
 
 export default function Login() {
   const [show, setShow] = useState(false);
@@ -42,6 +46,7 @@ export default function Login() {
   const toast = useToast();
   const[loading,setLoading] = useState(false);
   const router = useRouter();
+  const setUserData = useSetAtom(userData);
   const[formData,setFormData] = useState({
 
   email:null,
@@ -49,9 +54,7 @@ export default function Login() {
 
   });
  // This tells Next.js to use the proxy we just built
-const url = "/api/backend/user/login"; 
-
-  
+  const url = "/api/backend/user/login";   
   const updateFormData = (e,data) => {
 
     setFormData((prev) => ({...prev,[data]:e.target.value}));
@@ -94,6 +97,9 @@ const handleLogin = async () => {
     // Store the JWT Token
     localStorage.setItem("token", result.data.token);
 
+   //Update user data
+    setUserData(result.data);
+ 
     toast({
       title: "Success",
       description: "Welcome back!",
