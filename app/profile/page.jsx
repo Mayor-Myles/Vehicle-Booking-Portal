@@ -104,7 +104,7 @@ if(!user) {
 }
   
        
-
+alert(user.email);
 
   
 
