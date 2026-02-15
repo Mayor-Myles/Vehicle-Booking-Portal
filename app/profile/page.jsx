@@ -59,7 +59,7 @@ export default function Profile() {
   
   useEffect(() => {
       
-  const checkAuth = async => {
+  const checkAuth = async () =>  {
 
     const res = await axios.post(url,{
 
