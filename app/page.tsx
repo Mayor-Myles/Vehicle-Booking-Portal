@@ -42,12 +42,14 @@ useEffect(()=>{
     
   }catch(error){
     
-toast({
-      title: "Fetch error",
-      description: error.response.data.message || error.message,
-      status: "error",
-      position: "top",
-    });
+const errorMessage = error.response?.data?.message || error.message;
+
+      toast({
+        title: "Fetch error",
+        description: errorMessage,
+        status: "error",
+        position: "top",
+      });
     
   }
 
