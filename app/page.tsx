@@ -33,9 +33,10 @@ useEffect(()=>{
     const result = response.data;
 
     setUserData(result.data);
-  }catch(e){
     
-alert(e.message || result.message);
+  }catch(error){
+    
+alert(error.message || result.message);
   }
 
   }//get user data
