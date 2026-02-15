@@ -53,8 +53,7 @@ export default function Profile() {
   const iconColor = useColorModeValue("orange.200", "orange.300");
   const router = useRouter();
   const url = "/api/backend/auth/verifyToken";
-  const jwt = localStorage.getItem("token");
-  const [user,setUser] = useAtom(userData);
+    const [user,setUser] = useAtom(userData);
 const toast = useToast();
 
   
@@ -65,7 +64,8 @@ const toast = useToast();
     toast.closeAll();
     
     try{
-      
+    const jwt = localStorage.getItem("token");
+
     const res = await axios.post(url,{
       
    "jwt":jwt,
