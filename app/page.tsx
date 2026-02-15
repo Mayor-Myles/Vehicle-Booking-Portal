@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { ChakraProvider, Box, Flex, useDisclosure, useBreakpointValue, VStack,useColorModeValue, } from '@chakra-ui/react';
 import  Navbar from '@/components/navbar';
 import Hero from "@/components/hero"
@@ -11,17 +11,39 @@ import PopularRoutes from "@/components/popular";
 import HowItWorks from "@/components/howItWorks";
 import Features from "@/components/features";
 import FAQ from "@/components/faq";
-
-
+import {axios} from "axios";
+import {useAtom} from "jotai";
+import {userData} from "@/state";
 
 
 
 
 function App() {
-  //const { isOpen, onOpen, onClose } = useDisclosure();
-  //const isMobile = useBreakpointValue({ base: true, md: false });
+  const [user,setUserData] = useAtom(userData);
+  const url = "/api/backend/user/getUserData";
 
-//const bg = useColorModeValue("gray.50","black");
+useEffect(()=>{
+
+  const getUserData = async () => {
+
+  try {
+    
+    const response = await axios.get(url);
+
+    const result = response.data;
+
+    setUserData(result.data);
+  }catch(e){
+    
+alert(e.message || result.message);
+  }
+
+  }//get user data
+
+  getUserData();
+
+},[]);
+
   
   return (
     <ChakraProvider>      
