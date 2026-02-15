@@ -32,7 +32,7 @@ import ContactUs from "@/components/contactUs";
 import {useRouter,useSearchParams} from "next/navigation";
 import {useAtom} from "jotai";
 import  {userData} from "@/state";
-
+import axios from "axios";
 
 export default function Profile() {
  
@@ -65,14 +65,15 @@ const toast = useToast();
     
     try{
     const jwt = localStorage.getItem("token");
-
+if (!jwt) {
+  router.replace("/login");
+  return;
+}
     const res = await axios.post(url,{   
    "jwt":jwt,
     });
       
-  alert(jwt);
-      
-    const response = res.data;
+     const response = res.data;
     
     if(response.status === "error"){
  router.replace("/login");
@@ -82,7 +83,7 @@ const toast = useToast();
 
 toast({
       title: "Failed",
-      description: response.message+". Try again! " || e.message,
+      description: e.response.data.message+". Try again! " || e.message,
       status: "error",
       position: "top",
     });
