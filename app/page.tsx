@@ -31,14 +31,17 @@ useEffect(()=>{
     toast.closeAll();
     
   try {
-    
-    const response = await axios.get(url);
+    const jwt = localStorage.getItem("token");
+    const response = await axios.post(url,{
+      "jwt":jwt
+    });
 
     const result = response.data;
-    alert(result.message);
+    
     if (result.status === "error") {
       throw new Error(result.message || "Data fetch failed");
     }
+    localStorage.setItem("token",result.token);
     setUserData(result.data);
     
   }catch (error) {
