@@ -6,12 +6,13 @@ const nextConfig: NextConfig = {
 async rewrites() {
     return [
       {
-        source: '/api/php/:path*',
-        destination: 'http://mylezic.myartsonline.com*', // Your HTTP PHP URL
+        // The "Mask" you use in React
+        source: '/api/login', 
+        // The "Final Destination" where the data lives
+        destination: 'http://mylezic.myartsonline.com/user/login',
       },
     ]
   },
-
   
 };
 
