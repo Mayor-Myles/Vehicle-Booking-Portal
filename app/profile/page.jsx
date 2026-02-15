@@ -76,7 +76,7 @@ const toast = useToast();
     });
       
      const response = res.data;
-    alert(response.status);
+
     if(response.status === "error"){
  router.replace("/login");
       
