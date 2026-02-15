@@ -73,8 +73,7 @@ const handleLogin = async () => {
     });
     return;
   }
-alert(formData.email);
-  alert(formData.password);
+
   setLoading(true);
 
   try {
