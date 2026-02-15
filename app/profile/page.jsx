@@ -66,14 +66,14 @@ const toast = useToast();
     try{
     const jwt = localStorage.getItem("token");
 
-    const res = await axios.post(url,{
-      
+    const res = await axios.post(url,{   
    "jwt":jwt,
     });
       
-  
+  alert(jwt);
+      
     const response = res.data;
-    alert(response.status);
+    
     if(response.status === "error"){
  router.replace("/login");
       
