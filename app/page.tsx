@@ -35,7 +35,7 @@ useEffect(()=>{
     const response = await axios.get(url);
 
     const result = response.data;
-    alert(result.status);
+    alert(result.message);
     if (result.status === "error") {
       throw new Error(result.message || "Data fetch failed");
     }
