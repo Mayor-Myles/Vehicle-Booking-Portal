@@ -28,9 +28,10 @@ import {
 } from "react-icons/md";
 import NextLink from "next/link";
 import Navbar from "@/components/navbar";
-import {supabase} from "@/lib/supabaseClient";
+//import {supabase} from "@/lib/supabaseClient";
 import {useRouter} from "next/navigation";
-
+import {urlAtom} from "@/states";
+import {useAtom} from "jotai";
 
 
 export default function Login() {
@@ -49,7 +50,7 @@ export default function Login() {
   password:null,
 
   });
- // const[id,setid] = useState(null);
+ const url = useAtom(urlAtom);
 
   const updateFormData = (e,data) => {
 
@@ -59,51 +60,55 @@ export default function Login() {
 
           
 const handleLogin = async () => {
-  setLoading(true);
-  toast.closeAll();
-  
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: formData.email,
-    password: formData.password,
-  });
-
-  
-  if (error) {
-    toast({
-      title: "Error",
-      description:"Login Failed! " + error.message,
-      status: "error",
-      position:"top"
-    });
-    setLoading(false);
+  if (!formData.email || !formData.password) {
+    toast({ title: "Error", description: "Fields cannot be empty", status: "error" });
     return;
   }
 
-  //get rhe id of logged innieer
-const fetchUser = async () => {
-      const { data, error } = await supabase
-        .from("users")
-        .select("*")
-        .eq("email",formData.email)
-         .single();
-    
-        
-      if(error) { 
-      console.error(error); 
-      } 
+  setLoading(true);
+  toast.closeAll();
 
-   // setId(data.id);//logged in user id
+  try {
+    const response = await fetch(url+"/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password,
+      }),
+    });
 
-}
-  
-fetchUser();
-  
-   
-  setLoading(false);
-  router.push("/profile");
-  
-};//login method
-  
+    const result = await response.json();
+
+    if (!response.ok || result.status == "error") {
+      throw new Error(result.message || "Login failed");
+    }
+
+    // Store the JWT Token
+    localStorage.setItem("token", result.data.token);
+
+
+    toast({
+      title: "Success",
+      description: "Welcome back!",
+      status: "success",
+      position: "top",
+    });
+
+    router.push("/profile");
+  } catch (error) {
+    toast({
+      title: "Login Error",
+      description: error.message,
+      status: "error",
+      position: "top",
+    });
+  } finally {
+    setLoading(false);
+  }
+};
 
   
   return (
