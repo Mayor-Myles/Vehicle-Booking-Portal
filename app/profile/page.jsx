@@ -53,7 +53,7 @@ export default function Profile() {
   const router = useRouter();
   const url = "/api/backend/auth/verifyToken";
   const jwt = localStorage.getItem("token");
-  const {user} = useAtom(userData);
+  const user = useAtom(userData);
 
 
   
@@ -63,10 +63,12 @@ export default function Profile() {
 
     const res = await axios.post(url,{
 
+      const response = res.data;
+      
    "jwt":jwt,
     });
 
-    if(res.status === "error"){
+    if(response.status === "error"){
  router.replace("/login");
       
     }
