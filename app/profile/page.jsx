@@ -65,7 +65,7 @@ const toast = useToast();
     toast.closeAll();
     
     try{
-      alert(jet);
+      
     const res = await axios.post(url,{
       
    "jwt":jwt,
