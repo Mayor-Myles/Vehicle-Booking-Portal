@@ -120,7 +120,7 @@ if(!user) {
           p={6}
         >
           <Heading color="white" size="md" mb={4}>
-            Wallet {document.write(user)}
+            Wallet 
           </Heading>
 
           <Flex align="center" justify="space-between">
@@ -135,7 +135,7 @@ if(!user) {
                   Available Balance
                 </Text>
                 <Text color="white" fontSize="2xl" fontWeight="bold">
-                  ₦{users.balance.toLocaleString()}
+                  ₦{user.balance.toLocaleString()}
                 </Text>
               </VStack>
             </HStack>
@@ -158,18 +158,18 @@ if(!user) {
             <HStack>
               <Icon as={MdOutlinePerson} boxSize={5} color={iconColor} />
               <Text fontWeight="medium">
-                {users.fullName}
+                {user.fullName}
               </Text>
             </HStack>
 
             <HStack>
               <Icon as={MdOutlineEmail} boxSize={5} color={iconColor} />
-              <Text>{users.email}</Text>
+              <Text>{user.email}</Text>
             </HStack>
 
             <HStack>
               <Icon as={MdOutlinePhone} boxSize={5} color={iconColor} />
-              <Text>{users.phoneNumber}</Text>
+              <Text>{user.phoneNumber}</Text>
             </HStack>
           </Stack>
         </Box>
