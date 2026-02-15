@@ -65,7 +65,9 @@ const toast = useToast();
     
     try{
     const jwt = localStorage.getItem("token");
-if (!jwt) {
+alert(jwt);
+      
+      if (!jwt) {
   router.replace("/login");
   return;
 }
