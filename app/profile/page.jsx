@@ -29,10 +29,13 @@ import HowItWorks from "@/components/howItWorks";
 import FAQ from "@/components/faq";
 import ContactUs from "@/components/contactUs";
 import {useRouter,useSearchParams} from "next/navigation";
+import {useAtom} from "jotai";
+import  {userData} from "@/state";
+
 
 export default function Profile() {
  
-  const user = {
+  const routes = {
     history: [
       { id: 1, route: "Lagos → Ibadan", date: "Oct 24, 2023", status: "Completed" },
       { id: 2, route: "Ibadan → Ilorin", date: "Nov 02, 2023", status: "Completed" },
@@ -42,47 +45,32 @@ export default function Profile() {
   
   const searchParams = useSearchParams();
   //const id = searchParams.get("id");//to identify logged in user
-  const [users,setUsers] = useState(null); 
+  //const [users,setUsers] = useState(null); 
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
   const mutedText = useColorModeValue("gray.600", "gray.400");
   const iconColor = useColorModeValue("orange.200", "orange.300");
   const router = useRouter();
-  
+  const url = "api/profile";
+  const jwt = localStorage.getItem("token");
+  const {user} = useAtom(userData);
+
+
   
   useEffect(() => {
       
-  const checkAuth = async () => {
+  const checkAuth = async => {
 
-  
-    const { data } = await supabase.auth.getUser();
-  
-    if (!data.user) {
-      router.replace("/login");
-    }
+    const {res} = await axios.post(url,{
 
-    else{
+   "jwt":jwt,
+    });
 
-      const id = data.user.id;
+    if(res.status === "error"){
+ router.replace("/login");
       
-const fetchUser = async () => {
-      const { data: fetchedData, error } = await supabase
-        .from("users")
-        .select("*")
-        .eq("id",id)
-        .single();
-        
-      if(error) { 
-      console.error(error); 
-      } 
-      else {
-        setUsers(fetchedData); 
-      } 
-    };//fetch user
-
-      fetchUser();
+    }
          
-  }
 
   }//checkAuth
     
@@ -91,7 +79,7 @@ const fetchUser = async () => {
     
   }, []);
   
-if(!users) {
+if(!user) {
   return null;
 
 }
@@ -186,7 +174,7 @@ if(!users) {
           </Heading>
 
           <Stack spacing={4}>
-            {user.history.map(item => (
+            {routes.history.map(item => (
               <Box key={item.id}>
                 <HStack justify="space-between">
                   <Box>
