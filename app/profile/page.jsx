@@ -54,7 +54,7 @@ export default function Profile() {
   const router = useRouter();
   const url = "/api/backend/auth/verifyToken";
   const jwt = localStorage.getItem("token");
-  const user = useAtom(userData);
+  const [user,setUser] = useAtom(userData);
 const toast = useToast();
 
   
