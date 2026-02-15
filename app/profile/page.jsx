@@ -43,7 +43,7 @@ export default function Profile() {
     ],
   };
   
-  const searchParams = useSearchParams();
+  //const searchParams = useSearchParams();
   //const id = searchParams.get("id");//to identify logged in user
   //const [users,setUsers] = useState(null); 
   const bg = useColorModeValue("white", "gray.800");
@@ -51,7 +51,7 @@ export default function Profile() {
   const mutedText = useColorModeValue("gray.600", "gray.400");
   const iconColor = useColorModeValue("orange.200", "orange.300");
   const router = useRouter();
-  const url = "api/backend/auth/verifyToken";
+  const url = "/api/backend/auth/verifyToken";
   const jwt = localStorage.getItem("token");
   const {user} = useAtom(userData);
 
