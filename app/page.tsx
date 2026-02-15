@@ -18,7 +18,7 @@ import {userData} from "@/state";
 
 
 
-function App() {
+export default function App() {
   const [user,setUserData] = useAtom(userData);
   const url = "/api/backend/user/getUserData";
   const toast = useToast();
@@ -32,7 +32,7 @@ useEffect(()=>{
     
   try {
     
-    const response = await axios.get(url);
+    const response = await axios.post(url,{});
 
     const result = response.data;
     if (result.status === "error") {
@@ -79,4 +79,4 @@ const errorMessage = error.response?.data?.message || error.message;
   );
 }
 
-export default App;
+
