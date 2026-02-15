@@ -52,15 +52,15 @@ export default function Profile() {
   const mutedText = useColorModeValue("gray.600", "gray.400");
   const iconColor = useColorModeValue("orange.200", "orange.300");
   const router = useRouter();
-  const url = "/api/backend/auth/verifyToken";
-    const [user,setUser] = useAtom(userData);
+  const [user,setUserData] = useAtom(userData);
 const toast = useToast();
 
   
   useEffect(() => {
       
   const checkAuth = async () =>  {
-
+const url = "/api/backend/auth/verifyToken";
+  
     toast.closeAll();
     
     try{
@@ -75,7 +75,7 @@ const toast = useToast();
    "jwt":jwt,
     });
       
-     const response = res.data;
+     const response = res.data.json();
 
     if(response.status === "error"){
  router.replace("/login");
@@ -95,8 +95,50 @@ toast({
     
 
   }//checkAuth
+
+
+
+  const getUserData = async () => {
+      
+    const url = "/api/backend/user/getUserData";
+
+    toast.closeAll();
     
-  checkAuth();  
+  try {
+    const jwt = localStorage.getItem("token");
+    const response = await axios.post(url,{
+      "jwt":jwt
+    });
+
+    const result = response.data;
+    
+    if (result.status === "error") {
+      throw new Error(result.message || "Data fetch failed");
+    }
+    //localStorage.setItem("token",result.token);
+    setUserData(result.data);
+    
+  }catch (error) {
+  let message = "Something went wrong";
+
+  if (axios.isAxiosError(error)) {
+    message =
+      error.response?.data?.message || error.message;
+  } 
+
+  toast({
+      title: "Data Fetching Error",
+      description: message,
+      status: "error",
+      position: "top",
+    });
+}
+
+  }//get user data
+    
+   checkAuth();  
+   getUserData();
+  
   
     
   }, [router,toast]);
