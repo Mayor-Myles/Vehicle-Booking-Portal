@@ -13,6 +13,7 @@ import {
   VStack,
   HStack,
   Badge,
+  useToast,
 } from "@chakra-ui/react";
 import {
   MdOutlinePerson,
@@ -54,25 +55,41 @@ export default function Profile() {
   const url = "/api/backend/auth/verifyToken";
   const jwt = localStorage.getItem("token");
   const user = useAtom(userData);
-
+const toast = useToast();
 
   
   useEffect(() => {
       
   const checkAuth = async () =>  {
 
+    toast.closeAll();
+    
+    try{
+      
     const res = await axios.post(url,{
-
-      const response = res.data;
       
    "jwt":jwt,
     });
-
+      
+  
+    const response = res.data;
+    
     if(response.status === "error"){
  router.replace("/login");
       
     }
-         
+    }catch(e){
+
+toast({
+      title: "Failed",
+      description: response.message+". Try again! " || e.message,
+      status: "error",
+      position: "top",
+    });
+
+    }
+
+    
 
   }//checkAuth
     
