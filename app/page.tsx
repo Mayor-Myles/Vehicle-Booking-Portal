@@ -32,9 +32,10 @@ useEffect(()=>{
     
   try {
     
-    const response = await axios.post(url,{});
+    const response = await axios.get(url);
 
     const result = response.data;
+    alert(result.status);
     if (result.status === "error") {
       throw new Error(result.message || "Data fetch failed");
     }
@@ -60,7 +61,7 @@ useEffect(()=>{
 
   getUserData();
 
-},[]);
+},[toast,user]);
 
   
   return (
