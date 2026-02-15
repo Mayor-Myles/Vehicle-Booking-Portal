@@ -48,8 +48,9 @@ export default function Login() {
   password:null,
 
   });
- const url = process.env.NEXT_PUBLIC_API_URL;
+ const url = process.env.NEXT_PUBLIC_API_URL+"/user/login";
 
+  alert(url);
   const updateFormData = (e,data) => {
 
     setFormData((prev) => ({...prev,[data]:e.target.value}));
@@ -68,7 +69,7 @@ const handleLogin = async () => {
   toast.closeAll();
 
   try {
-    const response = await fetch(url+"/user/login", {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
