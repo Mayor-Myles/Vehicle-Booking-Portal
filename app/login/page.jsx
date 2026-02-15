@@ -48,7 +48,8 @@ export default function Login() {
   password:null,
 
   });
- const url = process.env.NEXT_PUBLIC_API_URL+"/user/login";
+ // This tells Next.js to use the proxy we just built
+const url = "/api/php/user/login"; 
 
   
   const updateFormData = (e,data) => {
