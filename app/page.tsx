@@ -40,18 +40,21 @@ useEffect(()=>{
     }
     setUserData(result.data);
     
-  }catch(error){
-    
-const errorMessage = error.response?.data?.message || error.message;
+  }catch (error) {
+  let message = "Something went wrong";
 
-      toast({
-        title: "Fetch error",
-        description: errorMessage,
-        status: "error",
-        position: "top",
-      });
-    
-  }
+  if (axios.isAxiosError(error)) {
+    message =
+      error.response?.data?.message || error.message;
+  } 
+
+  toast({
+      title: "Data Fetching Error",
+      description: message,
+      status: "error",
+      position: "top",
+    });
+}
 
   }//get user data
 
