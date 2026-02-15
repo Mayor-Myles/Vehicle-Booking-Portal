@@ -59,7 +59,7 @@ export default function Login() {
           
 const handleLogin = async () => {
   if (!formData.email || !formData.password) {
-    toast({ title: "Error", description: "Fields cannot be empty", status: "error" });
+    toast({ title: "Error", description: "Fields cannot be empty", status: "warning","positin":"top" });
     return;
   }
 
