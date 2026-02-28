@@ -79,16 +79,23 @@ const url = "/api/backend/auth/verifyToken";
       
      const response = res.data;
 
-      alert(response.status);
+      
     if(response.status === "error"){
  router.push("/login");
       
     }
-    }catch(e){
-
+      
+    }catch(error){
+wrong";
+let message ="Error while requesting from server";
+      
+  if (axios.isAxiosError(error)) {
+    message =
+      error.response?.data?.message || error.message;
+  }
 toast({
       title: "Failed",
-      description: e.response.data.message+". Try again! " || e.message,
+      description: message+" Try again! " || e.message,
       status: "error",
       position: "top",
     });
