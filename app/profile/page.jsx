@@ -157,10 +157,12 @@ toast({
   
 
 return(
+  <>
    {txt ? ( <pre>txt</pre>)
 
 : (<></>)
 }
+  </>
   );
 
 }
