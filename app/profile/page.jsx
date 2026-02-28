@@ -54,7 +54,7 @@ export default function Profile() {
   const router = useRouter();
   const [user,setUserData] = useAtom(userData);
 const toast = useToast();
-
+const [txt,setTxt] = useState(null);
   
   useEffect(() => {
       
@@ -77,8 +77,9 @@ const url = "/api/backend/auth/verifyToken";
    "jwt":jwt,
     });
       
-     const result = res.data.data;
+     const result = res.data;
 
+      setTxt(result)
       alert(result.status);
       
     if(result.status === "error"){
@@ -164,7 +165,7 @@ if(!user) {
    <>
    <Navbar />
     <Box px={{ base: 4, md: 8 }} py={6} maxW="7xl" mx="auto">
-      
+      {txt && ( <pre>txt</pre>)}
       <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={6}>
       
            {/* WALLET */}
