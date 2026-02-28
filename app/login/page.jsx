@@ -86,7 +86,7 @@ const handleLogin = async () => {
       password: formData.password,
     });
 
-    const result = response.data;
+    const result = response.data.json();
 
     // Axios only enters the 'try' block if status is 2xx. 
     // We check your custom 'error' status if your PHP returns 200 with an error body.
