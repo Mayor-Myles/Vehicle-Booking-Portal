@@ -157,7 +157,10 @@ toast({
   
 
 return(
-   {txt && ( <pre>txt</pre>)}
+   {txt ? ( <pre>txt</pre>)
+
+: (<></>)
+}
   );
 
 }
