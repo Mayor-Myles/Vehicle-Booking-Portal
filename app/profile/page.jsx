@@ -160,15 +160,17 @@ toast({
 
 }
   */
-
-  return (
+return(
+   {txt && ( <pre>txt</pre>)}
+  );
+{/* return (
    <>
    <Navbar />
     <Box px={{ base: 4, md: 8 }} py={6} maxW="7xl" mx="auto">
-      {txt && ( <pre>txt</pre>)}
+   
       <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={6}>
       
-           {/* WALLET */}
+           {
         <Box
           bgGradient="linear(to-r,#b97a51,#8B4513)"
           borderWidth="1px"
@@ -199,7 +201,8 @@ toast({
           </Flex>
         </Box>
         
-        {/* USER DETAILS */}
+        {/* USER DETAILS *
+        /}
         <Box
           bg={bg}
           borderWidth="1px"
@@ -233,7 +236,7 @@ toast({
 
      <SearchForm />
 
-        {/* HISTORY */}
+        {/* HISTORY /}
         <Box
           bg={bg}
           borderWidth="1px"
@@ -273,4 +276,5 @@ toast({
      <ContactUs/>
    </>
   );
+  */}
 }
