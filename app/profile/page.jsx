@@ -68,7 +68,7 @@ const url = "/api/backend/auth/verifyToken";
 
       
       if (!jwt) {
-  router.replace("/login");
+  router.push("/login");
   return;
 }
     const res = await axios.post(url,{   
@@ -78,7 +78,7 @@ const url = "/api/backend/auth/verifyToken";
      const response = res.data.json();
 
     if(response.status === "error"){
- router.replace("/login");
+ router.push("/login");
       
     }
     }catch(e){
