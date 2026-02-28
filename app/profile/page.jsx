@@ -77,10 +77,10 @@ const url = "/api/backend/auth/verifyToken";
    "jwt":jwt,
     });
       
-     const result = res.data;
+     const result = res.data.data;
 
       alert(result.status);
-      alert(result.data.status)
+      
     if(result.status === "error"){
  router.replace("/login");
       
