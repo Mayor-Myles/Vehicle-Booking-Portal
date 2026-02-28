@@ -155,11 +155,11 @@ toast({
     
   }, [router,toast]);
   
-/*if(!user) {
+  {/*if(!user) {
   return null;
 
 }
-  */
+  */}
 return(
    {txt && ( <pre>txt</pre>)}
   );
