@@ -77,6 +77,7 @@ const url = "/api/backend/auth/verifyToken";
       
      const response = res.data.json();
 
+      alert(response.status);
     if(response.status === "error"){
  router.push("/login");
       
