@@ -49,8 +49,8 @@ export default function Login() {
   const setUserData = useSetAtom(userData);
   const[formData,setFormData] = useState({
 
-  email:null,
-  password:null,
+  email:"",
+  password:"",
 
   });
  // This tells Next.js to use the proxy we just built
@@ -86,7 +86,7 @@ const handleLogin = async () => {
       password: formData.password,
     });
 
-    const result = response.data.json();
+    const result = response.data;
 
     // Axios only enters the 'try' block if status is 2xx. 
     // We check your custom 'error' status if your PHP returns 200 with an error body.
