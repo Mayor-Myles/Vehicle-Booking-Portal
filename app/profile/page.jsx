@@ -72,12 +72,12 @@ const url = "/api/backend/auth/verifyToken";
   return;
 }
 
-      alert(jwt);
+      
     const res = await axios.post(url,{   
    "jwt":jwt,
     });
       
-     const response = res.data.json();
+     const response = res.data;
 
       alert(response.status);
     if(response.status === "error"){
