@@ -66,7 +66,7 @@ const url = "/api/backend/auth/verifyToken";
     try{
     const jwt = localStorage.getItem("token");
 
-      
+      alert(jwt)
       if (!jwt) {
   router.push("/login");
   return;
