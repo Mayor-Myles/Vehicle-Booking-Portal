@@ -86,7 +86,7 @@ const url = "/api/backend/auth/verifyToken";
     }
       
     }catch(error){
-wrong";
+
 let message ="Error while requesting from server";
       
   if (axios.isAxiosError(error)) {
