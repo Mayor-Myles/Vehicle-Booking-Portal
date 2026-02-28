@@ -19,53 +19,7 @@ import {userData} from "@/state";
 
 
 export default function App() {
-  const [user,setUserData] = useAtom(userData);
-  const url = "/api/backend/user/getUserData";
-  const toast = useToast();
-
-    
-useEffect(()=>{
-
-  const getUserData = async () => {
-
-    toast.closeAll();
-    
-  try {
-    const jwt = localStorage.getItem("token");
-    const response = await axios.post(url,{
-      "jwt":jwt
-    });
-
-    const result = response.data;
-    
-    if (result.status === "error") {
-      throw new Error(result.message || "Data fetch failed");
-    }
-    localStorage.setItem("token",result.token);
-    setUserData(result.data);
-    
-  }catch (error) {
-  let message = "Something went wrong";
-
-  if (axios.isAxiosError(error)) {
-    message =
-      error.response?.data?.message || error.message;
-  } 
-
-  toast({
-      title: "Data Fetching Error",
-      description: message,
-      status: "error",
-      position: "top",
-    });
-}
-
-  }//get user data
-
-  getUserData();
-
-},[toast,user]);
-
+  
   
   return (
     <ChakraProvider>      
