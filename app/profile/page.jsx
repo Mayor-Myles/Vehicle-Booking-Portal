@@ -80,6 +80,7 @@ const url = "/api/backend/auth/verifyToken";
      const result = res.data;
 
       alert(result.status);
+      alert(result.data.status)
     if(result.status === "error"){
  router.replace("/login");
       
