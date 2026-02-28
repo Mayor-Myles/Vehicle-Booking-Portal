@@ -66,7 +66,7 @@ const url = "/api/backend/auth/verifyToken";
     try{
     const jwt = localStorage.getItem("token");
 
-      alert(jwt)
+      
       if (!jwt) {
   router.push("/login");
   return;
@@ -79,7 +79,7 @@ const url = "/api/backend/auth/verifyToken";
       
      const result = res.data;
 
-      setTxt(result)
+      setTxt(result);
       alert(result.status);
       
     if(result.status === "error"){
