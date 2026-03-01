@@ -87,8 +87,6 @@ localStorage.removeItem("token");
       
     }
 
-      
-
     await  getUserData();
       
     }catch(error){
