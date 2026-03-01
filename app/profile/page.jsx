@@ -170,7 +170,7 @@ toast({
    
       <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={6}>
       
-           {
+           
         <Box
           bgGradient="linear(to-r,#b97a51,#8B4513)"
           borderWidth="1px"
