@@ -87,6 +87,8 @@ localStorage.removeItem("token");
       
     }
 
+      
+
     await  getUserData();
       
     }catch(error){
@@ -133,7 +135,7 @@ toast({
     }
     //localStorage.setItem("token",result.token);
     setUserData(result);
-
+localStorage.setItem("token",result.token);
     console.log(result);
   }catch (error) {
   let message = "Something went wrong";
