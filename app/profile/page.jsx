@@ -87,7 +87,7 @@ localStorage.removeItem("token");
       
     }
 
-      await getUserData();
+      
       
     }catch(error){
 
@@ -125,7 +125,7 @@ toast({
     });
 
     const result = response.data;
-    
+    alert(result.data.balance);
     if (result.status === "error") {
       throw new Error(result.message || "Data fetch failed");
     }
@@ -151,7 +151,7 @@ toast({
   }//get user data
     
    checkAuth();  
-   
+   getUserData();
   
   
     
@@ -194,7 +194,9 @@ toast({
                 <Text fontSize="sm" color={mutedText}>
                   Available Balance
                 </Text>
-                
+                <Text color="white" fontSize="2xl" fontWeight="bold">
+                  ₦{user.balance.toLocaleString()}
+                </Text>
               </VStack>
             </HStack>
           </Flex>
