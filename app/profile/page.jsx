@@ -125,14 +125,14 @@ toast({
     });
 
     const res = response.data;
-alert(res);
+
     const result = res.data;
-    alert(result);
+    
     if (result.status === "error") {
       throw new Error(result.message || "Data fetch failed");
     }
     //localStorage.setItem("token",result.token);
-    setUserData(result.data);
+    setUserData(result);
     
   }catch (error) {
   let message = "Something went wrong";
@@ -159,7 +159,7 @@ alert(res);
     
   }, [router,toast]);
   
-  if(!user.balance) {
+  if(!user) {
   return null;
 
 }
