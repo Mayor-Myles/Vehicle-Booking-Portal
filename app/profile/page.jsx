@@ -133,7 +133,8 @@ toast({
     }
     //localStorage.setItem("token",result.token);
     setUserData(result);
-    
+
+    console.log(result);
   }catch (error) {
   let message = "Something went wrong";
 
