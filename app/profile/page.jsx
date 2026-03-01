@@ -201,7 +201,8 @@ toast({
           </Flex>
         </Box>
         
-        {/* USER DETAILS */}
+        
+        
         <Box
           bg={bg}
           borderWidth="1px"
@@ -236,6 +237,8 @@ toast({
      <SearchForm />
 
         {/* HISTORY */}
+
+      
         <Box
           bg={bg}
           borderWidth="1px"
