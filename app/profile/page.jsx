@@ -197,7 +197,7 @@ toast({
                   Available Balance
                 </Text>
                 <Text color="white" fontSize="2xl" fontWeight="bold">
-                  ₦{user.balance.toLocaleString()}
+                  ₦{user?.balance.toLocaleString()}
                 </Text>
               </VStack>
             </HStack>
@@ -221,18 +221,18 @@ toast({
             <HStack>
               <Icon as={MdOutlinePerson} boxSize={5} color={iconColor} />
               <Text fontWeight="medium">
-                {user.fullname}
+                {user?.fullname}
               </Text>
             </HStack>
 
             <HStack>
               <Icon as={MdOutlineEmail} boxSize={5} color={iconColor} />
-              <Text>{user.email}</Text>
+              <Text>{user?.email}</Text>
             </HStack>
 
             <HStack>
               <Icon as={MdOutlinePhone} boxSize={5} color={iconColor} />
-              <Text>{user.phone_number}</Text>
+              <Text>{user?.phone_number}</Text>
             </HStack>
           </Stack>
         </Box>
