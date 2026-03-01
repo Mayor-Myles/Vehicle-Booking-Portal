@@ -266,8 +266,8 @@ toast({
                       {item.date}
                     </Text>
                     <Text fontWeight="300">Driver Name: {item.driver}</Text>
-                  <Text color="orange" fontWeight="200">Number Plate: {item.number_plate}</Text>
-                  <Text color="orange" fontWeight="200">Reference: {item.tid}</Text>
+                  <Text color="brown" fontWeight="200">Number Plate: {item.number_plate}</Text>
+                  <Text color="brown" fontWeight="200">Reference: {item.tid}</Text>
                   </Box>
                   <Badge
                     colorScheme={item.completed === 1 ? "green" : "orange"}
