@@ -159,7 +159,7 @@ alert(res);
     
   }, [router,toast]);
   
-  if(!user) {
+  if(!user.balance) {
   return null;
 
 }
