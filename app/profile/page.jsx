@@ -125,9 +125,9 @@ toast({
     });
 
     const res = response.data;
-
+alert(res);
     const result = res.data;
-    alert(result.balance);
+    alert(result);
     if (result.status === "error") {
       throw new Error(result.message || "Data fetch failed");
     }
