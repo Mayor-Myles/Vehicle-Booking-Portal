@@ -86,6 +86,8 @@ const url = "/api/backend/auth/verifyToken";
  router.replace("/login");
       
     }
+
+      await getUserData();
       
     }catch(error){
 
@@ -149,7 +151,7 @@ toast({
   }//get user data
     
    checkAuth();  
-   getUserData();
+   
   
   
     
