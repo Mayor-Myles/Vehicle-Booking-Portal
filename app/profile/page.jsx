@@ -271,6 +271,9 @@ toast({
                   >
                     {item.completed === 1 ? "Completed" : "Pending"}
                   </Badge>
+                  <Text>Driver {item.driver}</Text>
+                  <Text>{item.number_plate}</Text>
+                  <Text>{item.tid}</Text>
                 </HStack>
                 <Divider mt={3} />
               </Box>
