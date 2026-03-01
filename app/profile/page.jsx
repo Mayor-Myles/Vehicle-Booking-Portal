@@ -54,8 +54,7 @@ export default function Profile() {
   const router = useRouter();
   const [user,setUserData] = useAtom(userData);
 const toast = useToast();
-const [txt,setTxt] = useState(null);
-  
+
   useEffect(() => {
       
   const checkAuth = async () =>  {
@@ -79,9 +78,8 @@ const url = "/api/backend/auth/verifyToken";
       
      const result = res.data;
 
-      setTxt(result);
-      alert(result.response_code);
-      alert(result);
+    
+      
     if(result.status === "error" || result.response_code ===0){
 
 localStorage.removeItem("token");
@@ -159,18 +157,13 @@ toast({
     
   }, [router,toast]);
   
-  {/*if(!user) {
+  if(!user) {
   return null;
 
 }
-  */}
-return(
-  <>
-   {txt && ( <pre>txt</pre>)}
-  </>
-    );
-    
-{/* return (
+  
+
+     return (
    <>
    <Navbar />
     <Box px={{ base: 4, md: 8 }} py={6} maxW="7xl" mx="auto">
@@ -208,8 +201,7 @@ return(
           </Flex>
         </Box>
         
-        {/* USER DETAILS *
-        /}
+        {/* USER DETAILS */}
         <Box
           bg={bg}
           borderWidth="1px"
@@ -243,7 +235,7 @@ return(
 
      <SearchForm />
 
-        {/* HISTORY /}
+        {/* HISTORY */}
         <Box
           bg={bg}
           borderWidth="1px"
@@ -283,5 +275,5 @@ return(
      <ContactUs/>
    </>
   );
-  */}
+  
 }
