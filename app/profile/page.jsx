@@ -261,15 +261,15 @@ toast({
               <Box key={item.id}>
                 <HStack justify="space-between">
                   <Box>
-                    <Text fontWeight="medium">{item.route}</Text>
+                    <Text fontWeight="medium">{item.location} -> {item.destination}</Text>
                     <Text fontSize="sm" color={mutedText}>
                       {item.date}
                     </Text>
                   </Box>
                   <Badge
-                    colorScheme={item.status === "Completed" ? "green" : "orange"}
+                    colorScheme={item.completed === 1 ? "green" : "orange"}
                   >
-                    {item.status}
+                    {item.completed === 1 ? "Completed" : "Pending"}
                   </Badge>
                 </HStack>
                 <Divider mt={3} />
