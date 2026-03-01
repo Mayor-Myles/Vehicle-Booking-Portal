@@ -261,7 +261,7 @@ toast({
               <Box key={item.id}>
                 <HStack justify="space-between">
                   <Box>
-                    <Text fontWeight="medium">{item.location} -> {item.destination}</Text>
+                    <Text fontWeight="medium">{item.location+" -> "+item.destination}</Text>
                     <Text fontSize="sm" color={mutedText}>
                       {item.date}
                     </Text>
