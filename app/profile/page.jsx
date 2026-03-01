@@ -257,7 +257,7 @@ toast({
           </Heading>
 
           <Stack spacing={4}>
-            {(user?.history) || [].map(item => (
+            {(user?.history || []).map(item => (
               <Box key={item.id}>
                 <HStack justify="space-between">
                   <Box>
