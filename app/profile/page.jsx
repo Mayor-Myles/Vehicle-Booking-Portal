@@ -166,6 +166,7 @@ toast({
      return (
    <>
    <Navbar />
+     <pre>{user}</pre>
     <Box px={{ base: 4, md: 8 }} py={6} maxW="7xl" mx="auto">
    
       <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={6}>
