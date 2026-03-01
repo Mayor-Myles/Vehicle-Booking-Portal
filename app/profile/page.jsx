@@ -79,7 +79,7 @@ const url = "/api/backend/auth/verifyToken";
       
      const result = res.data;
 
-      setTxt(result);
+      setTxt(res);
       alert(result.status);
       
     if(result.status === "error"){
@@ -158,7 +158,7 @@ toast({
 
 return(
   <>
-   {txt ? ( <pre>txt</pre>)
+   {txt ? ( <b>txt</b>)
 
 : (<></>)
 }
