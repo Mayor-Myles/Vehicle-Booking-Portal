@@ -194,9 +194,7 @@ toast({
                 <Text fontSize="sm" color={mutedText}>
                   Available Balance
                 </Text>
-                <Text color="white" fontSize="2xl" fontWeight="bold">
-                  ₦{user.balance.toLocaleString()}
-                </Text>
+                
               </VStack>
             </HStack>
           </Flex>
