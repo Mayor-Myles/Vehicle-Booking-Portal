@@ -87,7 +87,7 @@ localStorage.removeItem("token");
       
     }
 
-      
+    await  getUserData();
       
     }catch(error){
 
@@ -152,11 +152,13 @@ toast({
 }
 
   }//get user data
+
+
     
-   checkAuth();  
-   getUserData();
-  
-  
+
+
+    
+   checkAuth(); 
     
   }, [router,toast]);
   
@@ -255,7 +257,7 @@ toast({
           </Heading>
 
           <Stack spacing={4}>
-            {routes.history.map(item => (
+            {user.history.map(item => (
               <Box key={item.id}>
                 <HStack justify="space-between">
                   <Box>
