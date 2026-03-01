@@ -79,7 +79,7 @@ const url = "/api/backend/auth/verifyToken";
       
      const result = res.data;
 
-      setTxt(res);
+      setTxt(result);
       alert(result.status);
       
     if(result.status === "error"){
@@ -155,14 +155,129 @@ toast({
     
   }, [router,toast]);
   
+  {/*if(!user) {
+  return null;
 
+}
+  */}
 return(
   <>
-   {txt ? ( <b>txt</b>)
-
-: (<></>)
-}
+   {txt && ( <pre>txt</pre>)}
   </>
-  );
+    );
+    
+{/* return (
+   <>
+   <Navbar />
+    <Box px={{ base: 4, md: 8 }} py={6} maxW="7xl" mx="auto">
+   
+      <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={6}>
+      
+           {
+        <Box
+          bgGradient="linear(to-r,#b97a51,#8B4513)"
+          borderWidth="1px"
+          borderColor={cardBorder}
+          borderRadius="2xl"
+          p={6}
+        >
+          <Heading color="white" size="md" mb={4}>
+            Wallet 
+          </Heading>
 
+          <Flex align="center" justify="space-between">
+            <HStack>
+              <Icon
+                as={MdOutlineAccountBalanceWallet}
+                boxSize={8}
+                color={iconColor}
+              />
+              <VStack align="start" spacing={0}>
+                <Text fontSize="sm" color={mutedText}>
+                  Available Balance
+                </Text>
+                <Text color="white" fontSize="2xl" fontWeight="bold">
+                  ₦{user.balance.toLocaleString()}
+                </Text>
+              </VStack>
+            </HStack>
+          </Flex>
+        </Box>
+        
+        {/* USER DETAILS *
+        /}
+        <Box
+          bg={bg}
+          borderWidth="1px"
+          borderColor={cardBorder}
+          borderRadius="2xl"
+          p={6}
+        >
+          <Heading size="md" mb={4}>
+            Personal Information
+          </Heading>
+
+          <Stack spacing={4}>
+            <HStack>
+              <Icon as={MdOutlinePerson} boxSize={5} color={iconColor} />
+              <Text fontWeight="medium">
+                {user.fullname}
+              </Text>
+            </HStack>
+
+            <HStack>
+              <Icon as={MdOutlineEmail} boxSize={5} color={iconColor} />
+              <Text>{user.email}</Text>
+            </HStack>
+
+            <HStack>
+              <Icon as={MdOutlinePhone} boxSize={5} color={iconColor} />
+              <Text>{user.phone_number}</Text>
+            </HStack>
+          </Stack>
+        </Box>
+
+     <SearchForm />
+
+        {/* HISTORY /}
+        <Box
+          bg={bg}
+          borderWidth="1px"
+          borderColor={cardBorder}
+          borderRadius="2xl"
+          p={6}
+        >
+          <Heading size="md" mb={4}>
+            Booking History
+          </Heading>
+
+          <Stack spacing={4}>
+            {routes.history.map(item => (
+              <Box key={item.id}>
+                <HStack justify="space-between">
+                  <Box>
+                    <Text fontWeight="medium">{item.route}</Text>
+                    <Text fontSize="sm" color={mutedText}>
+                      {item.date}
+                    </Text>
+                  </Box>
+                  <Badge
+                    colorScheme={item.status === "Completed" ? "green" : "orange"}
+                  >
+                    {item.status}
+                  </Badge>
+                </HStack>
+                <Divider mt={3} />
+              </Box>
+            ))}
+          </Stack>
+        </Box>
+      </SimpleGrid>
+    </Box>
+     <HowItWorks/>
+     <FAQ/>
+     <ContactUs/>
+   </>
+  );
+  */}
 }
