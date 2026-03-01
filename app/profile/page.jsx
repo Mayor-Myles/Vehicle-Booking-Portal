@@ -124,8 +124,10 @@ toast({
       "jwt":jwt
     });
 
-    const result = response.data;
-    alert(result.data.balance);
+    const res = response.data;
+
+    const result = res.data;
+    alert(result.balance);
     if (result.status === "error") {
       throw new Error(result.message || "Data fetch failed");
     }
