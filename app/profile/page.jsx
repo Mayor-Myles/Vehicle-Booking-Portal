@@ -80,9 +80,9 @@ const url = "/api/backend/auth/verifyToken";
      const result = res.data;
 
       setTxt(result);
-      alert(result.responseCode);
+      alert(result.response_code);
       alert(result);
-    if(result.status === "error" || result.responseCode===0){
+    if(result.status === "error" || result.response_code ===0){
 
 localStorage.removeItem("token");
  router.replace("/login");
