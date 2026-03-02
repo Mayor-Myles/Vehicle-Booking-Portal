@@ -43,7 +43,7 @@ export default function Register() {
 const[loading,setLoading] = useState(false);
   const bg = useColorModeValue("white", "gray.800");
   const cardBorder = useColorModeValue("orange.200", "gray.700");
-  const inputBg = useColorModeValue("orange.50", "gray.700");
+  const inputBg = useColorModeValue("gray.600", "gray.700");
   const iconColor = useColorModeValue("orange.500", "orange.300");
   const textColor = useColorModeValue("gray.700", "gray.300");
 const toast = useToast();
@@ -52,9 +52,12 @@ const router = useRouter();
   
 const [formData,setFormData] = useState(
   {
-  phoneNumber:null,
-  email:null,
-   password:null
+  phone_number:"",
+  email:"",
+   password:"",
+    gender:"",
+    fullname:""
+    
   }
 );
 
@@ -73,45 +76,28 @@ const submit = async() => {
   
   toast.closeAll();
 
-  {/* GENERATE AND GET NEW USER ID FOR SUPABASE */}
-const { data, error } = await supabase.auth.signUp({
-      email : formData.email,
-      password : formData.password,
-    });
-
-    if(error) {
-      toast({title:"Error",status:"error",description:"Registration failed. "+error.message,position:"top"});
-      setLoading(false);
-      return;
-    }
-
-    const userId = data.user.id;
-
-  {/* INSERT THE GENERATED ID AND OTHER FIELDS IN THE CREATED DB*/}
-  
-  const { insertError } =  await supabase.from("users").insert({
-    id: userId,
-    email: formData.email,
-    phoneNumber: formData.phoneNumber,
-    fullName: formData.fullName,
-    balance:0,
+const url = "api/backend/user/register";
     
-  });
+  const res = await axios.post(url,{formData});
 
-    if (insertError) {
-      toast({title:"Error",status:"error",description:"Registration failed. "+insertError.message,position:"top"});
-      setLoading(false);
-      return;
-    }
+  const result = res.data;
 
-    setLoading(false);
+  if(result.status === "success"){
+    
   toast({title:"Succesful",status:"success",description:"Registration succesful. You are now being redirected to dashboard. ",position:"top"});
-   
-  if(data.session){
-    
-    router.push("/profile");
-    
+
+    setTimeout(()=>{
+router.replace("/login");
+    },2000);
   }
+
+  else{
+    
+toast({title:"Error",status:"error",description:"Registration was not succesful. Try again . ",position:"top"});
+
+  }
+
+
   
   };
 
@@ -227,6 +213,31 @@ const { data, error } = await supabase.auth.signUp({
                 </InputRightElement>
               </InputGroup>
             </FormControl>
+
+ {/* Gender */}
+            <FormControl>
+              <FormLabel>Email</FormLabel>
+              <InputGroup>
+                <InputLeftElement>
+                  <MdOutlineEmail size={22} color={iconColor} />
+                </InputLeftElement>
+                <Select
+                  onChange={(e)=>updateFormData(e,"gender")}
+                  type="email"
+                  bg={inputBg}
+                  pl={12}
+                  height="52px"
+                  borderRadius="lg"
+                  placeholder="Select Gender"
+             
+                  <option value="male">Male</option>
+                <option value="female">Female</option>
+                </Select>
+              </InputGroup>
+            </FormControl>
+
+
+            
 
             {/* Register Button */}
             <Button
