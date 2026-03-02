@@ -216,11 +216,7 @@ toast({title:"Error",status:"error",description:"Registration was not succesful.
 
  {/* Gender */}
             <FormControl>
-              <FormLabel>Email</FormLabel>
-              <InputGroup>
-                <InputLeftElement>
-                  <MdOutlineEmail size={22} color={iconColor} />
-                </InputLeftElement>
+              
                 <Select
                   onChange={(e)=>updateFormData(e,"gender")}
                   type="email"
