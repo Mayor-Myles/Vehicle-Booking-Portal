@@ -228,7 +228,7 @@ toast({title:"Error",status:"error",description:"Registration was not succesful.
                   pl={12}
                   height="52px"
                   borderRadius="lg"
-                  placeholder="Select Gender"
+                  placeholder="Select Gender">
              
                   <option value="male">Male</option>
                 <option value="female">Female</option>
