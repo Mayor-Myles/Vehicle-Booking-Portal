@@ -216,7 +216,7 @@ toast({title:"Error",status:"error",description:"Registration was not succesful.
 
  {/* Gender */}
             <FormControl>
-              
+              <InputGroup>
                 <Select
                   onChange={(e)=>updateFormData(e,"gender")}
                   type="email"
