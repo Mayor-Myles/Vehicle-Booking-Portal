@@ -80,6 +80,8 @@ const submit = async() => {
 
 toast({title:"Warning",status:"warning",description:"Enter all the informations needed and try again. ",position:"top"});
 
+    setLoading(false);
+    
     return;
   }
 
@@ -102,6 +104,7 @@ router.replace("/login");
     
 toast({title:"Error",status:"error",description:"Registration was not succesful. Try again . ",position:"top"});
 
+    setLoading(false);
   }
   
   };
