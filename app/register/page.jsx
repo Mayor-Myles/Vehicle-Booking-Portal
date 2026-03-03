@@ -34,7 +34,7 @@ import Navbar from "@/components/navbar";
 import {supabase} from "@/lib/supabaseClient";
 import {FaUser} from "react-icons/fa";
 import NextLink from "next/link";
-
+import axios from "axios";
 
 
 
