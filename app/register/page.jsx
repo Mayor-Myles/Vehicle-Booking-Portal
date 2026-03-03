@@ -76,6 +76,13 @@ const submit = async() => {
   
   toast.closeAll();
 
+  if(!formData.email || !formData.password || !formData.gender || !formData.fullname || !formData.phone_number){
+
+toast({title:"Warning",status:"warning",description:"Enter all the informations needed and try again. ",position:"top"});
+
+    return;
+  }
+
 const url = "api/backend/user/register";
     
   const res = await axios.post(url,{formData});
@@ -96,8 +103,6 @@ router.replace("/login");
 toast({title:"Error",status:"error",description:"Registration was not succesful. Try again . ",position:"top"});
 
   }
-
-
   
   };
 
@@ -155,7 +160,7 @@ toast({title:"Error",status:"error",description:"Registration was not succesful.
                   <MdOutlinePhone size={22} color={iconColor} />
                 </InputLeftElement>
                 <Input
-                  onChange={(e)=>updateFormData(e,"phoneNumber")}
+                  onChange={(e)=>updateFormData(e,"phone_number")}
                   type="tel"
                   bg={inputBg}
                   pl={12}
