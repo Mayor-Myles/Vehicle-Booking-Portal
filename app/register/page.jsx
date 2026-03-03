@@ -76,7 +76,7 @@ const submit = async() => {
   
   toast.closeAll();
 
-  if(!formData.email || !formData.password || !formData.gender || !formData.fullname || !formData.phone_number){
+  if(formData.length < 5){
 
 toast({title:"Warning",status:"warning",description:"Enter all the informations needed and try again. ",position:"top"});
 
