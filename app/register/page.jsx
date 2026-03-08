@@ -90,7 +90,7 @@ const url = "api/backend/user/register";
   const res = await axios.post(url,{formData});
 
   const result = res.data;
-
+alert(result)
   if(result.status === "success"){
     
   toast({title:"Succesful",status:"success",description:"Registration succesful. You are now being redirected to dashboard. ",position:"top"});
