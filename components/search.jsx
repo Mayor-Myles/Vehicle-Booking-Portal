@@ -54,7 +54,7 @@ export default function SearchForm() {
 
   const updateFormData = (name,value) => {
 
-  setFormData((prev) => ({...prev,name:value}));
+  setFormData((prev) => ({...prev,[name]:value}));
 
   }
     
@@ -64,10 +64,9 @@ export default function SearchForm() {
     
     setTimeout(()=> {
 
-      router.push({
-  pathname: "/bus-listing",
-  query: formData
-});
+      router.push(
+  `/bus-listing?location=${formData.location}&destination=${formData.destination}&date=${formData.date}&passengers=${formData.passengers}`
+);
 
 setLoading(false);
     },3000);
