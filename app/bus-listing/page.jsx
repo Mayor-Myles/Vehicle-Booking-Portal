@@ -21,6 +21,7 @@ import HowItWorks from "@/components/howItWorks";
 import FAQ from "@/components/faq";
 import ContactUs from "@/components/contactUs";
 import axios from "axios";
+import { useSearchParams } from "next/navigation";
 
 /*const buses = [
   {
@@ -63,6 +64,15 @@ export default function BusListing() {
   const toast = useToast();
   const[buses,setBuses] = useState([]);
 
+  const params = useSearchParams();
+const formData = {
+
+  destination: params.get("destination"),
+  location:params.get("location"),
+  date:params.get("date"),
+  passengers:params.get("passengers") ,
+
+});
 
   
 const getListings = async () => {
