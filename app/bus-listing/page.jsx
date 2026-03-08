@@ -96,9 +96,11 @@ setLoading(false);
   
 }
 
-  const buses =  use(getBuses());
+  useEffect(() => {
 
+    getBuses();
 
+  },[]);
 
   if(!buses){
 return(
