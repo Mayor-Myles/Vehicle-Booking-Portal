@@ -76,8 +76,10 @@ const submit = async() => {
   
   toast.closeAll();
 
-  if(Object.keys(formData).length < 5){
+const emptyForm = Object.(formData).every(item => item == null && item == "");
 
+  if(emptyForm){
+  
 toast({title:"Warning",status:"warning",description:"Enter all the informations needed and try again. ",position:"top"});
 
     setLoading(false);
@@ -102,7 +104,7 @@ router.replace("/login");
 
   else{
     
-toast({title:"Error",status:"error",description:"Registration was not succesful. Try again . ",position:"top"});
+toast({title:"Error",status:"error",description:result.error+" Registration was not succesful. Try again . ",position:"top"});
 
     setLoading(false);
   }
