@@ -15,6 +15,7 @@ import {
   Flex,
   useColorModeValue,
   useToast,
+  Spinner
 } from "@chakra-ui/react";
 import Navbar from "@/components/navbar";
 import HowItWorks from "@/components/howItWorks";
@@ -73,7 +74,7 @@ const getBuses = async () => {
 
   setLoading(true);
       
-const res = axios.post(url,{formData});
+const res = await axios.post(url,{formData});
 
 const result = res.data;
 
@@ -96,7 +97,18 @@ setloading(false);
 }
 
   const buses =  use(getBuses());
+
+
+
+  if(!buses){
+return(
+  <Flex minH="100vh" align="center" justify="center">
   
+  <Spinner color="orange" size="xl"/>
+  
+  </Flex>
+
+  }
   return (
     <>
     <Navbar/>
