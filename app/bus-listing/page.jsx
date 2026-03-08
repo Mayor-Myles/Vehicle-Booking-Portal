@@ -1,5 +1,6 @@
 
 "use client";
+import {use,useState} from "react";
 
 import {
   Box,
@@ -13,13 +14,15 @@ import {
   Button,
   Flex,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
 import Navbar from "@/components/navbar";
 import HowItWorks from "@/components/howItWorks";
 import FAQ from "@/components/faq";
 import ContactUs from "@/components/contactUs";
+import axios from "axios";
 
-const buses = [
+/*const buses = [
   {
     id: 1,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaJgq_O6EmvH_FIlotKD68ZgWTJ-G0MkBayj7RZveb8Q&s=10",
@@ -50,12 +53,48 @@ const buses = [
     price: 5500,
     seatsLeft: 12,
   },
-];
+];*/
 
 export default function BusListing() {
   const cardBg = useColorModeValue("white", "gray.800");
   const border = useColorModeValue("gray.200", "gray.700");
+  const url = "api/backend/user/trips";
+  const[loading,setLoading] = useState(false);
+  const toast = useToast();
+  const[buses,setBuses] = useState([]);
 
+
+  
+const getListings = async () => {
+
+  toast.closeAll();
+
+  setLoading(true);
+  try{
+    
+const res = axios.post(url,{formData});
+
+const result = res.data;
+
+  if(result.status === "success"){
+
+    setBuses(result.data);
+    
+setLoading(false);
+  
+  }
+  
+else{
+setloading(false);
+  toast({title:"Warning",status:"warning",description:"Failed to get results. Try again! ",position:"top"});
+}
+
+  
+
+  
+}
+  
+  
   return (
     <>
     <Navbar/>
@@ -124,9 +163,11 @@ export default function BusListing() {
                 </VStack>
 
                 <Button
+                  onClick={getListings}
                   colorScheme="orange"
                   size="md"
                   borderRadius="xl"
+                  isLoading={loading}
                 >
                   Book Seat
                 </Button>
