@@ -15,7 +15,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Navbar from "@/components/navbar";
-import HowItWorks from "@/howitworks";
+import HowItWorks from "@/components/howitworks";
 import FAQ from "@/components/faq";
 import ContactUs from "@/components/contactUs";
 
