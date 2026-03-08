@@ -77,9 +77,9 @@ const getBuses = async () => {
 const res = await axios.post(url,{formData});
 
 const result = res.data;
-
-  if(result.status === "success"){
 console.log(result.data);
+  if(result.status === "success"){
+
    setBuses(result.data);
     
 setLoading(false);
