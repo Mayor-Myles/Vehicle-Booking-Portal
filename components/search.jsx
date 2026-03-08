@@ -54,7 +54,7 @@ export default function SearchForm() {
 
   const updateFormData = (name,value) => {
 
-  setFormData((prev) => ({...prev,name:value});
+  setFormData((prev) => ({...prev,name:value}));
 
   }
     
