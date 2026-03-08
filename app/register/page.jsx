@@ -104,7 +104,7 @@ router.replace("/login");
 
   else{
     
-toast({title:"Error",status:"error",description:result.error+" Registration was not succesful. Try again . ",position:"top"});
+toast({title:"Error",status:"error",description:result.message+" Registration was not succesful. Try again . ",position:"top"});
 
     setLoading(false);
   }
