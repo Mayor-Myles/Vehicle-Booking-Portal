@@ -52,11 +52,11 @@ const router = useRouter();
   
 const [formData,setFormData] = useState(
   {
-  phone_number:"",
-  email:"",
-   password:"",
-    gender:"",
-    fullname:""
+  phone_number:null,
+  email:null,
+   password:null,
+    gender:null,
+    fullname:null
     
   }
 );
@@ -90,7 +90,7 @@ const url = "api/backend/user/register";
   const res = await axios.post(url,{formData});
 
   const result = res.data;
-alert(result)
+console.log(result)
   if(result.status === "success"){
     
   toast({title:"Succesful",status:"success",description:"Registration succesful. You are now being redirected to dashboard. ",position:"top"});
