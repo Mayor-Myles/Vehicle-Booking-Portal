@@ -17,7 +17,7 @@ import {
 import Navbar from "@/components/navbar";
 import HowItWorks from "@/howitworks";
 import FAQ from "@/components/faq";
-import ContactUs from "@/contactUs";
+import ContactUs from "@/components/contactUs";
 
 const buses = [
   {
