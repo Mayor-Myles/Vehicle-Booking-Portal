@@ -76,7 +76,7 @@ const submit = async() => {
   
   toast.closeAll();
 
-  if(Object.values(formData).length < 5){
+  if(Object.keys(formData).length < 5){
 
 toast({title:"Warning",status:"warning",description:"Enter all the informations needed and try again. ",position:"top"});
 
