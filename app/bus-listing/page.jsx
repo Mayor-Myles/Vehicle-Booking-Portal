@@ -15,8 +15,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Navbar from "@/components/navbar";
-
-
+import HowItWorks from "@/howitworks";
+import FAQ from "@/components/faq";
+import ContactUs from "@/contactUs";
 
 const buses = [
   {
@@ -135,6 +136,10 @@ export default function BusListing() {
         ))}
       </SimpleGrid>
     </Box>
+      <HowItWorks/>
+      <FAQ/>
+      <ContactUs/>
+      
     </>
   );
 }
