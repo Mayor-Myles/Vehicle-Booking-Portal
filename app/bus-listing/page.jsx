@@ -70,15 +70,14 @@ const getListings = async () => {
   toast.closeAll();
 
   setLoading(true);
-  
-    
+      
 const res = axios.post(url,{formData});
 
 const result = res.data;
 
   if(result.status === "success"){
-
-    setBuses(result.data);
+console.log(result.data);
+   setBuses(result.data);
     
 setLoading(false);
   
@@ -104,7 +103,7 @@ setloading(false);
       </Heading>
 
       <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={6}>
-        {buses.map((bus) => (
+        {(buses ||[]).map((bus) => (
           <Box
             key={bus.id}
             bg={cardBg}
