@@ -63,7 +63,7 @@ export default function BusListing() {
   const url = "api/backend/user/trips";
   const[loading,setLoading] = useState(false);
   const toast = useToast();
-  
+  const[buses,setBuses] = useState(null);
 
   const params = useSearchParams();
 
@@ -87,7 +87,7 @@ setLoading(false);
   }
   
 else{
-setloading(false);
+setLoading(false);
   toast({title:"Warning",status:"warning",description:"Failed to get results. Try again! ",position:"top"});
 }
 
