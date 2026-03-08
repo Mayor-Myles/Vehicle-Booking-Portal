@@ -76,7 +76,7 @@ const submit = async() => {
   
   toast.closeAll();
 
-const emptyForm = Object.(formData).every(item => item == null && item == "");
+const emptyForm = Object.values(formData).every(item => item == null && item == "");
 
   if(emptyForm){
   
