@@ -75,7 +75,7 @@ const formData = {
 });
 
   
-const getListings = async () => {
+const getBuses = async () => {
 
   toast.closeAll();
 
@@ -102,14 +102,15 @@ setloading(false);
 
   
 }
-  
+
+  const buses =  use(getBuses());
   
   return (
     <>
     <Navbar/>
     <Box maxW="7xl" mx="auto" px={{ base: 4, md: 8 }} py={8}>
       <Heading size="lg" mb={6}>
-        Available Buses
+        Available Buses | Trips
       </Heading>
 
       <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={6}>
