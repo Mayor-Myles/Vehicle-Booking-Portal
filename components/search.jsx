@@ -67,7 +67,7 @@ export default function SearchForm() {
       router.push({
         "pathname": "/bus-listing",
         
-      query:{ location,destination,date,passengers}
+      query:{ formData.location,formData.destination,formData.date,formData.passengers}
       })
 
     },3000);
