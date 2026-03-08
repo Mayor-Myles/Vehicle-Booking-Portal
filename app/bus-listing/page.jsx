@@ -94,7 +94,8 @@ console.log(result.data);
   
 else{
   setLoading(false);
-  toast({title:"Warning",status:"warning",description:"Failed to get results. Try again! ",position:"top"});
+  toast({title:"Warning",status:"warning",description:result.message,position:"top"});
+setBuses([]);
 }
 
   
@@ -128,6 +129,8 @@ return(
         Available Buses | Trips
       </Heading>
 
+      {buses.length < 1 && (<Text fontSize="xl" color="orange">No vehicle was found for the trip you searched for. Try again later!</Text>)}
+      
       <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={6}>
         {(buses ||[]).map((bus) => (
           <Box
