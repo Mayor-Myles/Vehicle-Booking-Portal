@@ -69,7 +69,7 @@ export default function SearchForm() {
   query: formData
 });
 
-
+setLoading(false);
     },3000);
 
     
