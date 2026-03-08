@@ -1,6 +1,6 @@
 
 "use client";
-
+import {useState} from "react";
 import {
   Box,
   Button,
@@ -23,7 +23,7 @@ import {
   MdOutlinePersonOutline,
   MdSwapVert,
 } from 'react-icons/md';
-import NextLink from "next/link";
+import {useRouter} from "next/navigation";
 
 const cities = [
   'Ibadan',
@@ -41,7 +41,37 @@ export default function SearchForm() {
   const inputBg = useColorModeValue('orange.50', 'gray.700');
   const iconColor = useColorModeValue('orange.500', 'orange.300');
   const labelColor = useColorModeValue('gray.700', 'gray.300');
+  const [loading,setLoading] = useState(false);
+  const [formData,setFormData] = useState({
 
+    location:null,
+    destination:null,
+    date:null,
+    passengers:null,
+    
+  });
+  const router = useRouter();
+
+  const updateFormData = (name,value) => {
+
+  setFormData((prev) => ({...prev,name:value});
+
+  }
+    
+  const search = () => {
+
+ setLoading(true);
+    
+    setTimeout(()=> {
+
+      setLoading(false);
+
+    },3000);
+
+    router.push("/bus-listing?location="+location+"&destination="+destination+"&date="+date+"&passengers="+passengers);
+
+  }
+  
   return (
     <Flex align="center" justify="center" direction="column" px={4}>
       <Text fontSize="lg" fontWeight="bold" mb={4}>
@@ -69,6 +99,7 @@ export default function SearchForm() {
                 pl={12}
                 height="52px"
                 borderRadius="lg"
+                onChange={(e)=>updateFormData("location",e.target.value)}
               >
                 <option value="">Select departure city</option>
                 {cities.map(city => (
@@ -101,6 +132,8 @@ export default function SearchForm() {
                 pl={12}
                 height="52px"
                 borderRadius="lg"
+                onChange={(e)=>updateFormData("destination",e.target.value)}
+      
               >
                 <option value="">Select Destination City</option>
                 {cities.map(city => (
@@ -124,6 +157,8 @@ export default function SearchForm() {
                   pl={12}
                   height="52px"
                   borderRadius="lg"
+                  onChange={(e)=>updateFormData("date",e.target.value)}
+      
                 />
               </InputGroup>
             </FormControl>
@@ -139,11 +174,13 @@ export default function SearchForm() {
                   pl={12}
                   height="52px"
                   borderRadius="lg"
+                  onChange={(e)=>updateFormData("passengers",e.target.value)}
+      
                 >
-                  <option>1 Adult</option>
-                  <option>2 Adults</option>
-                  <option>3 Adults</option>
-                  <option>4 Adults</option>
+                  <option value="1">1 </option> 
+                  <option value="2">2 </option>
+                  <option value="3">3 </option>
+                  <option value="4">4 </option>
                 </Select>
               </InputGroup>
             </FormControl>
@@ -151,9 +188,9 @@ export default function SearchForm() {
 
           {/* CTA */}
           <Button
-            as={NextLink}
-            href="/bus-listing"
-            mt={4}
+            isLoading={loading}
+            onClick={search}
+             mt={4}
             height="56px"
             borderRadius="xl"
             bg="orange.600"
