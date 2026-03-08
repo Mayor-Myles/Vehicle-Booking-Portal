@@ -56,7 +56,7 @@ const [formData,setFormData] = useState(
   email:null,
    password:null,
     gender:null,
-    fullname:null
+    fullName:null
     
   }
 );
