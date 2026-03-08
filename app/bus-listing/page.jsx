@@ -77,17 +77,19 @@ const getBuses = async () => {
 const res = await axios.post(url,{formData});
 
 const result = res.data;
+  
 console.log(result.data);
+  
   if(result.status === "success"){
 
    setBuses(result.data);
     
-setLoading(false);
+  setLoading(false);
   
   }
   
 else{
-setLoading(false);
+  setLoading(false);
   toast({title:"Warning",status:"warning",description:"Failed to get results. Try again! ",position:"top"});
 }
 
@@ -103,7 +105,9 @@ setLoading(false);
   },[]);
 
   if(!buses){
+    
 return(
+  
   <Flex minH="100vh" align="center" justify="center">
   
   <Spinner color="orange" size="xl"/>
@@ -111,6 +115,7 @@ return(
   </Flex>
 )
   }
+  
   return (
     <>
     <Navbar/>
