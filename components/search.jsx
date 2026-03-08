@@ -64,8 +64,11 @@ export default function SearchForm() {
     
     setTimeout(()=> {
 
-      setLoading(false);
-router.push("/bus-listing?location="+location+"&destination="+destination+"&date="+date+"&passengers="+passengers);
+      router.push({
+        "pathname": "/bus-listing",
+        
+      query:{ location,destination,date,passengers}
+      })
 
     },3000);
 
