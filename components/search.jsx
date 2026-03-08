@@ -65,11 +65,11 @@ export default function SearchForm() {
     setTimeout(()=> {
 
       setLoading(false);
+router.push("/bus-listing?location="+location+"&destination="+destination+"&date="+date+"&passengers="+passengers);
 
     },3000);
 
-    router.push("/bus-listing?location="+location+"&destination="+destination+"&date="+date+"&passengers="+passengers);
-
+    
   }
   
   return (
