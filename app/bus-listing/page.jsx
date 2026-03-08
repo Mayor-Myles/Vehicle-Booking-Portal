@@ -14,6 +14,9 @@ import {
   Flex,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Navbar from "@/components/navbar";
+
+
 
 const buses = [
   {
@@ -53,6 +56,8 @@ export default function BusListing() {
   const border = useColorModeValue("gray.200", "gray.700");
 
   return (
+    <>
+    <Navbar/>
     <Box maxW="7xl" mx="auto" px={{ base: 4, md: 8 }} py={8}>
       <Heading size="lg" mb={6}>
         Available Buses
@@ -130,5 +135,6 @@ export default function BusListing() {
         ))}
       </SimpleGrid>
     </Box>
+    </>
   );
 }
