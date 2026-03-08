@@ -65,14 +65,6 @@ export default function BusListing() {
   const[buses,setBuses] = useState([]);
 
   const params = useSearchParams();
-const formData = {
-
-  destination: params.get("destination"),
-  location:params.get("location"),
-  date:params.get("date"),
-  passengers:params.get("passengers") ,
-
-});
 
   
 const getBuses = async () => {
