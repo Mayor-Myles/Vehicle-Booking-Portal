@@ -64,12 +64,12 @@ export default function SearchForm() {
     
     setTimeout(()=> {
 
-      router.push(
+      router.replace(
   `/bus-listing?location=${formData.location}&destination=${formData.destination}&date=${formData.date}&passengers=${formData.passengers}`
 );
 
 setLoading(false);
-    },3000);
+    },5000);
 
     
   }
