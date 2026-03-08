@@ -62,7 +62,7 @@ export default function BusListing() {
   const url = "api/backend/user/trips";
   const[loading,setLoading] = useState(false);
   const toast = useToast();
-  const[buses,setBuses] = useState([]);
+  
 
   const params = useSearchParams();
 
