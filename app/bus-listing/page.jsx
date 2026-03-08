@@ -173,7 +173,7 @@ setloading(false);
                 </VStack>
 
                 <Button
-                  onClick={getListings}
+                  
                   colorScheme="orange"
                   size="md"
                   borderRadius="xl"
