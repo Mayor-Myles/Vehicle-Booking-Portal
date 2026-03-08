@@ -70,7 +70,7 @@ const getListings = async () => {
   toast.closeAll();
 
   setLoading(true);
-  try{
+  
     
 const res = axios.post(url,{formData});
 
